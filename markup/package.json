@@ -1,10 +1,14 @@
 {
-	"name": "kasparibi",
-	"description": "The markup for kasparibi",
-	"author": "Peter Tollnes Flem",
-	"dependencies": {},
-	"devDependencies": {
-		"grunt": "0.4.x"
-	},
-	"engine": "node >= 0.10.13"
+  "name": "kasparibi",
+  "description": "The markup for kasparibi",
+  "author": "Peter Tollnes Flem",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-contrib-less": "~0.8.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1"
+  },
+  "engine": "node >= 0.10.13"
 }

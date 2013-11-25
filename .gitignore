@@ -6,6 +6,7 @@ hours.xlsx
 ##########
 markup/node_modules/
 markup/less/
+markup/build/
 
 # Wordpress #
 #############
