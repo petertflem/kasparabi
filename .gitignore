@@ -1,0 +1,29 @@
+# Hours #
+#########
+hours.xlsx
+
+# Markup #
+##########
+markup/node_modules/
+markup/less/
+
+# Wordpress #
+#############
+# Ignore everything in the wordpress folder except the "wp-content" directory.
+wordpress/*
+!wordpress/wp-content/
+
+# Ignore everything in the "wp-content" directory, except the "plugins"
+# and "themes" directories.
+wordpress/wp-content/*
+!wordpress/wp-content/plugins/
+!wordpress/wp-content/themes/
+
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify (see the commented-out examples for hints on how to do this.)
+wordpress/wp-content/plugins/*
+
+# Ignore everything in the "themes" directory, except the themes you
+# specify (see the commented-out example for a hint on how to do this.)
+wordpress/wp-content/themes/*
+!wordpress/wp-content/themes/kasparabi/

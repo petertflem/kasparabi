@@ -1,0 +1,10 @@
+{
+	"name": "kasparibi",
+	"description": "The markup for kasparibi",
+	"author": "Peter Tollnes Flem",
+	"dependencies": {},
+	"devDependencies": {
+		"grunt": "0.4.x"
+	},
+	"engine": "node >= 0.10.13"
+}
