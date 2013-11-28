@@ -5,7 +5,7 @@ hours.xlsx
 # Markup #
 ##########
 markup/node_modules/
-markup/stylesheets/css/
+#markup/stylesheets/css/
 markup/build/
 
 # Wordpress #
