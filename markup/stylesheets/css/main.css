@@ -6330,6 +6330,18 @@ td.visible-print {
     display: none !important;
   }
 }
+header img {
+  width: 75%;
+}
+footer .container {
+  height: 60px;
+}
+.latest-news.container img {
+  width: 100%;
+}
+.image-carousel.container img {
+  width: 100%;
+}
 body {
   text-align: center;
 }
