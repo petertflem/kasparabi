@@ -6332,16 +6332,44 @@ td.visible-print {
 }
 header img {
   width: 75%;
+  margin: 0px auto;
 }
 footer .container {
   height: 60px;
 }
-.latest-news.container img {
-  width: 100%;
-}
 .image-carousel.container img {
-  width: 100%;
+  margin: 0px auto;
 }
-body {
+.latest-news h2 {
   text-align: center;
+}
+article h1 {
+  text-align: center;
+}
+article img {
+  margin: 0px auto;
+}
+.references img {
+  margin: 0px auto;
+}
+.references h1,
+.references h4 {
+  text-align: center;
+}
+.references h4 {
+  margin-top: 5px;
+}
+.inspiration h1,
+.inspiration h4 {
+  text-align: center;
+}
+.inspiration img {
+  margin: 0px auto;
+}
+.contact-us h1,
+.contact-us h4 {
+  text-align: center;
+}
+.contact-us img {
+  margin: 0px auto;
 }
