@@ -22,9 +22,9 @@ wordpress/wp-content/*
 
 # Ignore everything in the "plugins" directory, except the plugins you
 # specify (see the commented-out examples for hints on how to do this.)
-wordpress/wp-content/plugins/news
-wordpress/wp-content/plugins/reference
-wordpress/wp-content/plugins/settings
+!wordpress/wp-content/plugins/news
+!wordpress/wp-content/plugins/reference
+!wordpress/wp-content/plugins/settings
 
 # Ignore everything in the "themes" directory, except the themes you
 # specify (see the commented-out example for a hint on how to do this.)
