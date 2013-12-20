@@ -38,11 +38,4 @@ function create_news_post_type() {
 }
 add_action('init', 'create_news_post_type');
 
-function add_news_to_query( $query ) {
-	if ( is_home() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'news' ) );
-	return $query;
-}
-add_action( 'pre_get_posts', 'add_news_to_query' );
-
 ?>

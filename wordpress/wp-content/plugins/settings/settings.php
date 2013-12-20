@@ -99,11 +99,11 @@
 		$options = get_option('kasparabi_settings');
 
 		?>
-			<input id='kasparabi_archive_references_num_per_page' 
+			<input id='kasparabi_archive_reference_num_per_page' 
 				class='small-text' 
-				name='kasparabi_settings[kasparabi_archive_references_num_per_page]' 
+				name='kasparabi_settings[kasparabi_archive_reference_num_per_page]' 
 				type='text' 
-				value='<?php echo $options["kasparabi_archive_references_num_per_page"] ?>'
+				value='<?php echo $options["kasparabi_archive_reference_num_per_page"] ?>'
 			/>
 			<p class='description'><?php _e('This is used to limit the references per page in the references archive', 'kasparabi'); ?></p>
 		<?php

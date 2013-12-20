@@ -38,11 +38,4 @@ function create_references_post_type() {
 }
 add_action('init', 'create_references_post_type');
 
-function add_references_to_query( $query ) {
-	if ( is_home() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'reference' ) );
-	return $query;
-}
-add_action( 'pre_get_posts', 'add_references_to_query' );
-
 ?>

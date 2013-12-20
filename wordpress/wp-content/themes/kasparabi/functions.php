@@ -49,26 +49,38 @@
 	/*--------------------------------------------------------------------------*/
 	function add_custom_posts_per_page( &$q ) {	
 		global $custom_post_types;
-
 		$custom_post_types = array('reference', 'news');
-		if ( $q->is_archive && !is_admin() ) { // any archive that isn't in admin
+
+		if ( $q->is_archive && !is_admin() ) {
 			if ( in_array ($q->query_vars['post_type'], $custom_post_types) ) {
+				$post_type = $q->query_vars['post_type'];
+				$options = get_option('kasparabi_settings');
 
-				$q->set( 'posts_per_page', 9);
-
-                $options = get_option('kasparabi_settings');
-
-				if ($q->query_vars['post_type'] === 'reference')
-					$q->set( 'posts_per_page', $options['kasparabi_archive_references_num_per_page'] );
-
-				if ($q->query_vars['post_type'] === 'news')
-					$q->set( 'posts_per_page', $options['kasparabi_archive_news_num_per_page'] );
-				
+				$q->set( 'posts_per_page', $options['kasparabi_archive_' . $post_type . '_num_per_page'] );
 			}
 		}
+
 		return $q;
 	}
 	add_filter('parse_query', 'add_custom_posts_per_page');
+
+
+
+
+
+	/*--------------------------------------------------------------------------*
+	 * Register custom post types with search
+	/*--------------------------------------------------------------------------*/
+
+	/**
+	 * Add custom post types to home page query
+	 */
+	function add_custom_post_types_to_home_page_query( $query ) {
+		if ( is_home() && $query->is_main_query() )
+			$query->set( 'post_type', array( 'news', 'reference' ) );
+		return $query;
+	}
+	add_action( 'pre_get_posts', 'add_custom_post_types_to_home_page_query' );
 
 
 
