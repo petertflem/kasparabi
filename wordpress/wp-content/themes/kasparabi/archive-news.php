@@ -24,13 +24,14 @@
                 <div class="row">
 					<div class="col-xs-12">
 						<div class="row">
+
+                        <?php if (has_post_thumbnail()) : ?>
 							<div class="col-sm-3">
-								<?php 
-									if (has_post_thumbnail())
-		                                the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' ));
-								?>
+								<?php the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' )); ?>
 							</div>
-							<div class="col-sm-9">
+                        <?php endif; ?>
+
+							<div class="col<?php echo has_post_thumbnail() ? '-sm-9' : '-xs-12'; ?>">
 								<h2><?php the_title(); ?></h2>
 								<p><?php the_excerpt(); ?></p>
 							</div>
