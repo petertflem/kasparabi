@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 		less : {
 			dev: {
 				files: {
-					'stylesheets/css/main.css': 'stylesheets/less/main.less'
+					'stylesheets/css/main.css': 'less/main.less'
 				}
 			},
 			build: {
@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 					cleancss: true
 				},
 				files: {
-					'build/css/main.css': 'stylesheets/less/main.less'
+					'build/css/main.css': 'less/main.less'
 				}
 			}
 		},
@@ -30,7 +30,7 @@ module.exports = function (grunt) {
 		copy: {
 			build: {
 				files: [
-					{ src: 'index.html', dest: 'build/' }
+					{ src: '*.html', dest: 'build/' }
 				]
 			}
 		},
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
 			},
 
 			less: {
-				files: 'stylesheets/less/**/*.less',
+				files: 'less/**/*.less',
 				tasks: ['clean:css', 'less:dev']
 			},
 
