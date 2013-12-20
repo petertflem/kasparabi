@@ -10,9 +10,16 @@
 ?>
 <?php 
 
+
+
+
 	/*--------------------------------------------------------------------------*
-	 * Make custom settings page
+	 * Register settings page, sections, and fields
 	/*--------------------------------------------------------------------------*/
+
+	/**
+	 * Register settings submenu page
+	 */
 	function register_settings_page () {
 		add_submenu_page('options-general.php', // parent slug
 			__('Kasparabi', 'kasparabi'), // page title
@@ -24,7 +31,10 @@
 	}
 	add_action('admin_menu', 'register_settings_page');
 
-	function register_settings() {
+	/**
+	 * Register sections
+	 */
+	function register_settings_sections_and_fields() {
 		register_setting( 'kasparabi-settings', 'kasparabi_settings', 'kasparabi_settings_validation');
 
 		//add_settings_section('kasparabi_header', __('Header', 'kasparabi'), 'display_kasparabi_header_settings', 'kasparabi-settings-section');
@@ -37,7 +47,14 @@
 			'display_kasparabi_archives_settings', // Callback used to render
 			'kasparabi-settings-page' // The page it is rendered on
 		);
+		register_kaspari_archive_fields();
+	}
+	add_action('admin_init', 'register_settings_sections_and_fields');
 
+	/**
+	 * Register fields
+	 */
+	function register_kaspari_archive_fields() {
 		add_settings_field(
 			'kasparabi-archive-references-num-per-page', // field ID
 			__('References per page', 'kasparabi'), // label
@@ -47,8 +64,11 @@
 		);
 		add_settings_field('kasparabi-archive-news-num-per-page', __('News per page', 'kasparabi'), 'display_archive_news_field', 'kasparabi-settings-page', 'kasparabi_archives');
 	}
-	add_action('admin_init', 'register_settings');
 
+
+	/*--------------------------------------------------------------------------*
+	 * Validation
+	/*--------------------------------------------------------------------------*/
 	function kasparabi_settings_validation($input) {
 		/* TODO: Add type validation */
 
@@ -65,12 +85,16 @@
 		return apply_filters( 'kasparabi_settings_validation', $output, $input);
 	}
 
-	/*function display_logo_field() {
-		$options = get_option('kasparabi_header');
-		echo "<input id='kasparabi_logo' name='kasparabi_header[kasparabi_logo]' size='40' type='text' value='{$options['kasparabi_logo']}'' />" .
-		     "<p class='description'>Here you can set the logo for the web page</p>";
-	}*/
 
+
+
+	/*--------------------------------------------------------------------------*
+	 * Render fields
+	/*--------------------------------------------------------------------------*/
+	
+	/**
+	 * Render the referemces per page field
+	 */
 	function display_archive_references_field() {
 		$options = get_option('kasparabi_settings');
 
@@ -85,6 +109,9 @@
 		<?php
 	}
 
+	/**
+	 * Render the news per page field
+	 */
 	function display_archive_news_field() {
 		$options = get_option('kasparabi_settings');
 
@@ -99,18 +126,22 @@
 		<?php
 	}
 
-	function display_kasparabi_header_settings() {
-		echo '';
-	}
 
-	/*function display_kasparabi_footer_settings() {
-		echo '';
-	}*/
 
-	function display_kasparabi_archives_settings() {
-		echo '';
-	}
 
+	/*--------------------------------------------------------------------------*
+	 * Render sections
+	/*--------------------------------------------------------------------------*/
+	//function display_kasparabi_header_settings() {}
+	//function display_kasparabi_footer_settings() {}
+	function display_kasparabi_archives_settings() {}
+	
+
+
+
+	/*--------------------------------------------------------------------------*
+	 * Render the settings page 
+	/*--------------------------------------------------------------------------*/
 	function kasparabi_settings_page() {
 
 		if (!current_user_can('manage_options')) {
