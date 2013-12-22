@@ -47,6 +47,10 @@
 	/*--------------------------------------------------------------------------*
 	 * Customize custom post type archive query
 	/*--------------------------------------------------------------------------*/
+
+	/**
+	 * Set number of custom post types per page on archive pages
+	 */
 	function add_custom_posts_per_page( &$q ) {	
 		global $custom_post_types;
 		$custom_post_types = array('reference', 'news', 'inspiration');
@@ -64,8 +68,11 @@
 	}
 	add_filter('parse_query', 'add_custom_posts_per_page');
 
-	function add_category( $q ) {
-		if ($q->is_archive && !is_admin()) {
+	/**
+	 * If the archive is the inspiration archive, filter by category if we have one
+	 */
+	function add_inspiration_category( $q ) {
+		if (is_post_type_archive('inspiration') && !is_admin()) {
 
 			$category_id = $_GET['category'];
 			if (!empty($category_id)) {
@@ -81,7 +88,7 @@
 
 		return $q;
 	}
-	add_filter('parse_query', 'add_category');
+	add_filter('parse_query', 'add_inspiration_category');
 
 
 
