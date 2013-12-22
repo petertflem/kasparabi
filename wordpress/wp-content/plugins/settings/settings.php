@@ -63,6 +63,7 @@
 			'kasparabi_archives' // name of section it belongs to
 		);
 		add_settings_field('kasparabi-archive-news-num-per-page', __('News per page', 'kasparabi'), 'display_archive_news_field', 'kasparabi-settings-page', 'kasparabi_archives');
+		add_settings_field('kasparabi-archive-inspiration-num-per-page', __('Inspirations per page', 'kasparabi'), 'display_archive_inspiration_field', 'kasparabi-settings-page', 'kasparabi_archives');
 	}
 
 
@@ -78,7 +79,7 @@
 			
 			if ( isset( $input[$key] ) ) {
 
-				$output[$key] = strip_tags( stripcslashes( $input[$key] ) );
+				$output[$key] = sanitize_text_field(strip_tags( stripcslashes( $input[$key] ) ) );
 			}
 		}
 
@@ -122,7 +123,24 @@
 				type='text' 
 				value='<?php echo $options["kasparabi_archive_news_num_per_page"] ?>'
 			/>
-			<p class='description'><?php _e('This is used to limit the news per page in the references archive', 'kasparabi'); ?></p>
+			<p class='description'><?php _e('This is used to limit the news per page in the news archive', 'kasparabi'); ?></p>
+		<?php
+	}
+
+	/**
+	 * Render the inspiration per page field
+	 */
+	function display_archive_inspiration_field() {
+		$options = get_option('kasparabi_settings');
+
+		?>
+			<input id='kasparabi_archive_inspiration_num_per_page' 
+				class='small-text' 
+				name='kasparabi_settings[kasparabi_archive_inspiration_num_per_page]' 
+				type='text' 
+				value='<?php echo $options["kasparabi_archive_inspiration_num_per_page"] ?>'
+			/>
+			<p class='description'><?php _e('This is used to limit the inspiration per page in the inspiration archive', 'kasparabi'); ?></p>
 		<?php
 	}
 

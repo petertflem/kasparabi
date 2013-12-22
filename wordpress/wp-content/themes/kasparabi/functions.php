@@ -45,11 +45,11 @@
 
 
 	/*--------------------------------------------------------------------------*
-	 * Make custom post type archive pagination work
+	 * Customize custom post type archive query
 	/*--------------------------------------------------------------------------*/
 	function add_custom_posts_per_page( &$q ) {	
 		global $custom_post_types;
-		$custom_post_types = array('reference', 'news');
+		$custom_post_types = array('reference', 'news', 'inspiration');
 
 		if ( $q->is_archive && !is_admin() ) {
 			if ( in_array ($q->query_vars['post_type'], $custom_post_types) ) {
@@ -63,6 +63,25 @@
 		return $q;
 	}
 	add_filter('parse_query', 'add_custom_posts_per_page');
+
+	function add_category( $q ) {
+		if ($q->is_archive && !is_admin()) {
+
+			$category_id = $_GET['category'];
+			if (!empty($category_id)) {
+				$q->set('tax_query', array(
+					array(
+						'taxonomy' => 'inspiration-taxonomy',
+						'field' => 'id',
+						'terms' => $category_id
+					)
+				));
+			}
+		}
+
+		return $q;
+	}
+	add_filter('parse_query', 'add_category');
 
 
 

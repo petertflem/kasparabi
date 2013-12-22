@@ -13,7 +13,14 @@ Author URI:
  * Register metabox
 /*--------------------------------------------------------------------------*/
 function kasparabi_page_left_menu() {
-    add_meta_box( 'kasparabi-left-menu-meta', __( 'Left Menu', 'kasparabi' ), 'kasparabi_render_left_menu_meta_box', 'page', 'side' );
+
+    /* Limit this metabox to article pages */
+    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+    $template_file = get_post_meta( $post_id, '_wp_page_template', true );
+
+    if ( $template_file == 'page-article.php' ) {
+        add_meta_box( 'kasparabi-left-menu-meta', __( 'Left Menu', 'kasparabi' ), 'kasparabi_render_left_menu_meta_box', 'page', 'side' );
+    }
 }
 add_action( 'add_meta_boxes', 'kasparabi_page_left_menu' );
 
@@ -76,7 +83,7 @@ function kasparibi_left_menu_meta_save( $post_id, $post ) {
 add_action( 'save_post', 'kasparibi_left_menu_meta_save', 1, 2 );
 
 function save_value( $id_of_input, $meta_key, $post ) {
- 	$new_meta_value = ( isset( $_POST[$id_of_input] ) ? sanitize_html_class( $_POST[$id_of_input] ) : '' );
+ 	$new_meta_value = ( isset( $_POST[$id_of_input] ) ? sanitize_text_field( $_POST[$id_of_input] ) : '' );
     $meta_value = get_post_meta( $post->ID, $meta_key, true);
 
 	/* If a new meta value was added and there was no previous value, add it. */
