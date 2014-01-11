@@ -33,9 +33,13 @@
 	function register_settings_sections_and_fields() {
 		register_setting( 'kasparabi-settings', 'kasparabi_settings', 'kasparabi_settings_validation');
 
-		//add_settings_section('kasparabi_header', __('Header', 'kasparabi'), 'display_kasparabi_header_settings', 'kasparabi-settings-section');
-		//add_settings_field('kasparabi-logo', __('Logo', 'kasparabi'), 'display_logo_field', 'kasparabi-settings-section', 'kasparabi_header');
-
+		add_settings_section('kasparabi_header', 
+			__('Header', 'kasparabi'), 
+			'display_kasparabi_header_settings', 
+			'kasparabi-settings-page'
+		);
+		register_kaspari_header_fields();
+		
 		//add_settings_section('kasparabi_footer', __('Footer', 'kasparabi'), 'display_kasparabi_footer_settings', 'kasparabi-settings-section');
 
 		add_settings_section('kasparabi_archives', // ID
@@ -60,6 +64,10 @@
 		);
 		add_settings_field('kasparabi-archive-news-num-per-page', __('News per page', 'kasparabi'), 'display_archive_news_field', 'kasparabi-settings-page', 'kasparabi_archives');
 		add_settings_field('kasparabi-archive-inspiration-num-per-page', __('Inspirations per page', 'kasparabi'), 'display_archive_inspiration_field', 'kasparabi-settings-page', 'kasparabi_archives');
+	}
+
+	function register_kaspari_header_fields() {
+		add_settings_field('kasparabi-logo', __('Logo', 'kasparabi'), 'display_logo_field', 'kasparabi-settings-page', 'kasparabi_header');
 	}
 
 
@@ -127,15 +135,32 @@
 		<?php
 	}
 
+	/**
+	 * Render the logo selection
+	 */
+	function display_logo_field() {
+	    $options = get_option('kasparabi_settings');
+
+	    ?>
+	        <p>
+	            <input type="button" class="button" id="logo-upload-button" value="<?php _e( 'Choose or upload an Image', 'kasparabi' )?>" />
+	            <br />
+	            <br />
+	            <img src="<?php echo $options['logo_url']; ?>" alt="logo" id="logo-thumbnail" />
+	            <input type="hidden" name="kasparabi_settings[logo_url]" id="logo_url" value="<?php echo $options['logo_url']; ?>" />
+	        </p>
+	    <?php
+	}
+
 
 
 
 	/*--------------------------------------------------------------------------*
 	 * Render sections
 	/*--------------------------------------------------------------------------*/
-	//function display_kasparabi_header_settings() {}
+	function display_kasparabi_header_settings() { _e('Settings for the header on the page.', 'kasparabi'); }
 	//function display_kasparabi_footer_settings() {}
-	function display_kasparabi_archives_settings() {}
+	function display_kasparabi_archives_settings() { _e('Settings for the archives on the page.', 'kasparabi'); }
 	
 
 
@@ -164,3 +189,25 @@
 
 		<?php
 	}
+
+
+
+
+
+	/*--------------------------------------------------------------------------*
+	 * Enqueue the image handeling script
+	/*--------------------------------------------------------------------------*/
+	function kasparabi_settings_image_upload() {
+	    wp_enqueue_media();
+
+	    wp_register_script( 'settings-image-upload', plugin_dir_url(__FILE__) . '/settings-image-upload.js', array('jquery') );
+	    wp_localize_script( 'settings-image-upload', 'settings_image', 
+	        array(
+	            'title' => __('Choose or upload an image', 'kasparabi'),
+	            'button' => __('Use this image', 'kasparabi')
+	        )
+	    );
+
+	    wp_enqueue_script('settings-image-upload');
+	}
+	add_action( 'admin_enqueue_scripts', 'kasparabi_settings_image_upload' );

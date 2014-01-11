@@ -39,7 +39,7 @@ function render_inspiration_images_selection_section($title, $type, $post) {
 
     ?>
         <p>
-            <label for="<?php echo $type; ?>-inspiration-image" class="prfx-row-title"><b><?php echo $title; ?></b></label>
+            <label for="<?php echo $type; ?>-inspiration-image"><b><?php echo $title; ?></b></label>
             <br />
             <img src="<?php echo $meta_image_url; ?>" alt="<?php echo $type; ?>-inspiration-image" class="inspiration-image-thumbnail" />
             <br />

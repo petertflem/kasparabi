@@ -9,14 +9,14 @@
     <?php 
         $meta = get_post_meta($post->ID);
 
-        $wedding_link = esc_attr( $meta['wedding_archive_link'][0] );
-        $wedding_archive_type = esc_attr( $meta['cat_wedding'][0] );
+        $wedding_link = isset($meta['wedding_archive_link']) ? esc_attr( $meta['wedding_archive_link'][0] ) : '';
+        $wedding_archive_type = isset($meta['cat_wedding']) ? esc_attr( $meta['cat_wedding'][0] ) : '';
       
-        $interior_link = esc_attr( $meta['interior_archive_link'][0] );
-        $interior_archive_type = esc_attr( $meta['cat_interior'][0] );
+        $interior_link = isset($meta['interior_archive_link']) ? esc_attr( $meta['interior_archive_link'][0] ) : '';
+        $interior_archive_type = isset($meta['cat_interior']) ? esc_attr( $meta['cat_interior'][0] ) : '';
 
-        $wedding_image = $meta['wedding_inspiration_image'][0];
-        $interior_image = $meta['interior_inspiration_image'][0];
+        $wedding_image = isset($meta['wedding_inspiration_image']) ? $meta['wedding_inspiration_image'][0] : '';
+        $interior_image = isset($meta['interior_inspiration_image']) ? $meta['interior_inspiration_image'][0] : '';
     ?>
 
 	<!-- INSIPRATION -->

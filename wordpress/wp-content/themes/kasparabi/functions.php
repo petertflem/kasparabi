@@ -129,8 +129,7 @@
 	 * Hide editor for specific page templates
 	/*--------------------------------------------------------------------------*/
 	function hide_editor() {
-		// Get the Post ID.
-		$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+		/*$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
 		if( !isset( $post_id ) ) return;
 	 
 		// Get the name of the Page Template file.
@@ -139,6 +138,6 @@
 	    if($template_file == 'page-inspiration-picker.php'){ 
 	    	remove_post_type_support('page', 'editor');
 	    	remove_post_type_support('page', 'thumbnail');
-	    }
+	    }*/
 	}
 	add_action( 'admin_init', 'hide_editor' );

@@ -23,7 +23,16 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <a href="<?php echo home_url(); ?>">
-                            <img src="http://lorempixel.com/1920/250/" alt="kaspara bryllup og interiør logo" class="img-responsive" />
+                            <?php 
+                                $options = get_option('kasparabi_settings');
+                                $logo_url = '';
+                                
+                                if (isset($options['logo_url'])) {
+                                    $logo_url = $options['logo_url'];
+                                }
+                            ?>
+                        
+                            <img src="<?php echo $logo_url; ?>" alt="kaspara bryllup og interiør logo" class="img-responsive" />
                         </a>
                     </div>
                 </div>
