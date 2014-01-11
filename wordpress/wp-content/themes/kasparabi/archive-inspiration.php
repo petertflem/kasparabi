@@ -23,13 +23,11 @@
                 ?>
 
                     <div class="col-sm-4">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php 
-                                if (has_post_thumbnail())
-                                    the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' )) 
-                            ?>
-                            <h4><?php the_title(); ?></h4>
-                        </a>
+                        <?php 
+                            if (has_post_thumbnail())
+                                the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' )) 
+                        ?>
+                        <h4><?php the_title(); ?></h4>
                     </div>
 
                 <?php endwhile; else : ?>

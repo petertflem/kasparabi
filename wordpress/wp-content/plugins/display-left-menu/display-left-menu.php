@@ -75,14 +75,14 @@ function kasparibi_left_menu_meta_save( $post_id, $post ) {
         return $post_id;
 
     /* Save the checkbox */
-    save_value( 'left-menu-checkbox', 'left_menu_checkbox', $post );
+    left_menu_save_value( 'left-menu-checkbox', 'left_menu_checkbox', $post );
 
     /* Save the dropdown */
-    save_value( 'menu-select', 'menu_select', $post );
+    left_menu_save_value( 'menu-select', 'menu_select', $post );
 }
 add_action( 'save_post', 'kasparibi_left_menu_meta_save', 1, 2 );
 
-function save_value( $id_of_input, $meta_key, $post ) {
+function left_menu_save_value( $id_of_input, $meta_key, $post ) {
  	$new_meta_value = ( isset( $_POST[$id_of_input] ) ? sanitize_text_field( $_POST[$id_of_input] ) : '' );
     $meta_value = get_post_meta( $post->ID, $meta_key, true);
 

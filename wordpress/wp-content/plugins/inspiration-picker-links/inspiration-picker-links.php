@@ -29,46 +29,30 @@ add_action( 'add_meta_boxes', 'kasparabi_inspiration_picker_links' );
 /*--------------------------------------------------------------------------*/
 function kasparabi_render_inspiration_picker_links_meta_box($post) {
     wp_nonce_field( basename( __FILE__ ), 'inspiration-picker-links-meta_nonce' );
+    
+    render_inspiration_picker_section(__('Wedding Link', 'kasparabi'), 'wedding', $post);
+    render_inspiration_picker_section(__('Interior Link', 'kasparabi'), 'interior', $post);
+}
 
+function render_inspiration_picker_section($title, $type, $post) {
     ?>
         <p>
-		    <label for="menu-select">
-                <strong><?php _e( 'Wedding link', 'kasparabi' )?></strong>
+            <label for="menu-select">
+                <strong><?php echo $title; ?></strong>
             </label>
 
-		    <br />
-		    
+            <br />
+            
             <?php _e('Link to archive', 'kasparabi'); ?> 
-            <input type="text" name="wedding-archive-link" class="regular-text code" value="<?php echo esc_attr( get_post_meta( $post->ID, 'wedding_archive_link', true ) ); ?>" />
+            <input type="text" name="<?php echo $type; ?>-archive-link" class="regular-text code" value="<?php echo esc_attr( get_post_meta( $post->ID, $type . '_archive_link', true ) ); ?>" />
             
             <br />
             
             <?php _e('Archive type', 'kasparabi'); ?> 
             <?php wp_dropdown_categories(array(
                 'taxonomy' => 'inspiration-taxonomy', 
-                'name' => 'cat-wedding',
-                'selected' => get_post_meta( $post->ID, 'cat_wedding', true )
-            )); 
-            
-            ?>
-		</p>
-        <p>
-            <label for="menu-select">
-                <strong><?php _e( 'Interior link', 'kasparabi' )?></strong>
-            </label>
-            
-            <br />
-            
-            <?php _e('Link to archive', 'kasparabi'); ?> 
-            <input type="text" name="interior-archive-link" class="regular-text code" value="<?php echo esc_attr( get_post_meta( $post->ID, 'interior_archive_link', true ) ); ?>" />
-            
-            <br />
-            
-            <?php _e('Archive type', 'kasparabi'); ?> 
-            <?php wp_dropdown_categories(array(
-                'taxonomy' => 'inspiration-taxonomy', 
-                'name' => 'cat-interior',
-                'selected' => get_post_meta( $post->ID, 'cat_interior', true )
+                'name' => 'cat-' . $type,
+                'selected' => get_post_meta( $post->ID, 'cat_' . $type, true )
             )); 
             
             ?>
