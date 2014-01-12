@@ -15,7 +15,16 @@ Author URI:
 function kasparabi_page_left_menu() {
 
     /* Limit this metabox to article pages */
-    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+    $post_id = '';
+
+    if (isset($_GET['post'])) {
+        $post_id = $_GET['post'];
+    } else if (isset($_GET['post_ID'])) {
+        $post_id = $_GET['post_ID'];
+    } else {
+        return;
+    }
+    
     $template_file = get_post_meta( $post_id, '_wp_page_template', true );
 
     if ( $template_file == 'page-article.php' ) {
