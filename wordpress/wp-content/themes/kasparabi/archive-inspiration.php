@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <!-- START INSPIRATION -->
         <div class="container references">
             <div class="row">
@@ -22,12 +22,20 @@
                         $iterations++;
                 ?>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 inspiration-gallery">
+
                         <?php 
-                            if (has_post_thumbnail())
-                                the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' )) 
+                            $thumb_id = get_post_thumbnail_id();
+                            $thumb_url = wp_get_attachment_image_src($thumb_id)[0];
                         ?>
-                        <h4><?php the_title(); ?></h4>
+
+                        <a href="<?php echo $thumb_url; ?>" title="<?php echo the_title(); ?>">
+                            <?php 
+                                if (has_post_thumbnail())
+                                    the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' ))
+                            ?>
+                            <h4><?php the_title(); ?></h4>
+                        </a>
                     </div>
 
                 <?php endwhile; else : ?>
