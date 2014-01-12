@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9 image-carousel">
-                    <img src="http://lorempixel.com/1920/1080/" alt="kaspara front page image slider" class="img-responsive" />
+                    <?php echo do_shortcode('[image-carousel]'); ?>
                 </div>
                 <div class="col-sm-3">
                     <p>
