@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 		less : {
 			dev: {
 				files: {
-					'stylesheets/css/main.css': 'less/main.less'
+					'css/main.css': 'less/main.less'
 				}
 			},
 			build: {
@@ -32,6 +32,11 @@ module.exports = function (grunt) {
 				files: [
 					{ src: '*.html', dest: 'build/' }
 				]
+			},
+			less_dev: {
+				files: [
+					{ src: 'css/main.css', dest: '../wordpress/wp-content/themes/kasparabi/css/main.css' }
+				]
 			}
 		},
 
@@ -42,7 +47,7 @@ module.exports = function (grunt) {
 
 			less: {
 				files: 'less/**/*.less',
-				tasks: ['clean:css', 'less:dev']
+				tasks: ['clean:css', 'less:dev', 'copy:less_dev']
 			},
 
 			html: {

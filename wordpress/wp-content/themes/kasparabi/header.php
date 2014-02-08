@@ -21,15 +21,11 @@
         <header>
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12">                        
                         <a href="<?php echo home_url(); ?>">
                             <?php 
                                 $options = get_option('kasparabi_settings');
-                                $logo_url = '';
-                                
-                                if (isset($options['logo_url'])) {
-                                    $logo_url = $options['logo_url'];
-                                }
+                                $logo_url = isset($options['logo_url']) ? $options['logo_url'] : '';
                             ?>
                         
                             <img src="<?php echo $logo_url; ?>" alt="kaspara bryllup og interiør logo" class="img-responsive" />
@@ -38,10 +34,18 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
+                        <div class="visible-xs text-center">
+                            <a data-toggle="collapse" id="toggle-main-nav" data-target="#main-menu">[MOBIL]</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
                         <nav>
                             <?php wp_nav_menu(array(
                                 'theme_location' => 'main-navigation',
-                                'menu_class' => 'nav nav-pills nav-justified'
+                                'menu_class' => 'nav nav-pills nav-justified',
+                                'menu_id' => 'main-menu'
                             )); ?>
                         </nav>
                     </div>
