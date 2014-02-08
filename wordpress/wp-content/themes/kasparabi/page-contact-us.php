@@ -34,8 +34,7 @@
     //php mailer variables
     $to = get_option('admin_email');
     $subject = "Someone sent a message from " . get_bloginfo('name');
-    $headers = 'From: '. $email . "rn" .
-        'Reply-To: ' . $email . "rn";
+    $headers = "Reply-To: " . $name . "<" . $email . ">" . "\r\n";
 
     if(!$human == 0){
         if($human != 2) 

@@ -55,7 +55,7 @@
 		global $custom_post_types;
 		$custom_post_types = array('reference', 'news', 'inspiration');
 
-		if ( $q->is_archive && !is_admin() ) {
+		if ( $q->is_main_query() && $q->is_archive && !is_admin() ) {
 			if ( in_array ($q->query_vars['post_type'], $custom_post_types) ) {
 				$post_type = $q->query_vars['post_type'];
 				$options = get_option('kasparabi_settings');
@@ -72,7 +72,9 @@
 	 * If the archive is the inspiration archive, filter by category if we have one
 	 */
 	function add_inspiration_category( $q ) {
-		if (is_post_type_archive('inspiration') && !is_admin()) {
+		if ($q->is_main_query() 
+	   		&& $q->is_post_type_archive('inspiration') 
+	   		&& !is_admin()) {
 
 			$category_id = $_GET['category'];
 			if (!empty($category_id)) {
