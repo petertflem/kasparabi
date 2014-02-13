@@ -23,7 +23,7 @@
 
                 <div class="row">
 					<div class="col-xs-12">
-						<div class="row">
+						<div class="row news-row">
 
                         <?php if (has_post_thumbnail()) : ?>
 							<div class="col-sm-3">
@@ -32,7 +32,9 @@
                         <?php endif; ?>
 
 							<div class="col<?php echo has_post_thumbnail() ? '-sm-9' : '-xs-12'; ?>">
-								<h2><?php the_title(); ?></h2>
+                                <a href="<?php the_permalink(); ?>">
+                                    <h1><?php the_title(); ?></h1>
+                                </a>
 								<p><?php the_excerpt(); ?></p>
 							</div>
 						</div>

@@ -77,13 +77,13 @@
             <div class="row">
                 <div class="col-sm-6">
                     <img src="http://lorempixel.com/100/100/" alt="Bildet av Nathalie Bergsaune" class="img-responsive" />
-                    <p>
+                    <p class="contact-us-persona">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla metus sit amet arcu ornare tempor. Suspendisse mi diam, volutpat ut velit quis, faucibus ultricies enim. Pellentesque sagittis lobortis nulla, id ultrices diam. Donec aliquet arcu et ultrices tempor. Aliquam blandit odio eu sapien euismod, quis laoreet nisl semper
                     </p>
                 </div>
                 <div class="col-sm-6">
                    <img src="http://lorempixel.com/100/100/" alt="Bildet av Heidi Madelen" class="img-responsive" />
-                    <p>
+                    <p class="contact-us-persona">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla metus sit amet arcu ornare tempor. Suspendisse mi diam, volutpat ut velit quis, faucibus ultricies enim. Pellentesque sagittis lobortis nulla, id ultrices diam. Donec aliquet arcu et ultrices tempor. Aliquam blandit odio eu sapien euismod, quis laoreet nisl semper
                     </p>
                 </div>
@@ -112,7 +112,7 @@
                         }
                     </style>
                      
-                    <div id="respond">
+                    <div id="respond" class="email-contact-form">
                         <?php echo $response; ?>
                         <form role="form" action="<?php the_permalink(); ?>" method="post">
                             <div class="form-group">

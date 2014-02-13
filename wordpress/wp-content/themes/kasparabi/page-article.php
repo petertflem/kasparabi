@@ -21,7 +21,7 @@
                 <!-- LEFT MENU -->
                 <?php if ($show_menu) : ?>
                     
-                    <div class="col-sm-2">
+                    <div class="col-sm-2 left-menu">
                         <nav>
                             <h4><?php echo $menu_title->name ?></h4>
                             <?php wp_nav_menu( array( 'menu' => $menu_slug ) ); ?>

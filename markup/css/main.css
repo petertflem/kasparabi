@@ -1,3 +1,14 @@
+/***************************************************
+	Theme Name: Kaspara bryllup & interiør
+	Theme URI:
+	Description: The wordpress theme for kasparabi.no
+	Version: 0.1
+	Author: Peter Tollnes Flem
+	Author URI:
+	License:
+	License:
+	Tags:
+*****************************************************/
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -6753,24 +6764,125 @@ img.mfp-img {
   right: 0;
   padding-top: 0;
 }
+@font-face {
+  font-family: 'gt_walsheim_regular';
+  src: url('fonts/gt-walsheim-web.eot');
+  src: url('fonts/gt-walsheim-web.eot?#iefix') format('embedded-opentype'), url('fonts/gt-walsheim-web.woff') format('woff'), url('fonts/gt-walsheim-web.ttf') format('truetype'), url('fonts/gt-walsheim-web.svg#gt_walsheim_regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'gt_walsheim_bold';
+  src: url('fonts/gt-walsheim-bold-web.eot');
+  src: url('fonts/gt-walsheim-bold-web.eot?#iefix') format('embedded-opentype'), url('fonts/gt-walsheim-bold-web.woff') format('woff'), url('fonts/gt-walsheim-bold-web.ttf') format('truetype'), url('fonts/gt-walsheim-bold-web.svg#gt_walsheim_bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+p {
+  font-family: 'gt_walsheim_regular';
+  font-size: 16px;
+  line-height: 20px;
+}
+h1 {
+  font-family: 'gt_walsheim_bold';
+  font-size: 24px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+header {
+  overflow: hidden;
+}
 header img {
-  width: 75%;
+  width: 276px;
+  height: 124px;
   margin: 0px auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+header .main-menu a {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: 'gt_walsheim_regular';
+  color: #000;
+}
+header .nav-justified {
+  width: 90px;
+}
+header .header-seperator {
+  background: url('images/kaspara-strek.png') no-repeat;
+  width: 646px;
+  height: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+footer {
+  background-color: #2A2A2A;
 }
 footer .container {
-  height: 60px;
+  height: 100px;
 }
-.image-carousel.container img {
+footer .container .copyright {
+  margin-top: 43px;
+}
+footer .container .copyright a {
+  color: white;
+  text-transform: uppercase;
+  font-family: 'gt_walsheim_regular';
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+footer .container .social-media {
+  position: relative;
+}
+footer .container .social-media .facebook {
+  background: url('images/facebook.png') no-repeat;
+  width: 113px;
+  height: 23px;
+  margin-top: 38px;
+  float: right;
+  margin-left: 40px;
+}
+footer .container .social-media .instagram {
+  background: url('images/instagram.png') no-repeat;
+  width: 126px;
+  height: 36px;
+  float: right;
+  margin-top: 36px;
+}
+.container.latest-news h1 {
+  text-align: center;
+}
+.container.latest-news .image-carousel img {
   margin: 0px auto;
 }
-.latest-news h2 {
-  text-align: center;
+.container.latest-news .aside-info-text h1 {
+  margin-top: 50px;
+}
+article p {
+  padding-right: 25%;
+  padding-left: 5%;
 }
 article h1 {
-  text-align: center;
+  text-align: left;
+  padding-bottom: 30px;
 }
 article img {
-  margin: 0px auto;
+  /*margin: 0px auto;*/
+}
+.left-menu ul {
+  list-style: none;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+.left-menu ul li {
+  margin-left: 10px;
+}
+.left-menu ul li a {
+  font-family: 'gt_walsheim_regular';
 }
 .references img {
   margin: 0px auto;
@@ -6795,4 +6907,23 @@ article img {
 }
 .contact-us img {
   margin: 0px auto;
+}
+.contact-us .contact-us-persona {
+  padding-left: 140px;
+  padding-right: 140px;
+  text-align: center;
+  margin-top: 20px;
+}
+.contact-us .email-contact-form {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+@media screen and (max-width: 768px) {
+  .contact-us .email-contact-form {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+}
+.news-row {
+  margin-bottom: 40px;
 }
