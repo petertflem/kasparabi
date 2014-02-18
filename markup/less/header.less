@@ -8,8 +8,23 @@ header {
 		margin-top: 40px;
 		margin-bottom: 40px;
 	}
+	
+	.mobile-menu-toggle {
+		a:hover {
+			background-color: rgb(238, 238, 238);
+		}
 
-	.main-menu {
+		a {
+			border-radius: 4px;
+			position: relative;
+			display: block;
+			padding: 10px 15px;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	}
+
+	.main-menu, .mobile-menu-toggle {
 		a {
 			font-size: 14px;
 			text-transform: uppercase;
@@ -18,8 +33,10 @@ header {
 		}
 	}
 
-	.nav-justified {
-		width: 90px;
+	.main-menu {
+		li {
+			white-space:nowrap;
+		}
 	}
 
 	.header-seperator {
@@ -29,5 +46,33 @@ header {
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 40px;
+	}
+
+	.main-menu-wrapper {
+		width: auto;
+		margin: 0px auto;
+	}
+
+	@media (min-width: @screen-sm-min) {
+		.main-menu-wrapper {
+			width: 720px;
+			margin: 0px auto;
+		}
+		
+		/* This might mess things up if I use .collapse more than one place.
+		It is a very simple fix which saves my lots of work. */
+		.collapse {
+			display: block;
+		}
+
+		/* This is because if you open, then close the menu in "mobile",
+		   bootstrap sets height: 0px on the ul. When you resize the browser
+		   to larger than sm, the ul drops down below the .header-seperator
+		   element. Setting the height to auto fixes this, but since
+		   bootstrap sets the height inline, I have to use !important
+		   to override it. */
+		.main-menu {
+			height: auto !important;
+		}
 	}
 }

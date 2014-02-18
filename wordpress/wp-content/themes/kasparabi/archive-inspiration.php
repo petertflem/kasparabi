@@ -11,12 +11,13 @@
             <?php
                 global $wp_query;
                 $iterations = 0;
+                $nthElement = 0;
+                $rowLength = 3;
 
                 if (have_posts()) : while (have_posts()) : the_post();
-
-                    $open = !( $iterations % 3 ) ? '<div class="row">' : '';
-                    $close = !( $iterations % 3 ) && $iterations ? '</div>' : '';
-                    echo $close.$open;
+                    $nthElement = $nthElement == $rowLength ? 0 : ++$nthElement;
+                    $open = !( $iterations % $rowLength ) ? '<div class="row">' : '';
+                    echo $open;
 
                     $iterations++;
             ?>
@@ -35,9 +36,21 @@
                         ?>
                         <h4><?php the_title(); ?></h4>
                     </a>
+                    
                 </div>
 
-            <?php endwhile; else : ?>
+                <?php 
+                    $close = !( $iterations % $rowLength ) && $iterations ? '</div>' : '';
+                    echo $close; 
+                ?>
+
+            <?php endwhile; 
+                if ($nthElement % $rowLength) {
+                    echo '</div>';
+                } 
+            ?>
+
+            <?php else : ?>
                 <p><?php _e('No inspirations found', 'kasparabi'); ?></p>
             <?php endif; ?>
         </div>

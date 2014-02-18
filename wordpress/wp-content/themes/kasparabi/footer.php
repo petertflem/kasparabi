@@ -1,3 +1,5 @@
+        </div> <!-- end .sticky-footer -->
+
         <!-- FOOTER -->
         <footer>
             <div class="container">

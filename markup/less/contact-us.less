@@ -6,23 +6,35 @@
 	img {
 		margin: 0px auto;
 	}
-	
+
 	.contact-us-persona {
-		padding-left: 140px;
-		padding-right: 140px;
 		text-align: center;
 		margin-top: 20px;
 	}
 
-	.email-contact-form {
-		padding-left: 20%;
-		padding-right: 20%;
+	@media (min-width: @screen-sm-min) { 
+		.contact-us-persona {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
 	}
 
-	@media screen and (max-width: 768px) {
+	@media (min-width: @screen-md-min) { 
+		.contact-us-persona {
+			padding-left: 70px;
+			padding-right: 70px;
+		}
+	}
+
+	@media (min-width: @screen-lg-min) { 
+		.contact-us-persona {
+			padding-left: 140px;
+			padding-right: 140px;
+		}
+
 		.email-contact-form {
-			padding-left: 0%;
-			padding-right: 0%;
+			padding-left: 20%;
+			padding-right: 20%;
 		}
 	}
 }

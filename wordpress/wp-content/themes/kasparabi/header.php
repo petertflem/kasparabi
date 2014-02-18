@@ -24,40 +24,43 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <!-- HEADER -->        
-        <header>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">                        
-                        <a href="<?php echo home_url(); ?>">
-                            <?php 
-                                $options = get_option('kasparabi_settings');
-                                $logo_url = isset($options['logo_url']) ? $options['logo_url'] : '';
-                            ?>
-                        
-                            <img src="<?php echo $logo_url; ?>" alt="kaspara bryllup og interiør logo" class="img-responsive" />
-                        </a>
+        <div class="sticky-footer">
+        
+            <!-- HEADER -->        
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">                        
+                            <a href="<?php echo home_url(); ?>">
+                                <?php 
+                                    $options = get_option('kasparabi_settings');
+                                    $logo_url = isset($options['logo_url']) ? $options['logo_url'] : '';
+                                ?>
+                            
+                                <img src="<?php echo $logo_url; ?>" alt="kaspara bryllup og interiør logo" class="img-responsive" />
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="visible-xs text-center">
-                            <a data-toggle="collapse" id="toggle-main-nav" data-target="#main-menu">[MOBIL]</a>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="visible-xs text-center mobile-menu-toggle">
+                                <a data-toggle="collapse" id="toggle-main-nav" data-target="#main-menu">Meny</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <nav class="main-menu-wrapper">
+                                <?php wp_nav_menu(array(
+                                    'theme_location' => 'main-navigation',
+                                    'menu_class' => 'nav nav-pills nav-justified collapse main-menu',
+                                    'menu_id' => 'main-menu'
+                                )); ?>
+                            </nav>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <nav>
-                            <?php wp_nav_menu(array(
-                                'theme_location' => 'main-navigation',
-                                'menu_class' => 'nav nav-pills nav-justified main-menu',
-                                'menu_id' => 'main-menu'
-                            )); ?>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="header-seperator"></div>
-        </header>    
-        <!-- END HEADER -->
+                <div class="clearfix"></div>
+                <div class="header-seperator"></div>
+            </header>    
+            <!-- END HEADER -->

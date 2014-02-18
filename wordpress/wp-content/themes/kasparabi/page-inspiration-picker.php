@@ -30,13 +30,13 @@
             <div class="col-sm-6">
                 <a href="<?php echo $wedding_link . '?category=' . $wedding_archive_type; ?>">
                     <img src="<?php echo $wedding_image; ?>" alt="Bilde for bryllupinspirasjon" class="img-responsive">
-                    <h4><?php _e('Bryllup', 'kasparabi'); ?></h4>
+                    <h2><?php _e('Bryllup', 'kasparabi'); ?></h2>
                 </a>
             </div>
             <div class="col-sm-6">
                 <a href="<?php echo $interior_link . '?category=' . $interior_archive_type; ?>">
                     <img src="<?php echo $interior_image; ?>" alt="Bilde for interiør inspirasjon" class="img-responsive">
-                    <h4><?php _e('Interiør', 'kasparabi'); ?></h4>
+                    <h2><?php _e('Interiør', 'kasparabi'); ?></h2>
                 </a>
             </div>
         </div>

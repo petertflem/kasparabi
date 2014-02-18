@@ -51,7 +51,7 @@
 	/**
 	 * Set number of custom post types per page on archive pages
 	 */
-	function add_custom_posts_per_page( &$q ) {	
+	function add_custom_posts_per_page( $q ) {	
 		global $custom_post_types;
 		$custom_post_types = array('reference', 'news', 'inspiration');
 
@@ -144,7 +144,8 @@
 		// Get the name of the Page Template file.
 		$template_file = get_post_meta($post_id, '_wp_page_template', true);
 	 
-	    if($template_file == 'page-inspiration-picker.php'){ 
+	    if($template_file == 'page-inspiration-picker.php'
+	    	|| $template_file == 'page-contact-us.php'){ 
 	    	remove_post_type_support('page', 'editor');
 	    	remove_post_type_support('page', 'thumbnail');
 	    }
