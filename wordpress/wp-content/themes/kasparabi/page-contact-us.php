@@ -64,6 +64,15 @@
     }
     else if ($_POST['submitted']) my_contact_form_generate_response("error", $missing_content);
 
+    /* Get conact information and their pictures */
+    $meta = get_post_meta($post->ID);
+
+    $nb_image = isset($meta['nathalie_bergsaune_image']) ? esc_attr( $meta['nathalie_bergsaune_image'][0] ) : '';
+    $nb_description = isset($meta['nathalie_bergsaune_description']) ? esc_attr( $meta['nathalie_bergsaune_description'][0] ) : '';
+  
+    $hm_image = isset($meta['heidi_madelen_image']) ? esc_attr( $meta['heidi_madelen_image'][0] ) : '';
+    $hm_description = isset($meta['heidi_madelen_description']) ? esc_attr( $meta['heidi_madelen_description'][0] ) : '';
+
 ?>
 <?php get_header(); ?>
         
@@ -76,15 +85,15 @@
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="http://lorempixel.com/100/100/" alt="Bildet av Nathalie Bergsaune" class="img-responsive" />
+                    <img src="<?php echo $nb_image; ?>" alt="Bildet av Nathalie Bergsaune" class="img-responsive" />
                     <p class="contact-us-persona">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla metus sit amet arcu ornare tempor. Suspendisse mi diam, volutpat ut velit quis, faucibus ultricies enim. Pellentesque sagittis lobortis nulla, id ultrices diam. Donec aliquet arcu et ultrices tempor. Aliquam blandit odio eu sapien euismod, quis laoreet nisl semper
+                        <?php echo $nb_description; ?>
                     </p>
                 </div>
                 <div class="col-sm-6">
-                   <img src="http://lorempixel.com/100/100/" alt="Bildet av Heidi Madelen" class="img-responsive" />
+                   <img src="<?php echo $hm_image; ?>" alt="Bildet av Heidi Madelen" class="img-responsive" />
                     <p class="contact-us-persona">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla metus sit amet arcu ornare tempor. Suspendisse mi diam, volutpat ut velit quis, faucibus ultricies enim. Pellentesque sagittis lobortis nulla, id ultrices diam. Donec aliquet arcu et ultrices tempor. Aliquam blandit odio eu sapien euismod, quis laoreet nisl semper
+                        <?php echo $hm_description; ?>
                     </p>
                 </div>
             </div>

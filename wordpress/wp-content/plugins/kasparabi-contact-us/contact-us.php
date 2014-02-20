@@ -46,7 +46,10 @@ function kasparabi_render_contact_us_information_meta_box($post) {
 
 function render_contact_us_information_form($post) {
     $nathalie_bergsaune_image = get_post_meta($post->ID, 'nathalie_bergsaune_image', true);
+    $nathalie_bergsaune_description = get_post_meta($post->ID, 'nathalie_bergsaune_description', true);
+    
     $heidi_madelen_image = get_post_meta($post->ID, $type . 'heidi_madelen_image', true);
+    $heidi_madelen_description = get_post_meta($post->ID, $type . 'heidi_madelen_description', true);
 
     ?>
         <div style="float: left;">
@@ -61,7 +64,7 @@ function render_contact_us_information_form($post) {
             </p>
             <p>
                 <b>Litt informasjon:</b> <br />
-                <textarea rows="5" cols="50"></textarea>
+                <textarea rows="5" cols="50" name="nathalie-bergsaune-description"><?php echo $nathalie_bergsaune_description; ?></textarea>
             </p>
         </div>
         <div style="float: left; margin-left: 50px;">
@@ -76,27 +79,12 @@ function render_contact_us_information_form($post) {
             </p>
             <p>
                 <b>Litt informasjon:</b> <br />
-                <textarea rows="5" cols="50"></textarea>
+                <textarea rows="5" cols="50" name="heidi-madelen-description"><?php echo $heidi_madelen_description; ?></textarea>
             </p>
         </div>
         <span style="clear: left; display: block;"></span>
     <?php
 }
-
-/*function render_inspiration_images_selection_section($title, $type, $post) {
-    $meta_image_url = get_post_meta($post->ID, $type . '_inspiration_image', true);
-
-    ?>
-        <p>
-            <label for="<?php echo $type; ?>-inspiration-image"><b><?php echo $title; ?></b></label>
-            <br />
-            <img src="<?php echo $meta_image_url; ?>" alt="<?php echo $type; ?>-inspiration-image" class="inspiration-image-thumbnail" />
-            <br />
-            <input type="button" class="button meta-image-button" value="<?php _e( 'Choose or upload an Image', 'kasparabi' )?>" />
-            <input type="hidden" name="<?php echo $type; ?>-inspiration-image" class="meta-image" value="<?php echo $meta_image_url; ?>" />
-        </p>
-    <?php
-}*/
 
 /*--------------------------------------------------------------------------*
  * Loads the image managment javascript
@@ -143,15 +131,17 @@ function kasparibi_contact_us_information_meta_save( $post_id, $post ) {
     if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
         return $post_id;
 
-    /* Save the Nathalie Bergsaune image */
-    contact_us_image_save( 'nathalie-bergsaune-image', 'nathalie_bergsaune_image', $post );
+    /* Save Nathalie Bergsaune */
+    contact_us_save_value( 'nathalie-bergsaune-image', 'nathalie_bergsaune_image', $post );
+    contact_us_save_value( 'nathalie-bergsaune-description', 'nathalie_bergsaune_description', $post );
 
-    /* Save the Heidi Madelen image */
-    inspiration_picker_images_save_value( 'heidi-madelen-image', 'heidi_madelen_image', $post );
+    /* Save Heidi Madelen */
+    contact_us_save_value( 'heidi-madelen-image', 'heidi_madelen_image', $post );
+    contact_us_save_value( 'heidi-madelen-description', 'heidi_madelen_description', $post );
 }
 add_action( 'save_post', 'kasparibi_contact_us_information_meta_save', 1, 2 );
 
-function contact_us_image_save( $name_of_input, $meta_key, $post ) {
+function contact_us_save_value( $name_of_input, $meta_key, $post ) {
  	$new_meta_value = ( isset( $_POST[$name_of_input] ) ? sanitize_text_field( $_POST[$name_of_input] ) : '' );
     $meta_value = get_post_meta( $post->ID, $meta_key, true);
 
