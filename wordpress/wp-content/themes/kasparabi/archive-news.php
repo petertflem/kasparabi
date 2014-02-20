@@ -20,7 +20,9 @@
 
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="col-sm-3">
-                                <?php the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' )); ?>
+                                <div class="news-thumbnail">
+                                    <?php the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' )); ?>
+                                </div>
                             </div>
                         <?php endif; ?>
 

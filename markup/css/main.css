@@ -7063,3 +7063,10 @@ article img {
 .news-row {
   margin-bottom: 40px;
 }
+.news-row .news-thumbnail {
+  margin-top: 20px;
+}
+.news-row .news-thumbnail img {
+  margin-left: auto;
+  margin-right: auto;
+}

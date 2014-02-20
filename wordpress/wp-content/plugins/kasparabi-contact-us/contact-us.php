@@ -40,8 +40,6 @@ function kasparabi_render_contact_us_information_meta_box($post) {
     wp_nonce_field( basename( __FILE__ ), 'contact-us-information-meta_nonce' );
     
     render_contact_us_information_form($post);    
-    //render_inspiration_images_selection_section(__('Wedding Image', 'kasparabi'), 'wedding', $post);
-    //render_inspiration_images_selection_section(__('Interior Image', 'kasparabi'), 'interior', $post);
 }
 
 function render_contact_us_information_form($post) {
@@ -67,7 +65,7 @@ function render_contact_us_information_form($post) {
                 <textarea rows="5" cols="50" name="nathalie-bergsaune-description"><?php echo $nathalie_bergsaune_description; ?></textarea>
             </p>
         </div>
-        <div style="float: left; margin-left: 50px;">
+        <div style="float: left;">
             <h4>Heidi Madelen</h4>
             <p>
                 <label for="heidi-madelen-image"><b><?php _e('Bilde:', 'kasparabi'); ?></b></label>
