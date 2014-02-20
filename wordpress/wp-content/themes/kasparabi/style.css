@@ -6900,12 +6900,8 @@ header .main-menu-wrapper {
 }
 footer {
   background-color: #2A2A2A;
-}
-footer .container {
-  height: 100px;
-}
-footer .container .copyright {
-  margin-top: 43px;
+  /* Skin */
+  /* Structure */
 }
 footer .container .copyright a {
   color: white;
@@ -6914,23 +6910,51 @@ footer .container .copyright a {
   letter-spacing: 3px;
   font-size: 12px;
 }
-footer .container .social-media {
-  position: relative;
-}
 footer .container .social-media .facebook {
   background: url('images/facebook.png') no-repeat;
   width: 113px;
   height: 23px;
-  margin-top: 38px;
-  float: right;
-  margin-left: 40px;
 }
 footer .container .social-media .instagram {
   background: url('images/instagram.png') no-repeat;
   width: 126px;
   height: 36px;
-  float: right;
-  margin-top: 36px;
+}
+footer .container .copyright {
+  margin-top: 25px;
+  text-align: center;
+}
+footer .container .social-media .facebook {
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer .container .social-media .instagram {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  footer .container {
+    height: 100px;
+  }
+  footer .container .copyright {
+    margin-top: 43px;
+    float: left;
+  }
+  footer .container .social-media {
+    float: right;
+  }
+  footer .container .social-media .facebook {
+    margin-top: 38px;
+    float: right;
+    margin-left: 40px;
+  }
+  footer .container .social-media .instagram {
+    float: right;
+    margin-top: 36px;
+  }
 }
 .container.latest-news h1 {
   text-align: center;

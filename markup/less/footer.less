@@ -1,12 +1,9 @@
 footer {
 	background-color: #2A2A2A;
-
+	
+	/* Skin */
 	.container {
-		height: 100px;
-		
 		.copyright {
-			margin-top: 43px;
-			
 			a {
 				color: white;
 				text-transform: uppercase;
@@ -17,23 +14,65 @@ footer {
 		}
 		
 		.social-media {
-			position: relative;
-
 			.facebook {
 				background: url('images/facebook.png') no-repeat;
 				width: 113px;
 				height: 23px;
-				margin-top: 38px;
-				float: right;
-				margin-left: 40px;
 			}
 
 			.instagram {
 				background: url('images/instagram.png') no-repeat;
 				width: 126px;
 				height: 36px;
+			}
+		}
+	}
+	
+	/* Structure */
+	.container {
+		.copyright {
+			margin-top: 25px;
+			text-align: center;
+		}
+		
+		.social-media {
+			.facebook {
+				margin-top: 25px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.instagram {
+				margin-top: 30px;
+				margin-bottom: 20px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
+	@media (min-width: @screen-sm-min) { 
+		.container {
+			height: 100px;
+		
+			.copyright {
+				margin-top: 43px;
+				float: left;
+			}
+			
+			.social-media {
 				float: right;
-				margin-top: 36px;
+
+				.facebook {
+					margin-top: 38px;
+					float: right;
+					margin-left: 40px;
+				}
+
+				.instagram {
+					float: right;
+					margin-top: 36px;
+				}
 			}
 		}
 	}
