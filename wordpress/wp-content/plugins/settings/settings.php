@@ -48,6 +48,13 @@
 			'kasparabi-settings-page' // The page it is rendered on
 		);
 		register_kaspari_archive_fields();
+
+		add_settings_section('kasparabi_frontpage', // ID
+			__('Frontpage', 'kasparabi'), // Title
+			'display_kasparabi_frontpage_settings', // Callback used to render
+			'kasparabi-settings-page' // The page it is rendered on
+		);
+		register_kaspari_frontpage_fields();
 	}
 	add_action('admin_init', 'register_settings_sections_and_fields');
 
@@ -68,6 +75,11 @@
 
 	function register_kaspari_header_fields() {
 		add_settings_field('kasparabi-logo', __('Logo', 'kasparabi'), 'display_logo_field', 'kasparabi-settings-page', 'kasparabi_header');
+	}
+
+	function register_kaspari_frontpage_fields() {
+		add_settings_field('frontpage-header', __('Frontpage Header', 'kasparabi'), 'display_frontpage_header', 'kasparabi-settings-page', 'kasparabi_frontpage');
+		add_settings_field('frontpage-text', __('Frontpage Text', 'kasparabi'), 'display_frontpage_text', 'kasparabi-settings-page', 'kasparabi_frontpage');
 	}
 
 
@@ -119,6 +131,39 @@
 	}
 
 	/**
+	 * Render the frontpage header
+	 */
+	function display_frontpage_header() {
+		$options = get_option('kasparabi_settings');
+
+		?>
+			<input id="<?php echo 'kasparabi_frontpage_header'; ?>"
+				class='large-text' 
+				name='kasparabi_settings[<?php echo 'kasparabi_frontpage_header'; ?>]' 
+				type='text' 
+				value='<?php echo $options['kasparabi_frontpage_header'] ?>'
+			/>
+			<p class='description'><?php _e('The heading next to the image carousel.', 'kasparabi'); ?></p>
+		<?php
+	}
+
+	/**
+	 * Render the frontpage text
+	 */
+	function display_frontpage_text() {
+		$options = get_option('kasparabi_settings');
+
+		?>
+			<textarea id="<?php echo 'kasparabi_frontpage_text'; ?>"
+				class='large-text' 
+				name='kasparabi_settings[<?php echo 'kasparabi_frontpage_text'; ?>]'
+				rows="5"
+			><?php echo $options['kasparabi_frontpage_text'] ?></textarea>
+			<p class='description'><?php _e('The text next to the image carousel.', 'kasparabi'); ?></p>
+		<?php
+	}
+
+	/**
 	 * Render a text field with description
 	 */
 	function render_num_per_page_archive_text_field($type, $description) {
@@ -161,7 +206,7 @@
 	function display_kasparabi_header_settings() { _e('Settings for the header on the page.', 'kasparabi'); }
 	//function display_kasparabi_footer_settings() {}
 	function display_kasparabi_archives_settings() { _e('Settings for the archives on the page.', 'kasparabi'); }
-	
+	function display_kasparabi_frontpage_settings() { _e('Settings for the frontpage.', 'kasparabi'); }
 
 
 

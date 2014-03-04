@@ -8,10 +8,14 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="aside-info-text">
-                        <h1>En kul tittel</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et adipiscing nunc. Donec pulvinar arcu ligula, ut vulputate nunc consectetur viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent suscipit odio metus, at porta odio consequat sed. Nunc sit amet lacinia nulla. Nam elementum scelerisque augue.
-                        </p>
+                        <?php 
+                            $options = get_option('kasparabi_settings');
+                            $heading = isset($options['kasparabi_frontpage_header']) ? esc_attr( $options['kasparabi_frontpage_header'] ) : '';
+                            $body = isset($options['kasparabi_frontpage_text']) ? esc_attr( $options['kasparabi_frontpage_text'] ) : '';
+                        ?>
+
+                        <h1><?php echo $heading; ?></h1>
+                        <p><?php echo $body; ?></p>
                     </div>
                 </div>
             </div>
