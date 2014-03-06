@@ -84,17 +84,25 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
-                    <img src="<?php echo $nb_image; ?>" alt="Bildet av Nathalie Bergsaune" class="img-responsive" />
-                    <p class="contact-us-persona">
-                        <?php echo $nb_description; ?>
-                    </p>
+                <div class="col-sm-6 left-column">
+                    <div class="left-image">
+                        <img src="<?php echo $nb_image; ?>" alt="Bildet av Nathalie Bergsaune" class="img-responsive" />
+                        <div>
+                            <p class="contact-us-persona">
+                                <?php echo $nb_description; ?>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                   <img src="<?php echo $hm_image; ?>" alt="Bildet av Heidi Madelen" class="img-responsive" />
-                    <p class="contact-us-persona">
-                        <?php echo $hm_description; ?>
-                    </p>
+                <div class="col-sm-6 right-column">
+                    <div class="right-image">
+                       <img src="<?php echo $hm_image; ?>" alt="Bildet av Heidi Madelen" class="img-responsive" />
+                        <div>
+                            <p class="contact-us-persona">
+                                <?php echo $hm_description; ?>
+                            </p>
+                        </div>
+                    </div>   
                 </div>
             </div>
             <div class="row">

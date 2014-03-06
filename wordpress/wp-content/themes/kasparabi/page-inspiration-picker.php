@@ -27,17 +27,25 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
-                <a href="<?php echo $wedding_link . '?category=' . $wedding_archive_type; ?>">
-                    <img src="<?php echo $wedding_image; ?>" alt="Bilde for bryllupinspirasjon" class="img-responsive">
-                    <h2><?php _e('Bryllup', 'kasparabi'); ?></h2>
-                </a>
+            <div class="col-sm-6 left-column">
+                <div class="left-image">
+                    <a href="<?php echo $wedding_link . '?category=' . $wedding_archive_type; ?>">
+                        <img src="<?php echo $wedding_image; ?>" alt="Bilde for bryllupinspirasjon" class="img-responsive">
+                        <div>
+                            <h2><?php _e('Bryllup', 'kasparabi'); ?></h2>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <a href="<?php echo $interior_link . '?category=' . $interior_archive_type; ?>">
-                    <img src="<?php echo $interior_image; ?>" alt="Bilde for interiør inspirasjon" class="img-responsive">
-                    <h2><?php _e('Interiør', 'kasparabi'); ?></h2>
-                </a>
+            <div class="col-sm-6 right-column">
+                <div class="right-image">
+                    <a href="<?php echo $interior_link . '?category=' . $interior_archive_type; ?>">
+                        <img src="<?php echo $interior_image; ?>" alt="Bilde for interiør inspirasjon" class="img-responsive">
+                        <div>
+                            <h2><?php _e('Interiør', 'kasparabi'); ?></h2>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

@@ -1,8 +1,10 @@
 .container.latest-news {
 	h1 {
 		text-align: center;
+		padding-bottom: 0px;
+		margin-bottom: 50px;
 	}
-	
+
 	.image-carousel {
 		img {
 			margin: 0px auto;
@@ -13,5 +15,23 @@
 .aside-info-text {
 	h1 {
 		margin-top: 50px;
+	}
+
+	@media (min-width: @screen-sm-min) { 
+		h1 {
+			margin-top: 20px;
+		}
+	}
+
+	@media (min-width: @screen-md-min) { 
+		h1 {
+			margin-top: 50px;
+		}
+	}
+}
+
+.carousel-caption {
+	h4 {
+		display: none;
 	}
 }

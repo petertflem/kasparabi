@@ -46,18 +46,30 @@
 						
 							<div class="col-sm-4">
 	                            <article>
+                                    
+                                    <?php 
+                                        $isInspiration = get_post_type() !== 'inspiration';
+                                        if ($isInspiration) { 
+                                    ?>
+
                                     <a href="<?php the_permalink(); ?>">
-    	                                <?php 
-                                            if (has_post_thumbnail()) {
-                                                the_post_thumbnail('post-thumbnail', array(
-                                                        'class' => 'img-responsive'
-                                                    )); 
-                                            }
-                                        ?>
-    	                                <h1><?php the_title(); ?></h1>
-    	                                <!--<p><?php the_time(get_option('time_format')); ?> <?php _e('at', 'kasparabi'); ?> <?php the_date(get_option('date_format')); ?>, <?php _e('by', 'kasparabi'); ?> <?php the_author_posts_link(); ?>
-    									<?php the_excerpt(); ?>-->
+
+                                    <?php }
+                                        if (has_post_thumbnail()) {
+                                            the_post_thumbnail('post-thumbnail', array(
+                                                    'class' => 'img-responsive'
+                                                )); 
+                                        }
+                                    ?>
+                                    
+                                    <h1><?php the_title(); ?></h1>
+                                    
+                                    <?php if ($isInspiration) { ?>
                                     </a>
+                                    <?php } ?>
+
+                                    
+
 	                            </article>
 	                        </div>
 

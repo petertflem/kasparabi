@@ -20,13 +20,39 @@
 	}
 
 	h2 {
-	    /*font-family: 'gt_walsheim_regular';
-	    line-height: 20px;
-	    font-size: 20px;*/
 	    margin-top: 10px;
+		margin-bottom: 20px;
         font-family: 'gt_walsheim_bold';
 	    font-size: 24px;
 	    line-height: 20px;
 	    text-transform: uppercase;
 	}
+
+	@media (min-width: @screen-sm-min) { 
+		.left-image {
+			padding-right: 40px;
+			display: inline-block;
+		}
+
+		.right-image {
+			padding-left: 40px;
+			display: inline-block;
+		}
+
+		.left-column {
+			text-align: right;
+		}
+
+		.right-column {
+			text-align: left;
+		}
+
+		img {
+			width: 300px;
+		}
+	}
+}
+
+.inspiration-gallery a {
+	text-decoration: none;
 }

@@ -6833,6 +6833,19 @@ ul {
   /* Pad bottom by footer height */
   padding: 0 0 100px;
 }
+a {
+  text-decoration: underline;
+  color: #333333;
+}
+a:hover {
+  color: #4b4b4b;
+}
+/* Overrides for plugins */
+.mfp-title {
+  text-align: center;
+  padding-right: 0px;
+  font-family: gt_walsheim_regular;
+}
 header {
   overflow: hidden;
 }
@@ -6860,6 +6873,7 @@ header .mobile-menu-toggle a {
   text-transform: uppercase;
   font-family: 'gt_walsheim_regular';
   color: #000;
+  text-decoration: none;
 }
 header .main-menu li {
   white-space: nowrap;
@@ -6909,6 +6923,7 @@ footer .container .copyright a {
   font-family: 'gt_walsheim_regular';
   letter-spacing: 3px;
   font-size: 12px;
+  text-decoration: none;
 }
 footer .container .social-media .facebook {
   background: url('images/facebook.png') no-repeat;
@@ -6958,6 +6973,8 @@ footer .container .social-media .instagram {
 }
 .container.latest-news h1 {
   text-align: center;
+  padding-bottom: 0px;
+  margin-bottom: 50px;
 }
 .container.latest-news .image-carousel img {
   margin: 0px auto;
@@ -6965,16 +6982,40 @@ footer .container .social-media .instagram {
 .aside-info-text h1 {
   margin-top: 50px;
 }
+@media (min-width: 768px) {
+  .aside-info-text h1 {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .aside-info-text h1 {
+    margin-top: 50px;
+  }
+}
+.carousel-caption h4 {
+  display: none;
+}
 article p {
   padding-right: 25%;
   padding-left: 5%;
+}
+article ul,
+article ol {
+  padding-right: 25%;
+  padding-left: 5%;
+  margin-left: 14px;
+}
+article ul {
+  list-style-type: circle;
 }
 article h1 {
   text-align: left;
   padding-bottom: 30px;
 }
 article img {
-  /*margin: 0px auto;*/
+  margin: 0px auto;
+  max-width: 100%;
+  height: auto;
 }
 .left-menu ul {
   list-style: none;
@@ -6999,6 +7040,9 @@ article img {
   font-family: 'gt_walsheim_regular';
   color: #000;
 }
+.references a {
+  text-decoration: none;
+}
 .inspiration h1,
 .inspiration h2,
 .inspiration h4 {
@@ -7018,21 +7062,43 @@ article img {
   font-family: 'gt_walsheim_regular';
 }
 .inspiration h2 {
-  /*font-family: 'gt_walsheim_regular';
-	    line-height: 20px;
-	    font-size: 20px;*/
   margin-top: 10px;
+  margin-bottom: 20px;
   font-family: 'gt_walsheim_bold';
   font-size: 24px;
   line-height: 20px;
   text-transform: uppercase;
 }
+@media (min-width: 768px) {
+  .inspiration .left-image {
+    padding-right: 40px;
+    display: inline-block;
+  }
+  .inspiration .right-image {
+    padding-left: 40px;
+    display: inline-block;
+  }
+  .inspiration .left-column {
+    text-align: right;
+  }
+  .inspiration .right-column {
+    text-align: left;
+  }
+  .inspiration img {
+    width: 300px;
+  }
+}
+.inspiration-gallery a {
+  text-decoration: none;
+}
 .contact-us h1,
-.contact-us h4 {
+.contact-us h4,
+.contact-us p {
   text-align: center;
 }
 .contact-us img {
   margin: 0px auto;
+  width: 200px;
 }
 .contact-us .contact-us-persona {
   text-align: center;
@@ -7042,6 +7108,23 @@ article img {
   .contact-us .contact-us-persona {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .contact-us .left-image {
+    padding-right: 40px;
+    display: inline-block;
+  }
+  .contact-us .right-image {
+    padding-left: 40px;
+    display: inline-block;
+  }
+  .contact-us .left-column {
+    text-align: right;
+  }
+  .contact-us .right-column {
+    text-align: left;
+  }
+  .contact-us img {
+    display: inline-block;
   }
 }
 @media (min-width: 992px) {
