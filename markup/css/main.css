@@ -7008,6 +7008,11 @@ footer .container .social-media .instagram {
   height: 20px;
   overflow: hidden;
 }
+article div {
+  margin: 0px auto;
+  padding-right: 25%;
+  padding-left: 5%;
+}
 article p {
   padding-right: 25%;
   padding-left: 5%;
@@ -7029,6 +7034,7 @@ article img {
   margin: 0px auto;
   max-width: 100%;
   height: auto;
+  display: block;
 }
 .left-menu ul {
   list-style: none;
