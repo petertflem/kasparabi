@@ -6992,8 +6992,21 @@ footer .container .social-media .instagram {
     margin-top: 50px;
   }
 }
+.carousel-caption {
+  bottom: -1%;
+  right: 0%;
+}
 .carousel-caption h4 {
   display: none;
+}
+.carousel-caption p {
+  position: absolute;
+  right: 0px;
+  text-align: right;
+  padding-right: 20px;
+  width: 300px;
+  height: 20px;
+  overflow: hidden;
 }
 article p {
   padding-right: 25%;
