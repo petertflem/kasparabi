@@ -40,6 +40,13 @@
 		);
 		register_kaspari_header_fields();
 		
+		add_settings_section('kasparabi_footer', 
+			__('Footer', 'kasparabi'), 
+			'display_kasparabi_footer_settings', 
+			'kasparabi-settings-page'
+		);
+		register_kaspari_footer_fields();
+
 		//add_settings_section('kasparabi_footer', __('Footer', 'kasparabi'), 'display_kasparabi_footer_settings', 'kasparabi-settings-section');
 
 		add_settings_section('kasparabi_archives', // ID
@@ -80,6 +87,11 @@
 	function register_kaspari_frontpage_fields() {
 		add_settings_field('frontpage-header', __('Frontpage Header', 'kasparabi'), 'display_frontpage_header', 'kasparabi-settings-page', 'kasparabi_frontpage');
 		add_settings_field('frontpage-text', __('Frontpage Text', 'kasparabi'), 'display_frontpage_text', 'kasparabi-settings-page', 'kasparabi_frontpage');
+	}
+
+	function register_kaspari_footer_fields() {
+		add_settings_field('footer-facebook-url', __('Facebook Url', 'kasparabi'), 'display_kasparabi_footer_facebook', 'kasparabi-settings-page', 'kasparabi_footer');
+		add_settings_field('footer-instagram-url', __('Instagram url', 'kasparabi'), 'display_kasparabi_footer_instagram', 'kasparabi-settings-page', 'kasparabi_footer');
 	}
 
 
@@ -181,6 +193,31 @@
 	}
 
 	/**
+	 * Render the footer sections
+	 */
+	function display_kasparabi_footer_facebook() {
+		$options = get_option('kasparabi_settings');
+
+	    ?>
+	        <p>
+	            <input class="regular-text code" name="kasparabi_settings[facebook_url]" id="facebook_url" value="<?php echo $options['facebook_url']; ?>" />
+	            <p class='description'><?php _e('The url to your facebook page.'); ?></p>
+	        </p>
+	    <?php
+	}
+
+	function display_kasparabi_footer_instagram() {
+		$options = get_option('kasparabi_settings');
+
+	    ?>
+	        <p>
+	            <input class="regular-text code" name="kasparabi_settings[instagram_url]" id="instagram_url" value="<?php echo $options['instagram_url']; ?>" />
+	            <p class='description'><?php _e('The url to your instagram page.'); ?></p>
+	        </p>
+	    <?php
+	}
+
+	/**
 	 * Render the logo selection
 	 */
 	function display_logo_field() {
@@ -207,6 +244,7 @@
 	//function display_kasparabi_footer_settings() {}
 	function display_kasparabi_archives_settings() { _e('Settings for the archives on the page.', 'kasparabi'); }
 	function display_kasparabi_frontpage_settings() { _e('Settings for the frontpage.', 'kasparabi'); }
+	function display_kasparabi_footer_settings() { _e('Settings for the footer', 'kasparabi'); }
 
 
 

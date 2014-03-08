@@ -162,7 +162,7 @@
 	function kasparabi_enqueue_javascript() {
 		wp_register_script('bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'));
 		wp_register_script('magnific-popupjs', get_template_directory_uri() . '/js/magnific-popup.min.js', array('jquery'));
-		wp_register_script('inspiration-gallery', get_template_directory_uri() . '/js/inspiration-gallery.js', array('jquery', 'magnific-popupjs'));
+		wp_register_script('inspiration-gallery', get_template_directory_uri() . '/js/initialize-mgnific-popup.js', array('jquery', 'magnific-popupjs'));
 		wp_register_script('mainjs', get_template_directory_uri() . '/js/main.js', array('jquery', 'bootstrapjs'));
 
 		wp_enqueue_script('bootstrapjs');

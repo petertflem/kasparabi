@@ -1,19 +1,18 @@
 article {
     div {
         margin: 0px auto;
-        padding-right: 25%;
-        padding-left: 5%;
-    }
-
-    p, {
-        padding-right: 25%;
-        padding-left: 5%;
+        max-width: 100% !important;
     }
 
     ul, ol {
-        padding-right: 25%;
-        padding-left: 5%;
         margin-left: 14px;
+    }
+
+    @media (min-width: @screen-sm-min) { 
+        div, p, ul, ol {
+            padding-right: 25%;
+            padding-left: 5%;
+        }
     }
 
     ul {

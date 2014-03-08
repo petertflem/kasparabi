@@ -1,5 +1,6 @@
 footer {
 	background-color: #2A2A2A;
+	overflow: hidden;
 	
 	/* Skin */
 	.container {
@@ -54,25 +55,40 @@ footer {
 
 	@media (min-width: @screen-sm-min) { 
 		.container {
-			height: 100px;
-		
+			height: 80px;
+			position: relative;
+
 			.copyright {
-				margin-top: 43px;
-				float: left;
+				position: absolute;
+			    top: 0;
+			    bottom: 0;
+			    right: 0;
+			    left: -85%;
+			    width: 50%;
+			    height: 30%;
+			    margin: auto;
 			}
 			
 			.social-media {
-				float: right;
+				height: 80px;
+				position: relative;
+
+				.facebook, .instagram, .copyright {
+					position: absolute;
+				    top: 0;
+				    bottom: 0;
+				    right: 0;
+				    width: 50%;
+				    height: 30%;
+				    margin: auto;
+				}
 
 				.facebook {
-					margin-top: 38px;
-					float: right;
-					margin-left: 40px;
+					left: 85%;
 				}
 
 				.instagram {
-					float: right;
-					margin-top: 36px;
+					left: 60%;
 				}
 			}
 		}

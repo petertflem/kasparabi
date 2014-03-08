@@ -6829,9 +6829,9 @@ ul {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -100px;
+  margin: 0 auto -80px;
   /* Pad bottom by footer height */
-  padding: 0 0 100px;
+  /*padding: 0 0 80px;*/
 }
 a {
   text-decoration: underline;
@@ -6914,6 +6914,7 @@ header .main-menu-wrapper {
 }
 footer {
   background-color: #2A2A2A;
+  overflow: hidden;
   /* Skin */
   /* Structure */
 }
@@ -6952,23 +6953,39 @@ footer .container .social-media .instagram {
 }
 @media (min-width: 768px) {
   footer .container {
-    height: 100px;
+    height: 80px;
+    position: relative;
   }
   footer .container .copyright {
-    margin-top: 43px;
-    float: left;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: -85%;
+    width: 50%;
+    height: 30%;
+    margin: auto;
   }
   footer .container .social-media {
-    float: right;
+    height: 80px;
+    position: relative;
+  }
+  footer .container .social-media .facebook,
+  footer .container .social-media .instagram,
+  footer .container .social-media .copyright {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 30%;
+    margin: auto;
   }
   footer .container .social-media .facebook {
-    margin-top: 38px;
-    float: right;
-    margin-left: 40px;
+    left: 85%;
   }
   footer .container .social-media .instagram {
-    float: right;
-    margin-top: 36px;
+    left: 60%;
   }
 }
 .container.latest-news h1 {
@@ -6976,13 +6993,16 @@ footer .container .social-media .instagram {
   padding-bottom: 0px;
   margin-bottom: 50px;
 }
-.container.latest-news .image-carousel img {
-  margin: 0px auto;
-}
 .aside-info-text h1 {
   margin-top: 50px;
+  text-align: center;
 }
 @media (min-width: 768px) {
+  .aside-info-text p {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .aside-info-text h1 {
     margin-top: 20px;
   }
@@ -6992,36 +7012,31 @@ footer .container .social-media .instagram {
     margin-top: 50px;
   }
 }
-.carousel-caption {
-  bottom: -1%;
-  right: 0%;
+.image-carousel {
+  text-align: center;
 }
-.carousel-caption h4 {
-  display: none;
+.image-carousel .carousel-wrapper {
+  display: inline-block;
 }
-.carousel-caption p {
-  position: absolute;
-  right: 0px;
-  text-align: right;
-  padding-right: 20px;
-  width: 300px;
-  height: 20px;
-  overflow: hidden;
+.image-carousel .carousel-caption {
+  top: 0px;
 }
 article div {
   margin: 0px auto;
-  padding-right: 25%;
-  padding-left: 5%;
-}
-article p {
-  padding-right: 25%;
-  padding-left: 5%;
+  max-width: 100% !important;
 }
 article ul,
 article ol {
-  padding-right: 25%;
-  padding-left: 5%;
   margin-left: 14px;
+}
+@media (min-width: 768px) {
+  article div,
+  article p,
+  article ul,
+  article ol {
+    padding-right: 25%;
+    padding-left: 5%;
+  }
 }
 article ul {
   list-style-type: circle;
@@ -7124,38 +7139,27 @@ article img {
   margin-top: 20px;
 }
 @media (min-width: 768px) {
-  .contact-us .contact-us-persona {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
   .contact-us .left-image {
-    padding-right: 40px;
-    display: inline-block;
+    padding-left: 30%;
   }
   .contact-us .right-image {
-    padding-left: 40px;
-    display: inline-block;
+    padding-right: 30%;
   }
-  .contact-us .left-column {
-    text-align: right;
-  }
-  .contact-us .right-column {
-    text-align: left;
-  }
-  .contact-us img {
-    display: inline-block;
+  .contact-us .right-image img,
+  .contact-us .left-image img {
+    margin: 0px auto;
   }
 }
 @media (min-width: 992px) {
   .contact-us .contact-us-persona {
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 45px;
+    padding-right: 45px;
   }
 }
 @media (min-width: 1200px) {
   .contact-us .contact-us-persona {
-    padding-left: 140px;
-    padding-right: 140px;
+    padding-left: 70px;
+    padding-right: 70px;
   }
   .contact-us .email-contact-form {
     padding-left: 20%;
@@ -7171,4 +7175,14 @@ article img {
 .news-row .news-thumbnail img {
   margin-left: auto;
   margin-right: auto;
+}
+.reference-images.maginfic-popup-gallery div {
+  padding: 5px;
+}
+.single-reference article ul,
+.single-reference article ol,
+.single-reference article div,
+.single-reference article p {
+  padding-right: 10%;
+  padding-left: 5%;
 }

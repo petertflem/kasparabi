@@ -3,10 +3,18 @@
         <!-- IMAGE CAROUSEL -->
         <div class="container">
             <div class="row">
-                <div class="col-sm-9 image-carousel">
-                    <?php echo do_shortcode('[image-carousel]'); ?>
+                <div class="col-sm-12 image-carousel">
+                    <div class="carousel-wrapper">
+                        <?php echo do_shortcode('[image-carousel]'); ?>
+                    </div>
                 </div>
-                <div class="col-sm-3">
+            </div>
+        </div>
+        <!-- END IMAGE CAROUSEL -->
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
                     <div class="aside-info-text">
                         <?php 
                             $options = get_option('kasparabi_settings');
@@ -20,8 +28,7 @@
                 </div>
             </div>
         </div>
-        <!-- END IMAGE CAROUSEL -->
-        
+
         <!-- LATEST NEWS -->
         <div class="container latest-news">
             <div class="row">
