@@ -39,51 +39,14 @@
                         </div>
                     </div>
                     <div class="row">
-						
-						<?php  
-
-                        $args = array(
-                            'posts_per_page' => 3,
-                            'post_type' => 'any'
-                        );
-                        $query = new WP_Query($args);
-                        if ($query->have_posts()) : while($query->have_posts()) : $query->the_post(); 
-
-                        ?>
-						
-							<div class="col-sm-4">
-	                            <article>
-                                    
-                                    <?php 
-                                        $isInspiration = get_post_type() !== 'inspiration';
-                                        if ($isInspiration) { 
-                                    ?>
-
-                                    <a href="<?php the_permalink(); ?>">
-
-                                    <?php }
-                                        if (has_post_thumbnail()) {
-                                            the_post_thumbnail('post-thumbnail', array(
-                                                    'class' => 'img-responsive'
-                                                )); 
-                                        }
-                                    ?>
-                                    
-                                    <h1><?php the_title(); ?></h1>
-                                    
-                                    <?php if ($isInspiration) { ?>
-                                    </a>
-                                    <?php } ?>
-
-                                    
-
-	                            </article>
-	                        </div>
-
-						<?php endwhile; else : ?>
-							<p><?php _e('No news found', 'kasparabi'); ?></p>
-						<?php endif; ?>
-
+						<div class="col-sm-12">
+                            <?php 
+                                wp_nav_menu(array(
+                                    'theme_location' => 'frontpage-news',
+                                    'menu_class' => 'frontpage-news'
+                                ));
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>

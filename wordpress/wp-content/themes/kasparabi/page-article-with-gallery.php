@@ -1,6 +1,6 @@
 <?php
     /*
-        Template Name: Article
+        Template Name: Article with gallery
     */
 ?>
 <?php get_header(); ?>
@@ -34,8 +34,8 @@
                 <!-- ARTICLE -->
                 <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
                     
-                    <div class="col-<?php echo !$show_menu ? 'xs-12' : 'sm-10'; ?>">
-                        <article class="article">
+                    <div class="col-<?php echo !$show_menu ? 'xs-8' : 'sm-6'; ?>">
+                        <article class="article article-with-gallery">
                             <h1><?php the_title(); ?></h1>
                             <?php the_content(); ?>
                         </article>
@@ -46,6 +46,12 @@
                     <p><?php _e('No page was found.', 'kasparabi'); ?></p>
                 
                 <?php endif; ?>
+
+                <div class="col-sm-4">
+                    <div class="maginfic-popup-gallery reference-images">
+                        <?php echo kasparabi_get_images(); ?>
+                    </div>
+                </div>
                 <!-- END ARTICLE -->
 
             </div>

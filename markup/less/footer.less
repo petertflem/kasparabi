@@ -5,6 +5,8 @@ footer {
 	/* Skin */
 	.container {
 		.copyright {
+			line-height: 24px;
+
 			a {
 				color: white;
 				text-transform: uppercase;
@@ -17,13 +19,11 @@ footer {
 		
 		.social-media {
 			.facebook {
-				background: url('images/facebook.png') no-repeat;
 				width: 113px;
 				height: 23px;
 			}
 
 			.instagram {
-				background: url('images/instagram.png') no-repeat;
 				width: 126px;
 				height: 36px;
 			}
@@ -63,10 +63,27 @@ footer {
 			    top: 0;
 			    bottom: 0;
 			    right: 0;
-			    left: -85%;
 			    width: 50%;
 			    height: 30%;
 			    margin: auto;
+			}
+
+			@media (min-width: @screen-sm-min) { 
+				.copyright {
+				    left: -74%;
+				}
+			}
+
+			@media (min-width: @screen-md-min) { 
+				.copyright {
+				    left: -79%;
+				}
+			}
+
+			@media (min-width: @screen-lg-min) { 
+				.copyright {
+				    left: -85%;
+				}
 			}
 			
 			.social-media {
@@ -79,17 +96,42 @@ footer {
 				    bottom: 0;
 				    right: 0;
 				    width: 50%;
-				    height: 30%;
 				    margin: auto;
 				}
 
-				.facebook {
-					left: 85%;
+				.facebook, .instagram {
+				    height: 30%;
+				}
+				
+				@media (min-width: @screen-sm-min) { 
+					.facebook {
+						left: 84%;
+					}
+
+					.instagram {
+						left: 57%;
+					}
 				}
 
-				.instagram {
-					left: 60%;
+				@media (min-width: @screen-md-min) { 
+					.facebook {
+						left: 88%;
+					}
+
+					.instagram {
+						left: 68%;
+					}
 				}
+
+				@media (min-width: @screen-lg-min) { 
+					.facebook {
+						left: 90%;
+					}
+
+					.instagram {
+						left: 70%;
+					}
+				} 
 			}
 		}
 	}

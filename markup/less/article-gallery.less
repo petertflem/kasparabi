@@ -1,15 +1,29 @@
-.reference-images.maginfic-popup-gallery {
+.maginfic-popup-gallery {
 	div {
     	padding: 5px;
 	}
-}
 
-.single-reference {
-	article {
-		ul, ol, div, p {
-	        padding-right: 10%;
-	        padding-left: 5%;
-	    
+	@media (min-width: @screen-xs-min) {    
+	    div a img {
+	        height: 198px;
 	    }
+	}
+
+	@media (min-width: @screen-sm-min) { 
+        div a img {
+            height: 70px;
+        }
+	}
+
+	@media (min-width: @screen-md-min) { 
+        div a img {
+            height: 95px;
+        }
+	}
+
+	@media (min-width: @screen-lg-min) { 
+        div a img {
+            height: 117px;
+        }
 	}
 }
