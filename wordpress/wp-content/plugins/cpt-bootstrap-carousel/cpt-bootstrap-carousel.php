@@ -462,13 +462,23 @@ function cptbc_frontend($atts){
 						echo '>';
 					}
 					echo $image['image'];
-					if($image['url']) { echo '</a>'; }?>
-					<?php if($atts['showcaption'] === 'true') { ?>
+
+					if($atts['showcaption'] === 'true') {
+						?>
 						<div class="carousel-caption">
 							<h4><?php echo $image['title']; ?></h4>
 							<p><?php echo $image['content']; ?></p>
 						</div>
-					<?php } ?>
+						<?php
+					}
+
+					if($image['url']) { echo '</a>'; }?>
+					<?php /*if($atts['showcaption'] === 'true') { ?>
+						<div class="carousel-caption">
+							<h4><?php echo $image['title']; ?></h4>
+							<p><?php echo $image['content']; ?></p>
+						</div>
+					<?php } */?>
 				</div>
 			<?php } ?>
 			</div>

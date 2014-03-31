@@ -1,3 +1,4 @@
+<?php load_theme_textdomain('kasparabi', get_template_directory() . '/lang'); ?>
 <?php
 	/*--------------------------------------------------------------------------*
 	 * Constants
@@ -215,7 +216,7 @@
             $title = esc_html( $attachment->post_title, 1 );
             $img = wp_get_attachment_image_src( $id, $size );
 
-            $output .= $open . '<div class="col-xs-4"><a href="' . esc_url( wp_get_attachment_url( $id ) ) . '" title="' . esc_attr( $title ) . '">';
+            $output .= $open . '<div class="col-xs-4 gallery-image"><a href="' . esc_url( wp_get_attachment_url( $id ) ) . '" title="' . esc_attr( $title ) . '">';
             $output .= '<img class="img-responsive" src="' . esc_url( $img[0] ) . '" alt="' . esc_attr( $title ) . '" title="' . esc_attr( $title ) . '" />';
             $output .= '</a></div>' . $close;
 

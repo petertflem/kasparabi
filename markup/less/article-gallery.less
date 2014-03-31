@@ -2,28 +2,37 @@
 	div {
     	padding: 5px;
 	}
-
+		
 	@media (min-width: @screen-xs-min) {    
-	    div a img {
+	    .gallery-image {
 	        height: 198px;
 	    }
 	}
 
 	@media (min-width: @screen-sm-min) { 
-        div a img {
+        .gallery-image {
             height: 70px;
         }
 	}
 
 	@media (min-width: @screen-md-min) { 
-        div a img {
+        .gallery-image {
             height: 95px;
         }
 	}
 
 	@media (min-width: @screen-lg-min) { 
-        div a img {
+        .gallery-image {
             height: 117px;
         }
+	}
+	
+
+	div a img {
+		height: auto;
+	}
+
+	.gallery-image {
+		overflow: hidden;
 	}
 }

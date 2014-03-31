@@ -8,6 +8,7 @@
 	License:
 	License:
 	Tags:
+	Text Domain: kasparabi
 *****************************************************/
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
@@ -195,6 +196,7 @@ sub {
  */
 img {
   border: 0;
+  width: auto;
 }
 /**
  * Correct overflow displayed oddly in IE 9.
@@ -6781,6 +6783,8 @@ img.mfp-img {
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 p {
   font-family: 'gt_walsheim_regular';
@@ -6799,6 +6803,7 @@ ul {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   -webkit-padding-start: 0px;
+  font-family: 'gt_walsheim_regular';
 }
 a {
   text-decoration: underline;
@@ -6814,6 +6819,19 @@ a:hover {
   margin: 0 auto -80px;
   /* Pad bottom by footer height */
   padding: 0 0 80px;
+}
+.archive-navigation {
+  text-align: center;
+}
+.newer-link,
+.older-link {
+  display: inline-block;
+  font-family: gt_walsheim_regular;
+  font-size: 14px;
+}
+.newer-link:hover,
+.older-link:hover {
+  text-decoration: underline;
 }
 /* Overrides for plugins */
 .mfp-title {
@@ -7059,11 +7077,9 @@ footer .container .social-media .instagram {
 .image-carousel {
   text-align: center;
 }
-.image-carousel .carousel-wrapper {
-  display: inline-block;
-}
 .image-carousel .carousel-caption {
   top: 0px;
+  bottom: inherit;
 }
 .image-carousel .carousel-caption h4,
 .image-carousel .carousel-caption p {
@@ -7072,6 +7088,7 @@ footer .container .social-media .instagram {
 .left-menu h4 {
   font-family: 'gt_walsheim_bold';
   text-transform: uppercase;
+  margin-top: 20px;
 }
 .left-menu ul {
   list-style: none;
@@ -7098,7 +7115,7 @@ article.article h1 {
   padding-bottom: 30px;
 }
 article.article img {
-  margin: 0px auto;
+  margin: 20px auto;
   max-width: 100%;
   height: auto;
   display: block;
@@ -7227,6 +7244,8 @@ article.article ol {
     text-align: left;
   }
   .inspiration img {
+    max-width: inherit;
+    /* FIXES IE 8 */
     width: 300px;
   }
 }
@@ -7245,6 +7264,9 @@ article.article ol {
 .contact-us .contact-us-persona {
   text-align: center;
   margin-top: 20px;
+}
+.contact-us h4 {
+  font-family: gt_walsheim_regular;
 }
 @media (min-width: 768px) {
   .contact-us .left-image {
@@ -7288,24 +7310,30 @@ article.article ol {
   padding: 5px;
 }
 @media (min-width: 480px) {
-  .maginfic-popup-gallery div a img {
+  .maginfic-popup-gallery .gallery-image {
     height: 198px;
   }
 }
 @media (min-width: 768px) {
-  .maginfic-popup-gallery div a img {
+  .maginfic-popup-gallery .gallery-image {
     height: 70px;
   }
 }
 @media (min-width: 992px) {
-  .maginfic-popup-gallery div a img {
+  .maginfic-popup-gallery .gallery-image {
     height: 95px;
   }
 }
 @media (min-width: 1200px) {
-  .maginfic-popup-gallery div a img {
+  .maginfic-popup-gallery .gallery-image {
     height: 117px;
   }
+}
+.maginfic-popup-gallery div a img {
+  height: auto;
+}
+.maginfic-popup-gallery .gallery-image {
+  overflow: hidden;
 }
 .single-reference article ul,
 .single-reference article ol,

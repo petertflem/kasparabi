@@ -69,9 +69,16 @@
 
     $nb_image = isset($meta['nathalie_bergsaune_image']) ? esc_attr( $meta['nathalie_bergsaune_image'][0] ) : '';
     $nb_description = isset($meta['nathalie_bergsaune_description']) ? esc_attr( $meta['nathalie_bergsaune_description'][0] ) : '';
+    $nb_name = isset($meta['nathalie_bergsaune_name']) ? esc_attr( $meta['nathalie_bergsaune_name'][0] ) : '';
+    $nb_phonenumber = isset($meta['nathalie_bergsaune_phonenumber']) ? esc_attr( $meta['nathalie_bergsaune_phonenumber'][0] ) : '';
+    $nb_email = isset($meta['nathalie_bergsaune_email']) ? esc_attr( $meta['nathalie_bergsaune_email'][0] ) : '';
+
   
     $hm_image = isset($meta['heidi_madelen_image']) ? esc_attr( $meta['heidi_madelen_image'][0] ) : '';
     $hm_description = isset($meta['heidi_madelen_description']) ? esc_attr( $meta['heidi_madelen_description'][0] ) : '';
+    $hm_name = isset($meta['heidi_madelen_name']) ? esc_attr( $meta['heidi_madelen_name'][0] ) : '';
+    $hm_phonenumber = isset($meta['heidi_madelen_phonenumber']) ? esc_attr( $meta['heidi_madelen_phonenumber'][0] ) : '';
+    $hm_email = isset($meta['heidi_madelen_email']) ? esc_attr( $meta['heidi_madelen_email'][0] ) : '';
 
 ?>
 <?php get_header(); ?>
@@ -88,8 +95,15 @@
                     <div class="left-image">
                         <img src="<?php echo $nb_image; ?>" alt="Bildet av Nathalie Bergsaune" class="img-responsive" />
                         <div>
+                            <h4><?php echo $nb_name; ?></h4>
                             <p class="contact-us-persona">
                                 <?php echo $nb_description; ?>
+                            </p>
+                            <p>
+                                <?php echo $nb_phonenumber; ?>
+                            </p>
+                            <p>
+                                <?php echo $nb_email; ?>
                             </p>
                         </div>
                     </div>
@@ -98,8 +112,15 @@
                     <div class="right-image">
                        <img src="<?php echo $hm_image; ?>" alt="Bildet av Heidi Madelen" class="img-responsive" />
                         <div>
+                            <h4><?php echo $hm_name; ?></h4>
                             <p class="contact-us-persona">
                                 <?php echo $hm_description; ?>
+                            </p>
+                            <p>
+                                <?php echo $hm_phonenumber; ?>
+                            </p>
+                            <p>
+                                <?php echo $hm_email; ?>
                             </p>
                         </div>
                     </div>   
@@ -123,6 +144,14 @@
                             color: green;
                             border-radius: 3px;
                         }
+
+                        .human-verification {
+                            display: inline-block;
+                        }
+
+                        form {
+                            margin-bottom: 20px;
+                        }
                      
                         form span{
                             color: red;
@@ -133,23 +162,23 @@
                         <?php echo $response; ?>
                         <form role="form" action="<?php the_permalink(); ?>" method="post">
                             <div class="form-group">
-                                <label for="name">Name: *</label>
+                                <label for="name"><?php echo _e('Name: *', 'kasparabi'); ?></label>
                                 <input type="text" name="message_name" class="form-control" value="<?php echo esc_attr($_POST['message_name']); ?>" />
                             </div>
                             <div class="form-group">
-                                <label for="message_email">Email: *</label>
+                                <label for="message_email"><?php echo _e('Email: *', 'kasparabi'); ?></label>
                                 <input type="text" name="message_email" class="form-control" value="<?php echo esc_attr($_POST['message_email']); ?>" />
                             </div>
                             <div class="form-group">
-                                <label for="message_text">Message: *</label>
+                                <label for="message_text"><?php echo _e('Message: *', 'kasparabi'); ?></label>
                                 <textarea type="text" rows="4" class="form-control" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="message_human">Human Verification: *<input type="text" style="width: 60px;" class="form-control" name="message_human"> + 3 = 5</label>
+                                <label for="message_human"><?php echo _e('Human Verification: *', 'kasparabi'); ?><br /><input type="text" style="width: 60px;" class="form-control human-verification" name="message_human"> + 3 = 5</label>
                             </div>
 
                             <input type="hidden" name="submitted" value="1" />
-                            <button type="submit" class="btn btn-default">Send epost</button>
+                            <button type="submit" class="btn btn-default"><?php echo _e('Send email', 'kasparabi'); ?></button>
                         </form>
                     </div>
 

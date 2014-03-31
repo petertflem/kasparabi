@@ -45,9 +45,16 @@ function kasparabi_render_contact_us_information_meta_box($post) {
 function render_contact_us_information_form($post) {
     $nathalie_bergsaune_image = get_post_meta($post->ID, 'nathalie_bergsaune_image', true);
     $nathalie_bergsaune_description = get_post_meta($post->ID, 'nathalie_bergsaune_description', true);
+    $nathalie_bergsaune_name = get_post_meta($post->ID, 'nathalie_bergsaune_name', true);
+    $nathalie_bergsaune_phonenumber = get_post_meta($post->ID, 'nathalie_bergsaune_phonenumber', true);
+    $nathalie_bergsaune_email = get_post_meta($post->ID, 'nathalie_bergsaune_email', true);    
     
     $heidi_madelen_image = get_post_meta($post->ID, $type . 'heidi_madelen_image', true);
     $heidi_madelen_description = get_post_meta($post->ID, $type . 'heidi_madelen_description', true);
+    $heidi_madelen_name = get_post_meta($post->ID, $type . 'heidi_madelen_name', true);
+    $heidi_madelen_phonenumber = get_post_meta($post->ID, $type . 'heidi_madelen_phonenumber', true);
+    $heidi_madelen_email = get_post_meta($post->ID, $type . 'heidi_madelen_email', true);
+
 
     ?>
         <div style="float: left;">
@@ -64,6 +71,18 @@ function render_contact_us_information_form($post) {
                 <b>Litt informasjon:</b> <br />
                 <textarea rows="5" cols="50" name="nathalie-bergsaune-description"><?php echo $nathalie_bergsaune_description; ?></textarea>
             </p>
+            <p>
+                <p class='description'><?php _e('Your name', 'kasparabi'); ?></p>
+                <input type="text" name="nathalie-bergsaune-name" class="regular-text" value="<?php echo $nathalie_bergsaune_name; ?>" />
+            </p>
+            <p>
+                <p class='description'><?php _e('Phone number', 'kasparabi'); ?></p>
+                <input type="text" name="nathalie-bergsaune-phone-number" class="regular-text" value="<?php echo $nathalie_bergsaune_phonenumber; ?>" />
+            </p>
+            <p>
+                <p class='description'><?php _e('Email', 'kasparabi'); ?></p>
+                <input type="text" name="nathalie-bergsaune-email" class="regular-text" value="<?php echo $nathalie_bergsaune_email; ?>" />
+            </p>
         </div>
         <div style="float: left;">
             <h4>Heidi Madelen</h4>
@@ -79,9 +98,29 @@ function render_contact_us_information_form($post) {
                 <b>Litt informasjon:</b> <br />
                 <textarea rows="5" cols="50" name="heidi-madelen-description"><?php echo $heidi_madelen_description; ?></textarea>
             </p>
+            <p>
+                <p class='description'><?php _e('Your name', 'kasparabi'); ?></p>
+                <input type="text" name="heidi-madelen-name" class="regular-text" value="<?php echo $heidi_madelen_name; ?>" />
+            </p>
+            <p>
+                <p class='description'><?php _e('Phone number', 'kasparabi'); ?></p>
+                <input type="text" name="heidi-madelen-phone-number" class="regular-text" value="<?php echo $heidi_madelen_phonenumber; ?>" />
+            </p>
+            <p>
+                <p class='description'><?php _e('Email', 'kasparabi'); ?></p>
+                <input type="text" name="heidi-madelen-email" class="regular-text" value="<?php echo $heidi_madelen_email; ?>" />
+            </p>
         </div>
         <span style="clear: left; display: block;"></span>
     <?php
+/*
+                <input id="<?php echo 'kasparabi_frontpage_header'; ?>"
+                class='large-text' 
+                name='kasparabi_settings[<?php echo 'kasparabi_frontpage_header'; ?>]' 
+                type='text' 
+                value='<?php echo $options['kasparabi_frontpage_header'] ?>'
+            />
+            <p class='description'><?php _e('The heading next to the image carousel.', 'kasparabi'); ?></p>*/
 }
 
 /*--------------------------------------------------------------------------*
@@ -132,10 +171,17 @@ function kasparibi_contact_us_information_meta_save( $post_id, $post ) {
     /* Save Nathalie Bergsaune */
     contact_us_save_value( 'nathalie-bergsaune-image', 'nathalie_bergsaune_image', $post );
     contact_us_save_value( 'nathalie-bergsaune-description', 'nathalie_bergsaune_description', $post );
+    contact_us_save_value( 'nathalie-bergsaune-name', 'nathalie_bergsaune_name', $post );
+    contact_us_save_value( 'nathalie-bergsaune-phone-number', 'nathalie_bergsaune_phonenumber', $post );
+    contact_us_save_value( 'nathalie-bergsaune-email', 'nathalie_bergsaune_email', $post );
 
     /* Save Heidi Madelen */
     contact_us_save_value( 'heidi-madelen-image', 'heidi_madelen_image', $post );
     contact_us_save_value( 'heidi-madelen-description', 'heidi_madelen_description', $post );
+    contact_us_save_value( 'heidi-madelen-name', 'heidi_madelen_name', $post );
+    contact_us_save_value( 'heidi-madelen-phone-number', 'heidi_madelen_phonenumber', $post );
+    contact_us_save_value( 'heidi-madelen-email', 'heidi_madelen_email', $post );
+
 }
 add_action( 'save_post', 'kasparibi_contact_us_information_meta_save', 1, 2 );
 

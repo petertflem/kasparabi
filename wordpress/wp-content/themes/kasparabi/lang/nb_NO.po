@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kasparabi\n"
+"POT-Creation-Date: 2014-03-29 14:09+0100\n"
+"PO-Revision-Date: 2014-03-29 14:12+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive-inspiration.php:6
+msgid "Inspiration"
+msgstr "Inspirasjon"
+
+#: archive-inspiration.php:55
+msgid "No inspirations found"
+msgstr "Ingen inspirasjoner funnet"
+
+#: archive-inspiration.php:62 archive-news.php:50 archive-reference.php:57
+msgid "&larr; newer"
+msgstr "&larr; Nyere"
+
+#: archive-inspiration.php:65 archive-news.php:53 archive-reference.php:63
+msgid "older &rarr;"
+msgstr "Eldre &rarr;"
+
+#: archive-news.php:7
+msgid "News"
+msgstr "Nyheter"
+
+#: archive-news.php:42
+msgid "No news found"
+msgstr "Ingen nyheter ble funnet"
+
+#: archive-news.php:44 archive-reference.php:48
+msgid "No references found"
+msgstr "Ingen referanser ble funnet"
+
+#: archive-reference.php:7
+msgid "References"
+msgstr "Referanser"
+
+#: functions.php:18
+msgid "Main Menu"
+msgstr "Hovedmeny"
+
+#: functions.php:19
+msgid "Frontpage News"
+msgstr "Nyheter"
+
+#: home.php:38
+msgid "Last news"
+msgstr "Siste nyheter"
+
+#: page-article-with-gallery.php:46 page-article.php:46 page.php:17
+#: single-reference.php:23 single.php:17
+msgid "No page was found."
+msgstr "Ingen side funnet"
+
+#: page-contact-us.php:90
+msgid "Contact us"
+msgstr "Kontakt oss"
+
+#: page-contact-us.php:131
+msgid "Send us an email"
+msgstr "Send oss en epost"
+
+#: page-contact-us.php:167
+msgid "Name: *"
+msgstr "Navn *"
+
+#: page-contact-us.php:171
+msgid "Email: *"
+msgstr "Til (epost) *"
+
+#: page-contact-us.php:175
+msgid "Message: *"
+msgstr "Beskjed *"
+
+#: page-contact-us.php:179
+msgid "Human Verification: *"
+msgstr "Verifiser at du er et menneske *"
+
+#: page-contact-us.php:183
+msgid "Send email"
+msgstr "Send epost"
+
+#: page-inspiration-picker.php:35
+msgid "Bryllup"
+msgstr "Bryllup"
+
+#: page-inspiration-picker.php:45
+msgid "Interiør"
+msgstr "Interiør"
