@@ -9,30 +9,31 @@
    */
 ?>
 <?php
+load_plugin_textdomain('reference', false, dirname(plugin_basename( __FILE__ )));
 
 function create_references_post_type() {
 	$labels = array(
-		'name'               => __( 'References', 'kasparabi' ),
-		'singular_name'      => __( 'Reference', 'kasparabi' ),
-		'add_new'            => __( 'Add New', 'kasparabi' ),
-		'add_new_item'       => __( 'Add new reference', 'kasparabi' ),
-		'edit_item'          => __( 'Edit reference', 'kasparabi' ),
-		'new_item'           => __( 'New reference', 'kasparabi' ),
-		'all_items'          => __( 'All references', 'kasparabi' ),
-		'view_item'          => __( 'View reference', 'kasparabi' ),
-		'search_items'       => __( 'Search references', 'kasparabi' ),
-		'not_found'          => __( 'No references found', 'kasparabi' ),
-		'not_found_in_trash' => __( 'No references found in the Trash', 'kasparabi' ), 
+		'name'               => __( 'References', 'reference' ),
+		'singular_name'      => __( 'Reference', 'reference' ),
+		'add_new'            => __( 'Add New', 'reference' ),
+		'add_new_item'       => __( 'Add new reference', 'reference' ),
+		'edit_item'          => __( 'Edit reference', 'reference' ),
+		'new_item'           => __( 'New reference', 'reference' ),
+		'all_items'          => __( 'All references', 'reference' ),
+		'view_item'          => __( 'View reference', 'reference' ),
+		'search_items'       => __( 'Search references', 'reference' ),
+		'not_found'          => __( 'No references found', 'reference' ),
+		'not_found_in_trash' => __( 'No references found in the Trash', 'reference' ), 
 		'parent_item_colon'  => '',
-		'menu_name'          => __('References', 'kasparabi')
+		'menu_name'          => __('References', 'reference')
 	);
 	$args = array(
 		'labels'        => $labels,
-		'description'   => __('All the references', 'kasparabi'),
+		'description'   => __('All the references', 'reference'),
 		'public'        => true,
 		'menu_position' => 5,
 		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt'),
-		'has_archive'   => __('references', 'kasparabi')
+		'has_archive'   => __('references', 'reference')
 	);
 	register_post_type( 'reference', $args );	
 }

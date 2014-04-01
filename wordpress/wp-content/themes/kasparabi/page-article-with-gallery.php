@@ -35,7 +35,7 @@
                 <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
                     
                     <div class="col-<?php echo !$show_menu ? 'xs-8' : 'sm-6'; ?>">
-                        <article class="article article-with-gallery">
+                        <article class="article-with-gallery">
                             <h1><?php the_title(); ?></h1>
                             <?php the_content(); ?>
                         </article>

@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: reference\n"
+"POT-Creation-Date: 2014-03-31 23:13+0100\n"
+"PO-Revision-Date: 2014-03-31 23:15+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: references.php:15 references.php:27
+msgid "References"
+msgstr "Referanser"
+
+#: references.php:16
+msgid "Reference"
+msgstr "Referanse"
+
+#: references.php:17
+msgid "Add New"
+msgstr "Legg til"
+
+#: references.php:18
+msgid "Add new reference"
+msgstr "Legg til ny referanse"
+
+#: references.php:19
+msgid "Edit reference"
+msgstr "Rediger referanse"
+
+#: references.php:20
+msgid "New reference"
+msgstr "Ny referanse"
+
+#: references.php:21
+msgid "All references"
+msgstr "Alle referanser"
+
+#: references.php:22
+msgid "View reference"
+msgstr "Vis referanse"
+
+#: references.php:23
+msgid "Search references"
+msgstr "Søk i referanser"
+
+#: references.php:24
+msgid "No references found"
+msgstr "Ingen referanser funnet"
+
+#: references.php:25
+msgid "No references found in the Trash"
+msgstr "Ingen referanser funnet i søppeldunken"
+
+#: references.php:31
+msgid "All the references"
+msgstr "Alle referansene"
+
+#: references.php:35
+msgid "references"
+msgstr "referanser"

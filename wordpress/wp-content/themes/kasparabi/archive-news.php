@@ -17,21 +17,21 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="row news-row">
+                            <a href="<?php the_permalink(); ?>">
 
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="col-sm-3">
-                                <div class="news-thumbnail">
-                                    <?php the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' )); ?>
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="col-sm-3">
+                                    <div class="news-thumbnail">
+                                        <?php the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' )); ?>
+                                    </div>
                                 </div>
-                            </div>
-                        <?php endif; ?>
+                            <?php endif; ?>
 
-                            <div class="col<?php echo has_post_thumbnail() ? '-sm-9' : '-xs-12'; ?>">
-                                <a href="<?php the_permalink(); ?>">
-                                    <h1><?php the_title(); ?></h1>
-                                </a>
-                                <p><?php the_excerpt(); ?></p>
-                            </div>
+                                <div class="col<?php echo has_post_thumbnail() ? '-sm-9' : '-xs-12'; ?>">
+                                        <h1><?php the_title(); ?></h1>
+                                    <p><?php the_excerpt(); ?></p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>

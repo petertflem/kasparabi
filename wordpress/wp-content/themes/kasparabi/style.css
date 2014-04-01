@@ -7020,7 +7020,7 @@ footer .container .social-media .instagram {
 .container.latest-news h1 {
   text-align: center;
   padding-bottom: 0px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 .container.latest-news .frontpage-news {
   text-align: center;
@@ -7037,6 +7037,7 @@ footer .container .social-media .instagram {
   font-family: 'gt_walsheim_bold';
   font-size: 20px;
   text-transform: uppercase;
+  width: 100%;
 }
 .container.latest-news .frontpage-news li h1 {
   margin-top: 10px;
@@ -7051,6 +7052,9 @@ footer .container .social-media .instagram {
 .container.latest-news .frontpage-news li:last-child {
   padding-left: 15px;
   padding-right: 0px;
+}
+.aside-info-text {
+  margin-bottom: 40px;
 }
 .aside-info-text h1 {
   margin-top: 50px;
@@ -7080,10 +7084,27 @@ footer .container .social-media .instagram {
 .image-carousel .carousel-caption {
   top: 0px;
   bottom: inherit;
+  white-space: pre-line;
 }
 .image-carousel .carousel-caption h4,
 .image-carousel .carousel-caption p {
   font-family: 'gt_walsheim_regular';
+  background-color: #000000;
+  /* FALLBACK FOR IE8 */
+  background-color: rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 100%;
+}
+.image-carousel .carousel-caption h4 {
+  margin: 0px;
+}
+.image-carousel img {
+  margin-left: auto;
+  margin-right: auto;
 }
 .left-menu h4 {
   font-family: 'gt_walsheim_bold';
@@ -7112,7 +7133,8 @@ article.article ul {
 }
 article.article h1 {
   text-align: left;
-  padding-bottom: 30px;
+  padding-bottom: 5px;
+  margin-top: 35px;
 }
 article.article img {
   margin: 20px auto;
@@ -7131,6 +7153,8 @@ article.article ol {
 @media (min-width: 768px) {
   article.article h1 {
     padding-left: 5%;
+    padding-bottom: 30px;
+    margin-top: 20px;
   }
   article.article div,
   article.article p,
@@ -7138,6 +7162,13 @@ article.article ol {
   article.article ol {
     padding-right: 20%;
     padding-left: 10%;
+  }
+  article.article .ezcol,
+  article.article .ezcol p,
+  article.article .ezcol ul,
+  article.article .ezcol ol {
+    padding-right: inherit;
+    padding-left: inherit;
   }
 }
 @media (min-width: 992px) {
@@ -7151,38 +7182,52 @@ article.article ol {
     padding-right: 25%;
     padding-left: 5%;
   }
+  article.article .ezcol,
+  article.article .ezcol p,
+  article.article .ezcol ul,
+  article.article .ezcol ol {
+    padding-right: inherit;
+    padding-left: inherit;
+  }
+}
+article.article-with-gallery h1 {
+  padding-bottom: 5px;
+  margin-top: 35px;
 }
 @media (min-width: 768px) {
+  article.article-with-gallery h1 {
+    margin-left: 30px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+  }
   article.article-with-gallery div,
   article.article-with-gallery p,
   article.article-with-gallery ul,
   article.article-with-gallery ol {
     padding-right: 5%;
-    padding-left: 10%;
+    padding-left: 60px;
   }
 }
 @media (min-width: 992px) {
   article.article-with-gallery h1 {
-    padding-left: 10%;
+    padding-left: 0%;
+    margin-left: 0px;
   }
   article.article-with-gallery div,
   article.article-with-gallery p,
   article.article-with-gallery ul,
   article.article-with-gallery ol {
     padding-right: 5%;
-    padding-left: 15%;
+    padding-left: 39px;
   }
 }
 @media (min-width: 1200px) {
-  article.article-with-gallery h1 {
-    padding-left: 20%;
-  }
   article.article-with-gallery div,
   article.article-with-gallery p,
   article.article-with-gallery ul,
   article.article-with-gallery ol {
     padding-right: 5%;
-    padding-left: 25%;
+    padding-left: 47px;
   }
 }
 .references img {
