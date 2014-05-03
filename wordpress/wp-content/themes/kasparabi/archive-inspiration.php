@@ -16,7 +16,7 @@
                     $rowLength = 3;
 
                     if (have_posts()) : while (have_posts()) : the_post();
-                        $nthElement = $nthElement == $rowLength ? 0 : ++$nthElement;
+                        $nthElement = ++$nthElement == $rowLength ? 0 : $nthElement;
                         $open = !( $iterations % $rowLength ) ? '<div class="row">' : '';
                         echo $open;
 

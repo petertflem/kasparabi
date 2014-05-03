@@ -31,14 +31,16 @@
 			}
 		}
 
-		li:first-child {
-			padding-left: 0px;
-			padding-right: 15px;
-		}
+		@media (min-width: @screen-sm-min) { 
+			li:first-child {
+				padding-left: 0px;
+				padding-right: 15px;
+			}
 
-		li:last-child {
-			padding-left: 15px;
-			padding-right: 0px;
+			li:last-child {
+				padding-left: 15px;
+				padding-right: 0px;
+			}
 		}
 	}
 }
@@ -91,7 +93,7 @@
 		h4, p {
 			font-family: 'gt_walsheim_regular';
 
-			background-color: rgb(0,0,0); /* FALLBACK FOR IE8 */
+			//background-color: rgb(210,210,210); /* FALLBACK FOR IE8 */
 			background-color: rgba(0,0,0,0.05);
 
 			display: inline-block;

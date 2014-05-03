@@ -19,21 +19,24 @@
     }
 
     //response messages
-    $not_human       = "Human verification incorrect.";
-    $missing_content = "Please supply all information.";
-    $email_invalid   = "Email Address Invalid.";
-    $message_unsent  = "Message was not sent. Try Again.";
-    $message_sent    = "Thanks! Your message has been sent.";
+    $not_human       = __("Human verification incorrect.", "kasparabi");
+    $missing_content = __("Please supply all information.", "kasparabi");
+    $email_invalid   = __("Email Address Invalid.", "kasparabi");
+    $message_unsent  = __("Message was not sent. Try Again.", "kasparabi");
+    $message_sent    = __("Thanks! Your message has been sent.", "kasparabi");
      
     //user posted variables
     $name = $_POST['message_name'];
     $email = $_POST['message_email'];
     $message = $_POST['message_text'];
     $human = $_POST['message_human'];
-     
+    $newsletter = $_POST['newsletter'];
+
+    $message .= "<br /><br />" . __("Newsletter: ", "kasparabi") . ($newsletter ? __("Yes", "kasparabi") : __("No", "kasparabi"));
+    
     //php mailer variables
     $to = get_option('admin_email');
-    $subject = "Someone sent a message from " . get_bloginfo('name');
+    $subject = __("Someone sent a message from ", "kasparabi") . get_bloginfo('name');
     $headers = "Reply-To: " . $name . "<" . $email . ">" . "\r\n";
 
     if(!$human == 0){
@@ -128,7 +131,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <h4><?php _e('Send us an email', 'kasparabi'); ?></h4>
+                    <h4 class="email-title"><?php _e('Send us an email', 'kasparabi'); ?></h4>
 
                     <style type="text/css">
                         .error{
@@ -166,7 +169,7 @@
                                 <input type="text" name="message_name" class="form-control" value="<?php echo esc_attr($_POST['message_name']); ?>" />
                             </div>
                             <div class="form-group">
-                                <label for="message_email"><?php echo _e('Email: *', 'kasparabi'); ?></label>
+                                <label for="message_email"><?php echo _e('From email: *', 'kasparabi'); ?></label>
                                 <input type="text" name="message_email" class="form-control" value="<?php echo esc_attr($_POST['message_email']); ?>" />
                             </div>
                             <div class="form-group">
@@ -175,6 +178,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="message_human"><?php echo _e('Human Verification: *', 'kasparabi'); ?><br /><input type="text" style="width: 60px;" class="form-control human-verification" name="message_human"> + 3 = 5</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newsletter"><input style="margin-right: 5px; margin-top: 5px;" type="checkbox" name="newsletter" checked><?php _e("I wish to receive newsletters from Kaspara Bryllup & Interiør", "kasparabi"); ?></label>
                             </div>
 
                             <input type="hidden" name="submitted" value="1" />

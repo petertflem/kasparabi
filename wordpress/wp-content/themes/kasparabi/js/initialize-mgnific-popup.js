@@ -4,8 +4,6 @@
 		if (!$('.maginfic-popup-gallery').length)
 			return {};
 
-		console.log('r');
-
 		$('.maginfic-popup-gallery').magnificPopup({
 			delegate: 'a',
 			type: 'image',
@@ -14,7 +12,10 @@
 			gallery: {
 				enabled: true,
 				navigateByImgClick: true,
-				preload: [0, 1]
+				preload: [0, 1],
+			  	tPrev: 'Forrige (Venstre piltast)', // title for left button
+	  			tNext: 'Neste (Høyre piltast)', // title for right button
+				tCounter: '%curr% av %total%' // markup of counter
 			},
 			image: {
 				tError: '<a href="%url%">Bildet #%curr%</a> kunne ikke bli lastet.',

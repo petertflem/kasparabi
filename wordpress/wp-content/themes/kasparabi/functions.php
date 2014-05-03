@@ -209,7 +209,7 @@
         $nthElement = 0;
         $rowLength = 3;
         foreach ( $attachments as $id  => $attachment ) :
-            $nthElement = $nthElement == $rowLength ? 0 : ++$nthElement;
+            $nthElement = ++$nthElement == $rowLength ? 0 : $nthElement;
             $open = !( $iterations++ % $rowLength ) ? '<div class="row">' : '';
             $close = !( $iterations % 3 ) && $iterations ? '</div>' : '';
 
@@ -221,6 +221,9 @@
             $output .= '</a></div>' . $close;
 
         endforeach;
+
+        if ($nthElement % $rowLength)
+            $output .= '</div>';
 
         return $output;
     }
@@ -255,6 +258,16 @@
 			
 			// get user defined attributes for thumbnail images
 			$attr_defaults = array( 'class' => 'nav_thumb' , 'alt' => esc_attr( $item->attr_title ) , 'title' => esc_attr( $item->attr_title ) );
+
+			// set the image title and alt from the featured image
+			$correspondig_page_id = get_post_meta($item->ID, '_menu_item_object_id', true);	// get the id the nav_menu_item points to
+			$thumbnail_id = get_post_thumbnail_id($correspondig_page_id);
+			$title = get_post($thumbnail_id)->post_title;
+			$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+
+			$args->thumbnail_attr["title"] = $title;
+			$args->thumbnail_attr["alt"] = $alt;
+
 			$attr = isset( $args->thumbnail_attr ) ? $args->thumbnail_attr : '';
 			$attr = wp_parse_args( $attr , $attr_defaults );
 	 
@@ -298,8 +311,23 @@
 			$args['thumbnail'] = true;
 			$args['thumbnail_link'] = false;
 			$args['thumbnail_size'] = 'nav_thumb';
-			$args['thumbnail_attr'] = array( 'class' => 'img-responsive' , 'alt' => 'test' , 'title' => 'test' );
+			$args['thumbnail_attr'] = array( 'class' => 'img-responsive' );
 		}
 		
 		return $args;
 	}
+/*
+	add_action('wp_footer', 'add_googleanalytics');
+	function add_googleanalytics() { ?>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-49610842-1', 'kasparabi.no');
+		  ga('send', 'pageview');
+
+		</script>
+	<?php }
+*/

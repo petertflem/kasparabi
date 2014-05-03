@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kasparabi\n"
-"POT-Creation-Date: 2014-03-29 14:09+0100\n"
-"PO-Revision-Date: 2014-03-29 14:12+0100\n"
+"POT-Creation-Date: 2014-04-01 18:55+0100\n"
+"PO-Revision-Date: 2014-04-01 18:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -73,23 +73,23 @@ msgstr "Kontakt oss"
 msgid "Send us an email"
 msgstr "Send oss en epost"
 
-#: page-contact-us.php:167
+#: page-contact-us.php:165
 msgid "Name: *"
 msgstr "Navn *"
 
-#: page-contact-us.php:171
-msgid "Email: *"
-msgstr "Til (epost) *"
+#: page-contact-us.php:169
+msgid "From email: *"
+msgstr "Fra (epost) *"
 
-#: page-contact-us.php:175
+#: page-contact-us.php:173
 msgid "Message: *"
 msgstr "Beskjed *"
 
-#: page-contact-us.php:179
+#: page-contact-us.php:177
 msgid "Human Verification: *"
 msgstr "Verifiser at du er et menneske *"
 
-#: page-contact-us.php:183
+#: page-contact-us.php:181
 msgid "Send email"
 msgstr "Send epost"
 

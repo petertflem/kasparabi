@@ -6785,6 +6785,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 p {
   font-family: 'gt_walsheim_regular';
@@ -7045,13 +7046,15 @@ footer .container .social-media .instagram {
   font-size: 20px;
   text-transform: uppercase;
 }
-.container.latest-news .frontpage-news li:first-child {
-  padding-left: 0px;
-  padding-right: 15px;
-}
-.container.latest-news .frontpage-news li:last-child {
-  padding-left: 15px;
-  padding-right: 0px;
+@media (min-width: 768px) {
+  .container.latest-news .frontpage-news li:first-child {
+    padding-left: 0px;
+    padding-right: 15px;
+  }
+  .container.latest-news .frontpage-news li:last-child {
+    padding-left: 15px;
+    padding-right: 0px;
+  }
 }
 .aside-info-text {
   margin-bottom: 40px;
@@ -7089,8 +7092,6 @@ footer .container .social-media .instagram {
 .image-carousel .carousel-caption h4,
 .image-carousel .carousel-caption p {
   font-family: 'gt_walsheim_regular';
-  background-color: #000000;
-  /* FALLBACK FOR IE8 */
   background-color: rgba(0, 0, 0, 0.05);
   display: inline-block;
   padding-left: 10px;
@@ -7310,8 +7311,15 @@ article.article-with-gallery h1 {
   text-align: center;
   margin-top: 20px;
 }
-.contact-us h4 {
+.contact-us h1 {
+  margin-bottom: 30px;
+}
+.contact-us h4,
+.contact-us label {
   font-family: gt_walsheim_regular;
+}
+.contact-us h4.email-title {
+  margin-top: 35px;
 }
 @media (min-width: 768px) {
   .contact-us .left-image {
@@ -7350,6 +7358,9 @@ article.article-with-gallery h1 {
 .news-row .news-thumbnail img {
   margin-left: auto;
   margin-right: auto;
+}
+.news-row a {
+  text-decoration: none;
 }
 .maginfic-popup-gallery div {
   padding: 5px;
