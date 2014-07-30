@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kasparabi\n"
-"POT-Creation-Date: 2014-04-01 18:55+0100\n"
-"PO-Revision-Date: 2014-04-01 18:55+0100\n"
+"POT-Creation-Date: 2014-05-03 17:14+0100\n"
+"PO-Revision-Date: 2014-05-03 17:23+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -65,31 +65,72 @@ msgstr "Siste nyheter"
 msgid "No page was found."
 msgstr "Ingen side funnet"
 
-#: page-contact-us.php:90
+#: page-contact-us.php:22
+#, fuzzy
+msgid "Human verification incorrect."
+msgstr "Verifiser at du er et menneske *"
+
+#: page-contact-us.php:23
+msgid "Please supply all information."
+msgstr "Fyll ut alle feltene."
+
+#: page-contact-us.php:24
+msgid "Email Address Invalid."
+msgstr "E-postadressen er ikke gyldig."
+
+#: page-contact-us.php:25
+msgid "Message was not sent. Try Again."
+msgstr "E-posten ble ikke sendt. Forsøk igjen."
+
+#: page-contact-us.php:26
+msgid "Thanks! Your message has been sent."
+msgstr "Takk! Din beskjed har blitt sendt."
+
+#: page-contact-us.php:35
+msgid "Newsletter: "
+msgstr "Nyhetsbrev: "
+
+#: page-contact-us.php:35
+msgid "Yes"
+msgstr "Ja"
+
+#: page-contact-us.php:35
+msgid "No"
+msgstr "Nei"
+
+#: page-contact-us.php:39
+msgid "Someone sent a message from "
+msgstr "Noe har sendt en mail fra"
+
+#: page-contact-us.php:93
 msgid "Contact us"
 msgstr "Kontakt oss"
 
-#: page-contact-us.php:131
+#: page-contact-us.php:134
 msgid "Send us an email"
 msgstr "Send oss en epost"
 
-#: page-contact-us.php:165
+#: page-contact-us.php:168
 msgid "Name: *"
 msgstr "Navn *"
 
-#: page-contact-us.php:169
+#: page-contact-us.php:172
 msgid "From email: *"
 msgstr "Fra (epost) *"
 
-#: page-contact-us.php:173
+#: page-contact-us.php:176
 msgid "Message: *"
 msgstr "Beskjed *"
 
-#: page-contact-us.php:177
+#: page-contact-us.php:180
 msgid "Human Verification: *"
 msgstr "Verifiser at du er et menneske *"
 
-#: page-contact-us.php:181
+#: page-contact-us.php:184
+msgid "I wish to receive newsletters from Kaspara Bryllup & Interiør"
+msgstr "Jeg ønsker nyhetsbrev fra Kaspara Bryllup & Interiør"
+
+#: page-contact-us.php:188
 msgid "Send email"
 msgstr "Send epost"
 

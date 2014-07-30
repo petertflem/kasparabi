@@ -30,10 +30,6 @@
 }
 
 article.article {
-    ul {
-        list-style-type: circle;
-    }
-
     h1 {
         text-align: left;
         padding-bottom: 5px;
@@ -55,6 +51,10 @@ article.article {
     ul, ol {
         margin-left: 14px;
     }
+		
+		.one_half {
+				padding-left: 10%;
+		}
 
     @media (min-width: @screen-sm-min) { 
         h1 {
@@ -67,6 +67,14 @@ article.article {
             padding-right: 20%;
             padding-left: 10%;
         }
+				
+				.one_half {
+						padding-right: 0%;
+				
+						div, p, ul, ol {
+							padding-right: 0%;
+					}
+				}
 
         .ezcol,
         .ezcol p,
@@ -86,6 +94,14 @@ article.article {
             padding-right: 25%;
             padding-left: 5%;
         }
+				
+				.one_half {
+						padding-right: 0%;
+						
+						div, p, ul, ol {
+							padding-right: 0%;
+					}
+				}
 
         .ezcol,
         .ezcol p,

@@ -6805,6 +6805,7 @@ ul {
   -webkit-margin-end: 0px;
   -webkit-padding-start: 0px;
   font-family: 'gt_walsheim_regular';
+  list-style-type: circle;
 }
 a {
   text-decoration: underline;
@@ -7129,9 +7130,6 @@ footer .container .social-media .instagram {
     width: 66.6666666667%;
   }
 }
-article.article ul {
-  list-style-type: circle;
-}
 article.article h1 {
   text-align: left;
   padding-bottom: 5px;
@@ -7151,6 +7149,9 @@ article.article ul,
 article.article ol {
   margin-left: 14px;
 }
+article.article .one_half {
+  padding-left: 10%;
+}
 @media (min-width: 768px) {
   article.article h1 {
     padding-left: 5%;
@@ -7163,6 +7164,15 @@ article.article ol {
   article.article ol {
     padding-right: 20%;
     padding-left: 10%;
+  }
+  article.article .one_half {
+    padding-right: 0%;
+  }
+  article.article .one_half div,
+  article.article .one_half p,
+  article.article .one_half ul,
+  article.article .one_half ol {
+    padding-right: 0%;
   }
   article.article .ezcol,
   article.article .ezcol p,
@@ -7182,6 +7192,15 @@ article.article ol {
   article.article ol {
     padding-right: 25%;
     padding-left: 5%;
+  }
+  article.article .one_half {
+    padding-right: 0%;
+  }
+  article.article .one_half div,
+  article.article .one_half p,
+  article.article .one_half ul,
+  article.article .one_half ol {
+    padding-right: 0%;
   }
   article.article .ezcol,
   article.article .ezcol p,

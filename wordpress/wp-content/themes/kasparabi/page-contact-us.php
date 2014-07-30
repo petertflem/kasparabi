@@ -32,7 +32,7 @@
     $human = $_POST['message_human'];
     $newsletter = $_POST['newsletter'];
 
-    $message .= "<br /><br />" . __("Newsletter: ", "kasparabi") . ($newsletter ? __("Yes", "kasparabi") : __("No", "kasparabi"));
+    $message .= "\r\n\r\n" . __("Newsletter: ", "kasparabi") . ($newsletter ? __("Yes", "kasparabi") : __("No", "kasparabi")) . '.';
     
     //php mailer variables
     $to = get_option('admin_email');
