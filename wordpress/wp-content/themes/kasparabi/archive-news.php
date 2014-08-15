@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h1><?php _e('News', 'kasparabi'); ?></h1>
+                    <h1 class="news-page-heading"><?php _e('News', 'kasparabi'); ?></h1>
                 </div>
             </div>
                 

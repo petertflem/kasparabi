@@ -7131,7 +7131,7 @@ footer .container .social-media .instagram {
 }
 article.article h1 {
   text-align: left;
-  padding-bottom: 5px;
+  margin-bottom: 30px;
   margin-top: 35px;
 }
 article.article img {
@@ -7154,7 +7154,6 @@ article.article .one_half {
 @media (min-width: 768px) {
   article.article h1 {
     padding-left: 5%;
-    padding-bottom: 30px;
     margin-top: 20px;
   }
   article.article div,
@@ -7210,13 +7209,12 @@ article.article .one_half {
   }
 }
 article.article-with-gallery h1 {
-  padding-bottom: 5px;
   margin-top: 35px;
+  margin-bottom: 30px;
 }
 @media (min-width: 768px) {
   article.article-with-gallery h1 {
     margin-left: 30px;
-    padding-bottom: 30px;
     margin-top: 20px;
   }
   article.article-with-gallery div,
@@ -7256,6 +7254,9 @@ article.article-with-gallery h1 {
 .references h4 {
   text-align: center;
 }
+.references h1 {
+  margin-bottom: 30px;
+}
 .references h4 {
   margin-top: 5px;
   font-size: 14px;
@@ -7273,7 +7274,7 @@ article.article-with-gallery h1 {
   text-transform: uppercase;
 }
 .inspiration h1 {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 .inspiration img {
   margin: 0px auto;
@@ -7379,6 +7380,9 @@ article.article-with-gallery h1 {
 }
 .news-row a {
   text-decoration: none;
+}
+.news-page-heading {
+  margin-bottom: 10px;
 }
 .maginfic-popup-gallery div {
   padding: 5px;
