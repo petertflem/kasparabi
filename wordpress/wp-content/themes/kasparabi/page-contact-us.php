@@ -139,6 +139,8 @@
                             border: 1px solid red;
                             color: red;
                             border-radius: 3px;
+                            margin-bottom: 12px;
+                            margin-top: 12px;
                         }
                      
                         .success{
@@ -146,6 +148,8 @@
                             border: 1px solid green;
                             color: green;
                             border-radius: 3px;
+                            margin-bottom: 12px;
+                            margin-top: 12px;
                         }
 
                         .human-verification {
