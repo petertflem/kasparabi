@@ -32,8 +32,6 @@
     $human = $_POST['message_human'];
     $newsletter = $_POST['newsletter'];
 
-    $message .= "\r\n\r\n" . __("Newsletter: ", "kasparabi") . ($newsletter ? __("Yes", "kasparabi") : __("No", "kasparabi")) . '.';
-    
     //php mailer variables
     $to = get_option('admin_email');
     $subject = __("Someone sent a message from ", "kasparabi") . get_bloginfo('name');
@@ -55,6 +53,8 @@
                 }
                 else //ready to go!
                 {
+                    $message .= "\r\n\r\n" . __("Newsletter: ", "kasparabi") . ($newsletter ? __("Yes", "kasparabi") : __("No", "kasparabi")) . '.';
+
                     $sent = wp_mail($to, $subject, strip_tags($message), $headers);
                     
                     if($sent) 
@@ -86,7 +86,7 @@
 ?>
 <?php get_header(); ?>
         
-    <!-- CONTANT US -->
+        <!-- CONTANT US -->
         <div class="container contact-us">
             <div class="row">
                 <div class="col-xs-12">
