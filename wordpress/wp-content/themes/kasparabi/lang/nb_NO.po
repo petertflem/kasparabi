@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kasparabi\n"
-"POT-Creation-Date: 2014-05-03 17:14+0100\n"
-"PO-Revision-Date: 2014-05-03 17:23+0100\n"
+"POT-Creation-Date: 2014-08-15 17:45+0100\n"
+"PO-Revision-Date: 2014-08-15 17:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -66,7 +66,6 @@ msgid "No page was found."
 msgstr "Ingen side funnet"
 
 #: page-contact-us.php:22
-#, fuzzy
 msgid "Human verification incorrect."
 msgstr "Verifiser at du er et menneske *"
 
@@ -86,21 +85,21 @@ msgstr "E-posten ble ikke sendt. Forsøk igjen."
 msgid "Thanks! Your message has been sent."
 msgstr "Takk! Din beskjed har blitt sendt."
 
-#: page-contact-us.php:35
+#: page-contact-us.php:37
+msgid "Someone sent a message from "
+msgstr "Noe har sendt en mail fra"
+
+#: page-contact-us.php:56
 msgid "Newsletter: "
 msgstr "Nyhetsbrev: "
 
-#: page-contact-us.php:35
+#: page-contact-us.php:56
 msgid "Yes"
 msgstr "Ja"
 
-#: page-contact-us.php:35
+#: page-contact-us.php:56
 msgid "No"
 msgstr "Nei"
-
-#: page-contact-us.php:39
-msgid "Someone sent a message from "
-msgstr "Noe har sendt en mail fra"
 
 #: page-contact-us.php:93
 msgid "Contact us"
@@ -110,27 +109,27 @@ msgstr "Kontakt oss"
 msgid "Send us an email"
 msgstr "Send oss en epost"
 
-#: page-contact-us.php:168
+#: page-contact-us.php:172
 msgid "Name: *"
 msgstr "Navn *"
 
-#: page-contact-us.php:172
+#: page-contact-us.php:176
 msgid "From email: *"
 msgstr "Fra (epost) *"
 
-#: page-contact-us.php:176
+#: page-contact-us.php:180
 msgid "Message: *"
 msgstr "Beskjed *"
 
-#: page-contact-us.php:180
+#: page-contact-us.php:184
 msgid "Human Verification: *"
 msgstr "Verifiser at du er et menneske *"
 
-#: page-contact-us.php:184
+#: page-contact-us.php:188
 msgid "I wish to receive newsletters from Kaspara Bryllup & Interiør"
 msgstr "Jeg ønsker nyhetsbrev fra Kaspara Bryllup & Interiør"
 
-#: page-contact-us.php:188
+#: page-contact-us.php:192
 msgid "Send email"
 msgstr "Send epost"
 
