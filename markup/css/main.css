@@ -7449,26 +7449,30 @@ article.article-with-gallery ol {
 .news-page-heading {
   margin-bottom: 10px;
 }
-.maginfic-popup-gallery div {
+.maginfic-popup-gallery div.gallery-image {
   padding: 5px;
 }
 @media (min-width: 480px) {
-  .maginfic-popup-gallery .gallery-image {
+  .maginfic-popup-gallery .gallery-image,
+  .maginfic-popup-gallery .article-gallery-image {
     height: 198px;
   }
 }
 @media (min-width: 768px) {
-  .maginfic-popup-gallery .gallery-image {
+  .maginfic-popup-gallery .gallery-image,
+  .maginfic-popup-gallery .article-gallery-image {
     height: 70px;
   }
 }
 @media (min-width: 992px) {
-  .maginfic-popup-gallery .gallery-image {
+  .maginfic-popup-gallery .gallery-image,
+  .maginfic-popup-gallery .article-gallery-image {
     height: 95px;
   }
 }
 @media (min-width: 1200px) {
-  .maginfic-popup-gallery .gallery-image {
+  .maginfic-popup-gallery .gallery-image,
+  .maginfic-popup-gallery .article-gallery-image {
     height: 117px;
   }
 }

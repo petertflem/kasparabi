@@ -217,8 +217,9 @@
             $img = wp_get_attachment_image_src( $id, $size );
 
             $output .= $open . '<div class="col-xs-4 gallery-image"><a href="' . esc_url( wp_get_attachment_url( $id ) ) . '" title="' . esc_attr( $title ) . '">';
-            $output .= '<img class="img-responsive" src="' . esc_url( $img[0] ) . '" alt="' . esc_attr( $title ) . '" title="' . esc_attr( $title ) . '" />';
-            $output .= '</a></div>' . $close;
+            //$output .= '<img class="img-responsive" src="' . esc_url( $img[0] ) . '" alt="' . esc_attr( $title ) . '" title="' . esc_attr( $title ) . '" />';
+            $output .= '<div class="article-gallery-image" style="background: url(' . esc_url( $img[0] ) . ') no-repeat; background-position: center center; background-size: cover;" title="' . esc_attr( $title ) . '"></div>';
+						$output .= '</a></div>' . $close;
 
         endforeach;
 
