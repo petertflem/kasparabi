@@ -35,7 +35,7 @@
     //php mailer variables
     $to = get_option('admin_email');
     $subject = __("Someone sent a message from ", "kasparabi") . get_bloginfo('name');
-    $headers = "Reply-To: " . $name . "<" . $email . ">" . "\r\n";
+    $headers = "Reply-To: <" . $email . ">" . "\r\n";
 
     if(!$human == 0){
         if($human != 2) 
@@ -53,7 +53,7 @@
                 }
                 else //ready to go!
                 {
-                    $message .= "\r\n\r\n" . __("Newsletter: ", "kasparabi") . ($newsletter ? __("Yes", "kasparabi") : __("No", "kasparabi")) . '.';
+                    $message .= "\r\n\r\n" . __("Newsletter: ", "kasparabi") . ($newsletter ? __("Yes", "kasparabi") : __("No", "kasparabi")) . ".\r\n\r\nFra: " . $name;
 
                     $sent = wp_mail($to, $subject, strip_tags($message), $headers);
                     
@@ -93,42 +93,7 @@
                     <h1><?php _e('Contact us', 'kasparabi'); ?></h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6 left-column">
-                    <div class="left-image">
-                        <img src="<?php echo $nb_image; ?>" alt="Bildet av Nathalie Bergsaune" class="img-responsive" />
-                        <div>
-                            <h4><?php echo $nb_name; ?></h4>
-                            <p class="contact-us-persona">
-                                <?php echo $nb_description; ?>
-                            </p>
-                            <p>
-                                <?php echo $nb_phonenumber; ?>
-                            </p>
-                            <p>
-                                <?php echo $nb_email; ?>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 right-column">
-                    <div class="right-image">
-                       <img src="<?php echo $hm_image; ?>" alt="Bildet av Heidi Madelen" class="img-responsive" />
-                        <div>
-                            <h4><?php echo $hm_name; ?></h4>
-                            <p class="contact-us-persona">
-                                <?php echo $hm_description; ?>
-                            </p>
-                            <p>
-                                <?php echo $hm_phonenumber; ?>
-                            </p>
-                            <p>
-                                <?php echo $hm_email; ?>
-                            </p>
-                        </div>
-                    </div>   
-                </div>
-            </div>
+            
             <div class="row">
                 <div class="col-xs-12">
                     <h4 class="email-title"><?php _e('Send us an email', 'kasparabi'); ?></h4>
@@ -205,6 +170,42 @@
                         <button type="submit" class="btn btn-default">Send epost</button>
                     </form-->
 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 left-column">
+                    <div class="left-image">
+                        <img src="<?php echo $nb_image; ?>" alt="Bildet av Nathalie Bergsaune" class="img-responsive" />
+                        <div>
+                            <h4><?php echo $nb_name; ?></h4>
+                            <p class="contact-us-persona">
+                                <?php echo $nb_description; ?>
+                            </p>
+                            <p>
+                                <?php echo $nb_phonenumber; ?>
+                            </p>
+                            <p>
+                                <?php echo $nb_email; ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 right-column">
+                    <div class="right-image">
+                       <img src="<?php echo $hm_image; ?>" alt="Bildet av Heidi Madelen" class="img-responsive" />
+                        <div>
+                            <h4><?php echo $hm_name; ?></h4>
+                            <p class="contact-us-persona">
+                                <?php echo $hm_description; ?>
+                            </p>
+                            <p>
+                                <?php echo $hm_phonenumber; ?>
+                            </p>
+                            <p>
+                                <?php echo $hm_email; ?>
+                            </p>
+                        </div>
+                    </div>   
                 </div>
             </div>
         </div>
