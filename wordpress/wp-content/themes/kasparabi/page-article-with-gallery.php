@@ -17,24 +17,34 @@
 
         <div class="container">
             <div class="row">
-                
+                <div class="col-xs-12">
+                    <div class="visible-xs text-center sub-menu-toggle">
+                        <a data-toggle="collapse" data-target="#sub-menu">Undermeny</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <!-- LEFT MENU -->
                 <?php if ($show_menu) : ?>
-                    
-                    <div class="col-sm-2 left-menu">
-                        <nav>
-                            <h4><?php echo $menu_title->name ?></h4>
-                            <?php wp_nav_menu( array( 'menu' => $menu_slug ) ); ?>
+
+                    <div class="col-sm-12 sub-menu">
+                        <nav class="sub-menu-wrapper">
+                            <?php wp_nav_menu(array(
+                                'menu' => $menu_slug, 
+                                'menu_class' => 'nav nav-pills nav-justified collapse sub-menu',
+                                'menu_id' => 'sub-menu')); ?>
                         </nav>
                     </div>
 
                 <?php endif; ?>
                 <!-- END LEFT MENU -->
-                
+            </div>
+           
+            <div class="row">
                 <!-- ARTICLE -->
                 <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
                     
-                    <div class="col-<?php echo !$show_menu ? 'xs-8' : 'sm-6'; ?>">
+                    <div class="col-xs-8">
                         <article class="article-with-gallery">
                             <h1><?php the_title(); ?></h1>
                             <?php the_content(); ?>

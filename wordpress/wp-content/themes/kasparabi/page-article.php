@@ -8,47 +8,52 @@
         <?php 
             $meta_show_menu = get_post_meta( $post->ID, 'left_menu_checkbox', true ); 
             $show_menu = !empty($meta_show_menu);
-            $menu_slug = get_post_meta( $post->ID, 'menu_select', true );
-
-            if (!empty($menu_slug)) :
-                $menu_title = wp_get_nav_menu_object($menu_slug);
-            endif;
         ?>
 
-        <div class="container">
-            <div class="row">
-                
-                <!-- LEFT MENU -->
-                <?php if ($show_menu) : ?>
-                    
-                    <div class="col-sm-2 left-menu">
-                        <nav>
-                            <h4><?php echo $menu_title->name ?></h4>
-                            <?php wp_nav_menu( array( 'menu' => $menu_slug ) ); ?>
-                        </nav>
-                    </div>
+  <div class="container">
 
-                <?php endif; ?>
-                <!-- END LEFT MENU -->
-                
-                <!-- ARTICLE -->
-                <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
-                    
-                    <div class="col-<?php echo !$show_menu ? 'xs-12' : 'sm-10'; ?>">
-                        <article class="article">
-                            <h1><?php the_title(); ?></h1>
-                            <?php the_content(); ?>
-                        </article>
-                    </div>
-                
-                <?php endwhile; else : ?>
+    <div class="row">
+				<div class="col-xs-12">
+						<div class="visible-xs text-center sub-menu-toggle">
+								<a data-toggle="collapse" data-target="#sub-menu">Undermeny</a>
+						</div>
+				</div>
+		</div>
+		<div class="row">
+				<!-- LEFT MENU -->
+				<?php if ($show_menu) : ?>
 
-                    <p><?php _e('No page was found.', 'kasparabi'); ?></p>
-                
-                <?php endif; ?>
-                <!-- END ARTICLE -->
+						<div class="col-sm-12 sub-menu">
+								<nav class="sub-menu-wrapper">
+										<?php wp_nav_menu(array(
+												'menu' => $menu_slug, 
+												'menu_class' => 'nav nav-pills nav-justified collapse sub-menu',
+												'menu_id' => 'sub-menu')); ?>
+								</nav>
+						</div>
 
-            </div>
-        </div>        
+				<?php endif; ?>
+				<!-- END LEFT MENU -->
+		</div>
+
+      <!-- ARTICLE -->
+      <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
+
+        <div class="col-xs-12">
+          <article class="article">
+            <h1><?php the_title(); ?></h1>
+            <?php the_content(); ?>
+          </article>
+        </div>
+
+      <?php endwhile; else : ?>
+
+        <p><?php _e('No page was found.', 'kasparabi'); ?></p>
+
+      <?php endif; ?>
+      <!-- END ARTICLE -->
+
+    </div>
+  </div>        
 
 <?php get_footer(); ?>

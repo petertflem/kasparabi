@@ -1,21 +1,86 @@
-.left-menu {
-    h4 {
-        font-family: 'gt_walsheim_bold';
-        text-transform: uppercase;
-        margin-top: 20px;
-    }
-
+.sub-menu {
     ul {
-        list-style: none;
-
-
         li {
-            margin-left: 10px;
-
+            white-space:nowrap;
+            
             a {
                 font-family: 'gt_walsheim_regular';
+                padding: 5px 5px;
             }
         }
+    }
+    
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+
+.sub-menu-toggle {
+    margin-top: -40px;
+    
+    a:hover {
+      background-color: rgb(238, 238, 238);
+    }
+
+    a {
+      border-radius: 4px;
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+}
+
+.sub-menu, .sub-menu-toggle {
+    a {
+        font-size: 14px;
+        font-family: 'gt_walsheim_regular';
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+.sub-menu-wrapper {
+    width: 100%;
+    margin: 0px auto;
+}
+
+@media (min-width: @screen-sm-min) {
+    .sub-menu-wrapper {
+        width: 80%;
+        margin: 0px auto;
+        
+        .sub-menu {
+            margin-top: -40px;
+        }
+    }
+
+    /* This might mess things up if I use .collapse more than one place.
+    It is a very simple fix which saves my lots of work. */
+    .collapse {
+      display: block;
+    }
+
+    /* This is because if you open, then close the menu in "mobile",
+       bootstrap sets height: 0px on the ul. When you resize the browser
+       to larger than sm, the ul drops down below the .header-seperator
+       element. Setting the height to auto fixes this, but since
+       bootstrap sets the height inline, I have to use !important
+       to override it. */
+    .sub-menu {
+      height: auto !important;
+    }
+}
+
+	@media (min-width: @screen-md-min) {
+		.sub-menu-wrapper {
+			width: 60%;
+		}
+	}
+
+@media (min-width: @screen-xs-min) {
+    .sub-menu {
+        margin-top: 0px;
     }
 }
 

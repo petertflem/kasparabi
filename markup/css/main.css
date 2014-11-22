@@ -6879,10 +6879,10 @@ header .header-seperator {
   height: 5px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
 }
 header .main-menu-wrapper {
-  width: auto;
+  width: 100%;
   margin: 0px auto;
 }
 @media (min-width: 768px) {
@@ -6896,15 +6896,21 @@ header .main-menu-wrapper {
 		   bootstrap sets the height inline, I have to use !important
 		   to override it. */
   }
-  header .main-menu-wrapper {
-    width: 720px;
-    margin: 0px auto;
-  }
   header .collapse {
     display: block;
   }
   header .main-menu {
     height: auto !important;
+  }
+}
+@media (min-width: 992px) {
+  header .main-menu-wrapper {
+    width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  header .main-menu-wrapper {
+    width: 70%;
   }
 }
 footer {
@@ -7107,19 +7113,74 @@ footer .container .social-media .instagram {
   margin-left: auto;
   margin-right: auto;
 }
-.left-menu h4 {
-  font-family: 'gt_walsheim_bold';
-  text-transform: uppercase;
-  margin-top: 20px;
+.sub-menu {
+  margin-top: -40px;
+  margin-bottom: 20px;
 }
-.left-menu ul {
-  list-style: none;
+.sub-menu ul li {
+  white-space: nowrap;
 }
-.left-menu ul li {
-  margin-left: 10px;
-}
-.left-menu ul li a {
+.sub-menu ul li a {
   font-family: 'gt_walsheim_regular';
+  padding: 5px 5px;
+}
+.sub-menu-toggle {
+  margin-top: -40px;
+}
+.sub-menu-toggle a:hover {
+  background-color: #eeeeee;
+}
+.sub-menu-toggle a {
+  border-radius: 4px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.sub-menu a,
+.sub-menu-toggle a {
+  font-size: 14px;
+  font-family: 'gt_walsheim_regular';
+  color: #000;
+  text-decoration: none;
+}
+.sub-menu-wrapper {
+  width: 100%;
+  margin: 0px auto;
+}
+@media (min-width: 768px) {
+  .sub-menu-wrapper {
+    width: 80%;
+    margin: 0px auto;
+  }
+  .sub-menu-wrapper .sub-menu {
+    margin-top: -40px;
+  }
+  /* This might mess things up if I use .collapse more than one place.
+    It is a very simple fix which saves my lots of work. */
+  .collapse {
+    display: block;
+  }
+  /* This is because if you open, then close the menu in "mobile",
+       bootstrap sets height: 0px on the ul. When you resize the browser
+       to larger than sm, the ul drops down below the .header-seperator
+       element. Setting the height to auto fixes this, but since
+       bootstrap sets the height inline, I have to use !important
+       to override it. */
+  .sub-menu {
+    height: auto !important;
+  }
+}
+@media (min-width: 992px) {
+  .sub-menu-wrapper {
+    width: 60%;
+  }
+}
+@media (min-width: 480px) {
+  .sub-menu {
+    margin-top: 0px;
+  }
 }
 .col-xs-8 {
   width: 100%;

@@ -46,20 +46,15 @@ header {
 		height: 5px;
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: 40px;
+		margin-bottom: 45px;
 	}
 
 	.main-menu-wrapper {
-		width: auto;
+		width: 100%;
 		margin: 0px auto;
 	}
 
-	@media (min-width: @screen-sm-min) {
-		.main-menu-wrapper {
-			width: 720px;
-			margin: 0px auto;
-		}
-		
+	@media (min-width: @screen-sm-min) {		
 		/* This might mess things up if I use .collapse more than one place.
 		It is a very simple fix which saves my lots of work. */
 		.collapse {
@@ -74,6 +69,18 @@ header {
 		   to override it. */
 		.main-menu {
 			height: auto !important;
+		}
+	}
+  
+	@media (min-width: @screen-md-min) {
+		.main-menu-wrapper {
+			width: 80%;
+		}
+	}
+	
+	@media (min-width: @screen-lg-min) {
+		.main-menu-wrapper {
+			width: 70%;
 		}
 	}
 }
