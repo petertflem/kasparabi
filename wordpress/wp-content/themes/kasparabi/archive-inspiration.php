@@ -57,15 +57,22 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
-                <?php 
-                    previous_posts_link(__('&larr; newer', 'kasparabi'));
-
-                    if ($wp_query->max_num_pages > $paged)
-                        next_posts_link(__('older &rarr;', 'kasparabi'));
-                ?>
+                <div class="col-xs-12">
+                    <div class="archive-navigation">
+                        <div class="newer-link">
+                        <?php 
+                            previous_posts_link(__('&larr; newer', 'kasparabi'));
+                        ?>
+                        </div>
+                        <div class="older-link">
+                        <?php
+                            if ($wp_query->max_num_pages > $paged)
+                                next_posts_link(__('older &rarr;', 'kasparabi'));
+                        ?>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
     </div>
     <!-- END INSPIRATION -->     
 <?php get_footer(); ?>

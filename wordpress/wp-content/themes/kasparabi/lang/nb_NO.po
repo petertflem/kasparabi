@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kasparabi\n"
 "POT-Creation-Date: 2014-10-19 04:38+0100\n"
-"PO-Revision-Date: 2014-10-19 04:38+0100\n"
+"PO-Revision-Date: 2014-11-22 15:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -26,11 +26,11 @@ msgstr "Ingen inspirasjoner funnet"
 
 #: archive-inspiration.php:62 archive-news.php:50 archive-reference.php:57
 msgid "&larr; newer"
-msgstr "&larr; Nyere"
+msgstr "&larr; Tilbake"
 
 #: archive-inspiration.php:65 archive-news.php:53 archive-reference.php:63
 msgid "older &rarr;"
-msgstr "Eldre &rarr;"
+msgstr "Flere &rarr;"
 
 #: archive-news.php:7
 msgid "News"
