@@ -43,34 +43,22 @@ function kasparabi_render_contact_us_information_meta_box($post) {
 }
 
 function render_contact_us_information_form($post) {
-    $nathalie_bergsaune_image = get_post_meta($post->ID, 'nathalie_bergsaune_image', true);
-    $nathalie_bergsaune_description = get_post_meta($post->ID, 'nathalie_bergsaune_description', true);
     $nathalie_bergsaune_name = get_post_meta($post->ID, 'nathalie_bergsaune_name', true);
     $nathalie_bergsaune_phonenumber = get_post_meta($post->ID, 'nathalie_bergsaune_phonenumber', true);
     $nathalie_bergsaune_email = get_post_meta($post->ID, 'nathalie_bergsaune_email', true);    
     
-    $heidi_madelen_image = get_post_meta($post->ID, $type . 'heidi_madelen_image', true);
-    $heidi_madelen_description = get_post_meta($post->ID, $type . 'heidi_madelen_description', true);
     $heidi_madelen_name = get_post_meta($post->ID, $type . 'heidi_madelen_name', true);
     $heidi_madelen_phonenumber = get_post_meta($post->ID, $type . 'heidi_madelen_phonenumber', true);
     $heidi_madelen_email = get_post_meta($post->ID, $type . 'heidi_madelen_email', true);
 
-
+    $street_name = get_post_meta($post->ID, 'street_name', true);
+    $zip_code = get_post_meta($post->ID, 'zip_code', true);
+    $area = get_post_meta($post->ID, 'area', true);
+    $kasparabi_email = get_post_meta($post->ID, 'kasparabi_email', true);
+    
     ?>
-        <div style="float: left;">
+        <div>
             <h4>Nathalie Bergsaune</h4>
-            <p>
-                <label for="nathalie-bergsaune-image"><b><?php _e('Bilde:', 'kasparabi'); ?></b></label>
-                <br />
-                <img src="<?php echo $nathalie_bergsaune_image; ?>" alt="nathalie bergsaune image" class="contact-us-image-thumbnail" />
-                <br />
-                <input type="button" class="button contact-us-meta-image-button" value="<?php _e( 'Choose or upload an Image', 'kasparabi' )?>" />
-                <input type="hidden" name="nathalie-bergsaune-image" class="contact-us-image" value="<?php echo $nathalie_bergsaune_image; ?>" />
-            </p>
-            <p>
-                <b>Litt informasjon:</b> <br />
-                <textarea rows="5" cols="50" name="nathalie-bergsaune-description"><?php echo $nathalie_bergsaune_description; ?></textarea>
-            </p>
             <p>
                 <p class='description'><?php _e('Your name', 'kasparabi'); ?></p>
                 <input type="text" name="nathalie-bergsaune-name" class="regular-text" value="<?php echo $nathalie_bergsaune_name; ?>" />
@@ -84,20 +72,8 @@ function render_contact_us_information_form($post) {
                 <input type="text" name="nathalie-bergsaune-email" class="regular-text" value="<?php echo $nathalie_bergsaune_email; ?>" />
             </p>
         </div>
-        <div style="float: left;">
+        <div>
             <h4>Heidi Madelen</h4>
-            <p>
-                <label for="heidi-madelen-image"><b><?php _e('Bilde:', 'kasparabi'); ?></b></label>
-                <br />
-                <img src="<?php echo $heidi_madelen_image; ?>" alt="heidi madelen image" class="contact-us-image-thumbnail" />
-                <br />
-                <input type="button" class="button contact-us-meta-image-button" value="<?php _e( 'Choose or upload an Image', 'kasparabi' )?>" />
-                <input type="hidden" name="heidi-madelen-image" class="contact-us-image" value="<?php echo $heidi_madelen_image; ?>" />
-            </p>
-            <p>
-                <b>Litt informasjon:</b> <br />
-                <textarea rows="5" cols="50" name="heidi-madelen-description"><?php echo $heidi_madelen_description; ?></textarea>
-            </p>
             <p>
                 <p class='description'><?php _e('Your name', 'kasparabi'); ?></p>
                 <input type="text" name="heidi-madelen-name" class="regular-text" value="<?php echo $heidi_madelen_name; ?>" />
@@ -111,40 +87,27 @@ function render_contact_us_information_form($post) {
                 <input type="text" name="heidi-madelen-email" class="regular-text" value="<?php echo $heidi_madelen_email; ?>" />
             </p>
         </div>
-        <span style="clear: left; display: block;"></span>
+        <div>
+            <h4>Kaspara Bryllup & Interiør</h4>
+            <p>
+                <p class='description'><?php _e('Street name', 'kasparabi'); ?></p>
+                <input type="text" name="street-name" class="regular-text" value="<?php echo $street_name; ?>" />
+            </p>
+            <p>
+                <p class='description'><?php _e('Zip code', 'kasparabi'); ?></p>
+                <input type="text" name="zip-code" class="regular-text" value="<?php echo $zip_code; ?>" />
+            </p>
+            <p>
+                <p class='description'><?php _e('Area', 'kasparabi'); ?></p>
+                <input type="text" name="area" class="regular-text" value="<?php echo $area; ?>" />
+            </p>
+            <p>
+                <p class='description'><?php _e('Email', 'kasparabi'); ?></p>
+                <input type="text" name="kasparabi-email" class="regular-text" value="<?php echo $kasparabi_email; ?>" />
+            </p>
+        </div>
     <?php
-/*
-                <input id="<?php echo 'kasparabi_frontpage_header'; ?>"
-                class='large-text' 
-                name='kasparabi_settings[<?php echo 'kasparabi_frontpage_header'; ?>]' 
-                type='text' 
-                value='<?php echo $options['kasparabi_frontpage_header'] ?>'
-            />
-            <p class='description'><?php _e('The heading next to the image carousel.', 'kasparabi'); ?></p>*/
 }
-
-/*--------------------------------------------------------------------------*
- * Loads the image managment javascript
-/*--------------------------------------------------------------------------*/
-function kasparabi_contact_us_image_picker_enqueue() {
-    global $typenow;
-    
-    if ( $typenow != 'page' )
-        return;
-
-    wp_enqueue_media();
-
-    wp_register_script( 'contact-us-meta-box-image', plugin_dir_url(__FILE__) . '/contact-us-meta-box-image.js', array('jquery') );
-    wp_localize_script( 'contact-us-meta-box-image', 'meta_image', 
-        array(
-            'title' => __('Choose or upload an image', 'kasparabi'),
-            'button' => __('Use this image', 'kasparabi')
-        )
-    );
-
-    wp_enqueue_script('contact-us-meta-box-image');
-}
-add_action( 'admin_enqueue_scripts', 'kasparabi_contact_us_image_picker_enqueue' );
 
 /*--------------------------------------------------------------------------*
  * Save functions
@@ -169,35 +132,36 @@ function kasparibi_contact_us_information_meta_save( $post_id, $post ) {
         return $post_id;
 
     /* Save Nathalie Bergsaune */
-    contact_us_save_value( 'nathalie-bergsaune-image', 'nathalie_bergsaune_image', $post );
-    contact_us_save_value( 'nathalie-bergsaune-description', 'nathalie_bergsaune_description', $post );
     contact_us_save_value( 'nathalie-bergsaune-name', 'nathalie_bergsaune_name', $post );
     contact_us_save_value( 'nathalie-bergsaune-phone-number', 'nathalie_bergsaune_phonenumber', $post );
     contact_us_save_value( 'nathalie-bergsaune-email', 'nathalie_bergsaune_email', $post );
 
     /* Save Heidi Madelen */
-    contact_us_save_value( 'heidi-madelen-image', 'heidi_madelen_image', $post );
-    contact_us_save_value( 'heidi-madelen-description', 'heidi_madelen_description', $post );
     contact_us_save_value( 'heidi-madelen-name', 'heidi_madelen_name', $post );
     contact_us_save_value( 'heidi-madelen-phone-number', 'heidi_madelen_phonenumber', $post );
     contact_us_save_value( 'heidi-madelen-email', 'heidi_madelen_email', $post );
 
+    /* Kasparabi Information */
+    contact_us_save_value( 'street-name', 'street_name', $post );
+    contact_us_save_value( 'zip-code', 'zip_code', $post );
+    contact_us_save_value( 'area', 'area', $post );
+    contact_us_save_value( 'kasparabi-email', 'kasparabi_email', $post );
 }
 add_action( 'save_post', 'kasparibi_contact_us_information_meta_save', 1, 2 );
 
 function contact_us_save_value( $name_of_input, $meta_key, $post ) {
  	$new_meta_value = ( isset( $_POST[$name_of_input] ) ? sanitize_text_field( $_POST[$name_of_input] ) : '' );
-    $meta_value = get_post_meta( $post->ID, $meta_key, true);
+  $meta_value = get_post_meta( $post->ID, $meta_key, true);
 
-	/* If a new meta value was added and there was no previous value, add it. */
-    if ( $new_meta_value && '' == $meta_value )
-        add_post_meta( $post->ID, $meta_key, $new_meta_value, true);
+  /* If a new meta value was added and there was no previous value, add it. */
+  if ( $new_meta_value && '' == $meta_value )
+      add_post_meta( $post->ID, $meta_key, $new_meta_value, true);
 
-    /* If the new meta value does not match the old value, update it. */
-    elseif ( $new_meta_value && $new_meta_value != $meta_value )
-        update_post_meta( $post->ID, $meta_key, $new_meta_value );
+  /* If the new meta value does not match the old value, update it. */
+  elseif ( $new_meta_value && $new_meta_value != $meta_value )
+      update_post_meta( $post->ID, $meta_key, $new_meta_value );
 
-    /* If there is no new meta value but an old value exists, delete it. */
-    elseif ( '' == $new_meta_value && $meta_value )
-        delete_post_meta( $post->ID, $meta_key, $meta_value );
+  /* If there is no new meta value but an old value exists, delete it. */
+  elseif ( '' == $new_meta_value && $meta_value )
+      delete_post_meta( $post->ID, $meta_key, $meta_value );
 }

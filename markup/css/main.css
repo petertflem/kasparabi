@@ -7103,6 +7103,7 @@ footer .container .social-media .instagram {
   top: 0px;
   bottom: inherit;
   white-space: pre-line;
+  text-shadow: none;
 }
 .image-carousel .carousel-caption h4,
 .image-carousel .carousel-caption p {
@@ -7114,6 +7115,11 @@ footer .container .social-media .instagram {
   padding-top: 4px;
   padding-bottom: 4px;
   width: 100%;
+}
+.image-carousel .carousel-caption h4 a,
+.image-carousel .carousel-caption p a {
+  color: white;
+  text-decoration: none;
 }
 .image-carousel .carousel-caption h4 {
   margin: 0px;

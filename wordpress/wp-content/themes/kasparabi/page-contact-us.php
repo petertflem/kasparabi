@@ -70,18 +70,18 @@
     /* Get conact information and their pictures */
     $meta = get_post_meta($post->ID);
 
-    $nb_image = isset($meta['nathalie_bergsaune_image']) ? esc_attr( $meta['nathalie_bergsaune_image'][0] ) : '';
-    $nb_description = isset($meta['nathalie_bergsaune_description']) ? esc_attr( $meta['nathalie_bergsaune_description'][0] ) : '';
     $nb_name = isset($meta['nathalie_bergsaune_name']) ? esc_attr( $meta['nathalie_bergsaune_name'][0] ) : '';
     $nb_phonenumber = isset($meta['nathalie_bergsaune_phonenumber']) ? esc_attr( $meta['nathalie_bergsaune_phonenumber'][0] ) : '';
     $nb_email = isset($meta['nathalie_bergsaune_email']) ? esc_attr( $meta['nathalie_bergsaune_email'][0] ) : '';
 
-  
-    $hm_image = isset($meta['heidi_madelen_image']) ? esc_attr( $meta['heidi_madelen_image'][0] ) : '';
-    $hm_description = isset($meta['heidi_madelen_description']) ? esc_attr( $meta['heidi_madelen_description'][0] ) : '';
     $hm_name = isset($meta['heidi_madelen_name']) ? esc_attr( $meta['heidi_madelen_name'][0] ) : '';
     $hm_phonenumber = isset($meta['heidi_madelen_phonenumber']) ? esc_attr( $meta['heidi_madelen_phonenumber'][0] ) : '';
     $hm_email = isset($meta['heidi_madelen_email']) ? esc_attr( $meta['heidi_madelen_email'][0] ) : '';
+
+    $street_name  = isset($meta['street_name']) ? esc_attr( $meta['street_name'][0] ) : '';
+    $zip_code  = isset($meta['zip_code']) ? esc_attr( $meta['zip_code'][0] ) : '';
+    $area  = isset($meta['area']) ? esc_attr( $meta['area'][0] ) : '';
+    $kasparabi_email  = isset($meta['kasparabi_email']) ? esc_attr( $meta['kasparabi_email'][0] ) : '';
 
 ?>
 <?php get_header(); ?>
@@ -92,6 +92,29 @@
                 <div class="col-xs-12">
                     <h1><?php _e('Contact us', 'kasparabi'); ?></h1>
                 </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-sm-4">
+                <?php echo $street_name; ?>
+                <br />
+                <?php echo $zip_code; ?> <?php echo $area; ?>
+                <br />
+                <br />
+                <?php echo $kasparabi_email; ?>
+              </div>
+              <div class="col-sm-4">
+                <?php echo $nb_name ?>
+                <br />
+                <?php echo $nb_phonenumber ?>
+                <?php echo $nb_email ?>
+              </div>
+              <div class="col-sm-4">
+                <?php echo $hm_name ?>
+                <br />
+                <?php echo $hm_phonenumber ?>
+                <?php echo $hm_email ?>
+              </div>
             </div>
             
             <div class="row">
@@ -170,42 +193,6 @@
                         <button type="submit" class="btn btn-default">Send epost</button>
                     </form-->
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 left-column">
-                    <div class="left-image">
-                        <img src="<?php echo $nb_image; ?>" alt="Bildet av Nathalie Bergsaune" class="img-responsive" />
-                        <div>
-                            <h4><?php echo $nb_name; ?></h4>
-                            <p class="contact-us-persona">
-                                <?php echo $nb_description; ?>
-                            </p>
-                            <p>
-                                <?php echo $nb_phonenumber; ?>
-                            </p>
-                            <p>
-                                <?php echo $nb_email; ?>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 right-column">
-                    <div class="right-image">
-                       <img src="<?php echo $hm_image; ?>" alt="Bildet av Heidi Madelen" class="img-responsive" />
-                        <div>
-                            <h4><?php echo $hm_name; ?></h4>
-                            <p class="contact-us-persona">
-                                <?php echo $hm_description; ?>
-                            </p>
-                            <p>
-                                <?php echo $hm_phonenumber; ?>
-                            </p>
-                            <p>
-                                <?php echo $hm_email; ?>
-                            </p>
-                        </div>
-                    </div>   
                 </div>
             </div>
         </div>
