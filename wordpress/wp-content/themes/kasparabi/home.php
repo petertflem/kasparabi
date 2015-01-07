@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('header.php'); ?>
 
         <!-- IMAGE CAROUSEL -->
         <div class="container">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="row">
-						<div class="col-sm-12">
+						          <div class="col-sm-12">
                             <?php 
                                 wp_nav_menu(array(
                                     'theme_location' => 'frontpage-news',

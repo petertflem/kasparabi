@@ -16,12 +16,12 @@
                             ?>
                             <a href="<?php echo $facebook_url; ?>" target="_blank">
                                 <div class="facebook social-media-logo">
-                                    <img src="<?php bloginfo('template_directory');?>/images/facebook.png" alt="kaspara bryllup & interiør facebook" /> 
+                                    <img src="<?php bloginfo('template_directory');?>/assets/images/facebook.png" alt="kaspara bryllup & interiør facebook" /> 
                                 </div>
                             </a>
                             <a href="<?php echo $instagram_url; ?>" target="_blank">
                                 <div class="instagram social-media-logo">
-                                    <img src="<?php bloginfo('template_directory');?>/images/instagram.png" alt="kaspara bryllup & interiør instagram" />
+                                    <img src="<?php bloginfo('template_directory');?>/assets/images/instagram.png" alt="kaspara bryllup & interiør instagram" />
                                 </div>
                             </a>
                         </div>
