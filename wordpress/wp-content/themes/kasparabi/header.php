@@ -67,7 +67,7 @@
                             <nav class="main-menu-wrapper">
                                 <?php wp_nav_menu(array(
                                     'theme_location' => 'main-navigation',
-                                    'menu_class' => 'nav nav-pills nav-justified collapse main-menu',
+                                    'menu_class' => 'nav nav-pills collapse main-menu',
                                     'menu_id' => 'main-menu'
                                 )); ?>
                             </nav>

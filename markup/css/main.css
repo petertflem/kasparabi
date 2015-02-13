@@ -6768,8 +6768,8 @@ img.mfp-img {
 }
 @font-face {
   font-family: 'gt_walsheim_regular';
-  src: url('../assets/fonts/gt-walsheim-web.eot');
-  src: url('../assets/fonts/gt-walsheim-web.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/gt-walsheim-web.woff') format('woff'), url('../assets/fonts/gt-walsheim-web.ttf') format('truetype'), url('../assets/fonts/gt-walsheim-web.svg#gt_walsheim_regular') format('svg');
+  src: url('../fonts/gt-walsheim-web.eot');
+  src: url('../fonts/gt-walsheim-web.eot?#iefix') format('embedded-opentype'), url('../fonts/gt-walsheim-web.woff') format('woff'), url('../fonts/gt-walsheim-web.ttf') format('truetype'), url('../fonts/gt-walsheim-web.svg#gt_walsheim_regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6883,43 +6883,54 @@ header .main-menu li {
   white-space: nowrap;
 }
 header .header-seperator {
-  background: url('assets/images/kaspara-strek.png') no-repeat;
+  background: url('../images/kaspara-strek.png') no-repeat;
   width: 646px;
   height: 5px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 45px;
 }
-header .main-menu-wrapper {
-  width: 100%;
-  margin: 0px auto;
+header .main-menu-wrapper li {
+  float: none;
+  text-align: center;
 }
 @media (min-width: 768px) {
   header {
     /* This might mess things up if I use .collapse more than one place.
-		It is a very simple fix which saves my lots of work. */
+      It is a very simple fix which saves my lots of work. */
     /* This is because if you open, then close the menu in "mobile",
-		   bootstrap sets height: 0px on the ul. When you resize the browser
-		   to larger than sm, the ul drops down below the .header-seperator
-		   element. Setting the height to auto fixes this, but since
-		   bootstrap sets the height inline, I have to use !important
-		   to override it. */
+         bootstrap sets height: 0px on the ul. When you resize the browser
+         to larger than sm, the ul drops down below the .header-seperator
+         element. Setting the height to auto fixes this, but since
+         bootstrap sets the height inline, I have to use !important
+         to override it. */
+  }
+  header .main-menu-wrapper {
+    float: right;
+    position: relative;
+    left: -50%;
+    text-align: left;
+  }
+  header .main-menu-wrapper ul {
+    list-style: none;
+    position: relative;
+    left: 50%;
+    min-width: 793px;
+  }
+  header .main-menu-wrapper li {
+    float: left;
+    position: relative;
+  }
+  header .main-menu-wrapper a {
+    float: left;
+    text-align: center;
+    white-space: nowrap;
   }
   header .collapse {
     display: block;
   }
   header .main-menu {
     height: auto !important;
-  }
-}
-@media (min-width: 992px) {
-  header .main-menu-wrapper {
-    width: 80%;
-  }
-}
-@media (min-width: 1200px) {
-  header .main-menu-wrapper {
-    width: 70%;
   }
 }
 footer {
@@ -7129,7 +7140,6 @@ footer .container .social-media .instagram {
   margin-right: auto;
 }
 .sub-menu {
-  margin-top: -40px;
   margin-bottom: 20px;
 }
 .sub-menu ul li {
@@ -7160,17 +7170,33 @@ footer .container .social-media .instagram {
   color: #000;
   text-decoration: none;
 }
-.sub-menu-wrapper {
-  width: 100%;
-  margin: 0px auto;
+.sub-menu-wrapper li {
+  float: none;
+  text-align: center;
 }
 @media (min-width: 768px) {
-  .sub-menu-wrapper {
-    width: 80%;
-    margin: 0px auto;
-  }
   .sub-menu-wrapper .sub-menu {
     margin-top: -40px;
+  }
+  .sub-menu-wrapper {
+    float: right;
+    position: relative;
+    left: -50%;
+    text-align: left;
+  }
+  .sub-menu-wrapper ul {
+    list-style: none;
+    position: relative;
+    left: 50%;
+  }
+  .sub-menu-wrapper li {
+    float: left;
+    position: relative;
+  }
+  .sub-menu-wrapper a {
+    float: left;
+    text-align: center;
+    white-space: nowrap;
   }
   /* This might mess things up if I use .collapse more than one place.
     It is a very simple fix which saves my lots of work. */
@@ -7185,11 +7211,6 @@ footer .container .social-media .instagram {
        to override it. */
   .sub-menu {
     height: auto !important;
-  }
-}
-@media (min-width: 992px) {
-  .sub-menu-wrapper {
-    width: 60%;
   }
 }
 @media (min-width: 480px) {
@@ -7503,4 +7524,35 @@ article.article-with-gallery ol {
 .single-reference article p {
   padding-right: 10%;
   padding-left: 5%;
+}
+.gallery-menu .gallery-image {
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.gallery-menu a {
+  text-decoration: none;
+}
+.gallery-menu .gallery-menu-image {
+  height: 450px;
+}
+@media (min-width: 768px) {
+  .gallery-menu .gallery-menu-image {
+    height: 153px;
+  }
+  .gallery-menu .gallery-image {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .gallery-menu .gallery-menu-image {
+    height: 202px;
+  }
+}
+@media (min-width: 1200px) {
+  .gallery-menu .gallery-menu-image {
+    height: 247px;
+  }
 }

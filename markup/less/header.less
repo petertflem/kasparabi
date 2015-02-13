@@ -49,7 +49,7 @@ header {
 	}
 
 	.header-seperator {
-		background: url('assets/images/kaspara-strek.png') no-repeat;
+		background: url('../images/kaspara-strek.png') no-repeat;
 		width: 646px;
 		height: 5px;
 		margin-left: auto;
@@ -57,38 +57,51 @@ header {
 		margin-bottom: 45px;
 	}
 
-	.main-menu-wrapper {
-		width: 100%;
-		margin: 0px auto;
-	}
+	.main-menu-wrapper li {
+      float: none;
+      text-align: center;
+    }
 
-	@media (min-width: @screen-sm-min) {		
-		/* This might mess things up if I use .collapse more than one place.
-		It is a very simple fix which saves my lots of work. */
-		.collapse {
-			display: block;
-		}
+	@media (min-width: @screen-sm-min) {
+      .main-menu-wrapper {
+        float: right;
+        position: relative;
+        left: -50%;
+        text-align: left;
+      }
 
-		/* This is because if you open, then close the menu in "mobile",
-		   bootstrap sets height: 0px on the ul. When you resize the browser
-		   to larger than sm, the ul drops down below the .header-seperator
-		   element. Setting the height to auto fixes this, but since
-		   bootstrap sets the height inline, I have to use !important
-		   to override it. */
-		.main-menu {
-			height: auto !important;
-		}
-	}
-  
-	@media (min-width: @screen-md-min) {
-		.main-menu-wrapper {
-			width: 80%;
-		}
-	}
-	
-	@media (min-width: @screen-lg-min) {
-		.main-menu-wrapper {
-			width: 70%;
-		}
+      .main-menu-wrapper ul {
+        list-style: none;
+        position: relative;
+        left: 50%;
+        min-width: 793px;
+      }
+
+      .main-menu-wrapper li {
+        float: left;
+        position: relative;
+      }
+
+      .main-menu-wrapper a {
+        float: left;
+        text-align: center;
+        white-space: nowrap;
+      }
+      
+      /* This might mess things up if I use .collapse more than one place.
+      It is a very simple fix which saves my lots of work. */
+      .collapse {
+          display: block;
+      }
+
+      /* This is because if you open, then close the menu in "mobile",
+         bootstrap sets height: 0px on the ul. When you resize the browser
+         to larger than sm, the ul drops down below the .header-seperator
+         element. Setting the height to auto fixes this, but since
+         bootstrap sets the height inline, I have to use !important
+         to override it. */
+      .main-menu {
+          height: auto !important;
+      }
 	}
 }

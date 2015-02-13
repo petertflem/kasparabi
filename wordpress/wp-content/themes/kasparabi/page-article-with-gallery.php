@@ -31,7 +31,7 @@
                         <nav class="sub-menu-wrapper">
                             <?php wp_nav_menu(array(
                                 'menu' => $menu_slug, 
-                                'menu_class' => 'nav nav-pills nav-justified collapse sub-menu',
+                                'menu_class' => 'nav nav-pills  collapse sub-menu',
                                 'menu_id' => 'sub-menu')); ?>
                         </nav>
                     </div>
@@ -59,7 +59,7 @@
 
                 <div class="col-sm-4">
                     <div class="maginfic-popup-gallery reference-images">
-                        <?php echo kasparabi_get_images(); ?>
+                        <?php echo PostHelper::get_post_images_as_html(); ?>
                     </div>
                 </div>
                 <!-- END ARTICLE -->

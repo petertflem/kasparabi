@@ -8,6 +8,7 @@
         <?php 
             $meta_show_menu = get_post_meta( $post->ID, 'left_menu_checkbox', true ); 
             $show_menu = !empty($meta_show_menu);
+            $menu_slug = get_post_meta( $post->ID, 'menu_select', true );
         ?>
 
   <div class="container">
@@ -25,10 +26,10 @@
 
 						<div class="col-sm-12 sub-menu">
 								<nav class="sub-menu-wrapper">
-										<?php wp_nav_menu(array(
-												'menu' => $menu_slug, 
-												'menu_class' => 'nav nav-pills nav-justified collapse sub-menu',
-												'menu_id' => 'sub-menu')); ?>
+                                  <?php wp_nav_menu(array(
+                                          'menu' => $menu_slug, 
+                                          'menu_class' => 'nav nav-pills collapse sub-menu',
+                                          'menu_id' => 'sub-menu')); ?>
 								</nav>
 						</div>
 

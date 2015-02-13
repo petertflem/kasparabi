@@ -1,0 +1,39 @@
+.gallery-menu {
+    .gallery-image {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+  
+    a {
+        text-decoration: none;
+    }
+    
+    .gallery-menu-image {
+        height: 450px;
+    }
+	
+	@media (min-width: @screen-sm-min) { 
+        .gallery-menu-image {
+            height: 153px;
+	    }
+      
+      .gallery-image {
+          padding-left: 10px;
+          padding-right: 10px;
+      }
+	}
+
+	@media (min-width: @screen-md-min) { 
+        .gallery-menu-image {
+            height: 202px;
+	    }
+	}
+
+	@media (min-width: @screen-lg-min) { 
+        .gallery-menu-image {
+            height: 247px;
+	    }
+	}
+}

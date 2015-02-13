@@ -1,4 +1,4 @@
-<?php get_header('header.php'); ?>
+<?php get_header(); ?>
 
         <!-- IMAGE CAROUSEL -->
         <div class="container">

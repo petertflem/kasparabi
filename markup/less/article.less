@@ -10,7 +10,6 @@
         }
     }
     
-    margin-top: -40px;
     margin-bottom: 20px;
 }
 
@@ -40,20 +39,41 @@
     }
 }
 
-.sub-menu-wrapper {
-    width: 100%;
-    margin: 0px auto;
+.sub-menu-wrapper li {
+  float: none;
+  text-align: center;
 }
 
 @media (min-width: @screen-sm-min) {
     .sub-menu-wrapper {
-        width: 80%;
-        margin: 0px auto;
-        
         .sub-menu {
             margin-top: -40px;
         }
     }
+  
+  .sub-menu-wrapper {
+    float: right;
+    position: relative;
+    left: -50%;
+    text-align: left;
+  }
+  
+  .sub-menu-wrapper ul {
+    list-style: none;
+    position: relative;
+    left: 50%;
+  }
+  
+  .sub-menu-wrapper li {
+    float: left;
+    position: relative;
+  }
+  
+  .sub-menu-wrapper a {
+    float: left;
+    text-align: center;
+    white-space: nowrap;
+  }
 
     /* This might mess things up if I use .collapse more than one place.
     It is a very simple fix which saves my lots of work. */
@@ -71,12 +91,6 @@
       height: auto !important;
     }
 }
-
-	@media (min-width: @screen-md-min) {
-		.sub-menu-wrapper {
-			width: 60%;
-		}
-	}
 
 @media (min-width: @screen-xs-min) {
     .sub-menu {
