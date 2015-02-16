@@ -25,7 +25,7 @@ class Text_Link_Image_Menu_Walker extends Walker_Nav_Menu_Edit {
 
     // by means of phpQuery magic, inject a new input field
     $_li->find('.field-url')
-        ->append("<p class='description'>Image URL<br /><input type='text' value='$image_url' name='text_link_image_$menu_item_id' id='text_link_image' /><button id='select-image'>Select Image</button></p>");
+        ->append("<p class='description'>Image URL (only for the gallery menu page)<br /><input type='text' value='$image_url' name='text_link_image_$menu_item_id' id='text_link_image' /><button id='select-image'>Select Image</button></p>");
     
     // swap the $output
     $output = $_doc->html();

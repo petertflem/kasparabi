@@ -1,9 +1,9 @@
 <?php
  
 /*
-Plugin Name: [kasparabi] Metaboxes for the gallery menu page
+Plugin Name: [kasparabi] Article sub title menu meta box
 Plugin URI: 
-Description: Provides a metabox to set the gallery menu slug in
+Description: Provides a metabox to set the sub title menu slug in
 Author: Peter Tollnes Flem
 Version: 1.0
 Author URI:
@@ -12,7 +12,7 @@ Author URI:
 /*--------------------------------------------------------------------------*
  * Register metabox
 /*--------------------------------------------------------------------------*/
-function kasparabi_gallery_menu_information() {
+function kasparabi_sub_title_menu_information() {
 
     /* Limit this metabox to contact us pages */
     $post_id = '';
@@ -27,30 +27,30 @@ function kasparabi_gallery_menu_information() {
     
     $template_file = basename(get_post_meta( $post_id, '_wp_page_template', true ));
 
-    if ( $template_file == 'page-gallery-menu.php' ) {
-        add_meta_box( 'kasparabi-gallery-menu-meta', __( 'Gallery Menu Information', 'kasparabi' ), 'kasparabi_render_gallery_menu_meta_box', 'page' );
+    if ( $template_file == 'page-article.php' || $template_file == 'page-article-with-gallery.php' ) {
+        add_meta_box( 'kasparabi-sub-title-menu-meta', __( 'Sub title menu', 'kasparabi' ), 'kasparabi_render_sub_title_menu_meta_box', 'page' );
     }
 }
-add_action( 'add_meta_boxes', 'kasparabi_gallery_menu_information' );
+add_action( 'add_meta_boxes', 'kasparabi_sub_title_menu_information' );
 
 /*--------------------------------------------------------------------------*
  * Callbacks
 /*--------------------------------------------------------------------------*/
-function kasparabi_render_gallery_menu_meta_box($post) {
-    wp_nonce_field( basename( __FILE__ ), 'gallery-menu-meta_nonce' );
+function kasparabi_render_sub_title_menu_meta_box($post) {
+    wp_nonce_field( basename( __FILE__ ), 'gallery-sub-title-menu-meta_nonce' );
     
-    render_gallery_menu_form($post);    
+    render_sub_title_menu_form($post);    
 }
 
-function render_gallery_menu_form($post) {
-    $gallery_menu_slug = get_post_meta($post->ID, 'gallery_menu_slug', true);
+function render_sub_title_menu_form($post) {
+    $sub_title_menu_slug = get_post_meta($post->ID, 'sub_title_menu_slug', true);
     
     ?>
         <div>
-            <h4>Gallery Menu Slug</h4>
+            <h4>Sub Title Menu Slug</h4>
             <p>
-                <p class='description'><?php _e('Gallery Menu Slug', 'kasparabi'); ?></p>
-                <input type="text" name="gallery-menu-slug" class="regular-text" value="<?php echo $gallery_menu_slug; ?>" />
+                <p class='description'><?php _e('Sub Title Menu Slug', 'kasparabi'); ?></p>
+                <input type="text" name="sub-title-menu-slug" class="regular-text" value="<?php echo $sub_title_menu_slug; ?>" />
             </p>
         </div>
     <?php
@@ -59,12 +59,12 @@ function render_gallery_menu_form($post) {
 /*--------------------------------------------------------------------------*
  * Save functions
 /*--------------------------------------------------------------------------*/
-function kasparibi_gallery_menu_meta_save( $post_id, $post ) {
+function kasparibi_sub_title_menu_meta_save( $post_id, $post ) {
 
     // Checks save status
     $is_autosave = wp_is_post_autosave( $post_id );
     $is_revision = wp_is_post_revision( $post_id );
-    $is_valid_nonce = ( isset( $_POST[ 'gallery-menu-meta_nonce' ] ) && wp_verify_nonce( $_POST[ 'gallery-menu-meta_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+    $is_valid_nonce = ( isset( $_POST[ 'gallery-sub-title-menu-meta_nonce' ] ) && wp_verify_nonce( $_POST[ 'gallery-sub-title-menu-meta_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
 
     // Exits script depending on save status
     if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
@@ -79,11 +79,11 @@ function kasparibi_gallery_menu_meta_save( $post_id, $post ) {
         return $post_id;
 
     /* Save the slug */
-    gallery_menu_save_value( 'gallery-menu-slug', 'gallery_menu_slug', $post );
+    sub_title_menu_save_value( 'sub-title-menu-slug', 'sub_title_menu_slug', $post );
 }
-add_action( 'save_post', 'kasparibi_gallery_menu_meta_save', 1, 2 );
+add_action( 'save_post', 'kasparibi_sub_title_menu_meta_save', 1, 2 );
 
-function gallery_menu_save_value( $name_of_input, $meta_key, $post ) {
+function sub_title_menu_save_value( $name_of_input, $meta_key, $post ) {
  	$new_meta_value = ( isset( $_POST[$name_of_input] ) ? sanitize_text_field( $_POST[$name_of_input] ) : '' );
   $meta_value = get_post_meta( $post->ID, $meta_key, true);
 

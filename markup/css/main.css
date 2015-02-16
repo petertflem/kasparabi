@@ -7226,6 +7226,18 @@ footer .container .social-media .instagram {
     width: 66.6666666667%;
   }
 }
+article.article .menu-sub-title-wedding-menu-container {
+  padding: 0;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+article.article .menu-sub-title-wedding-menu-container ul {
+  padding: 0;
+  margin-left: 0;
+}
+article.article ul.sub-title-menu {
+  width: 100%;
+}
 article.article h1 {
   text-align: left;
   margin-bottom: 30px;
@@ -7555,4 +7567,33 @@ article.article-with-gallery ol {
   .gallery-menu .gallery-menu-image {
     height: 247px;
   }
+}
+.about-us .about-person-row {
+  margin-bottom: 15px;
+}
+.about-us .about-person-row .about-person-text {
+  font-size: 16px;
+  font-family: gt_walsheim_regular;
+}
+.prices .price-table {
+  text-align: center;
+  font-size: 16px;
+  font-family: gt_walsheim_regular;
+  margin: 0 auto;
+}
+.prices .price-table tr td:first-child {
+  text-align: left;
+}
+.prices .price-table tr td {
+  border: 1px solid black;
+  padding: 5px;
+}
+.prices .price-table tr:first-child {
+  font-weight: bold;
+}
+.prices article.article {
+  margin-bottom: 20px;
+}
+.prices article.article h1 {
+  text-align: center;
 }
