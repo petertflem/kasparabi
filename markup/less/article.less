@@ -13,7 +13,8 @@
     margin-bottom: 20px;
 }
 
-.sub-menu-toggle {
+.sub-menu-toggle,
+.sub-title-menu-toggle {
     margin-top: -40px;
     
     a:hover {
@@ -39,12 +40,25 @@
     }
 }
 
-.sub-menu-wrapper li {
+article.article div.sub-title-menu-toggle {
+  margin-top: -20px;
+}
+
+.sub-menu-wrapper li,
+.menu-sub-title-wedding-menu-container li {
   float: none;
   text-align: center;
 }
 
 @media (min-width: @screen-sm-min) {
+    .menu-sub-title-wedding-menu-container li {
+      float: left;
+    }
+  
+    .menu-sub-title-wedding-menu-container li a:first-child {
+      margin-left: -12px;
+    }
+  
     .sub-menu-wrapper {
         .sub-menu {
             margin-top: -40px;
@@ -109,15 +123,21 @@
 }
 
 article.article {
+    .sub-title-menu-toggle a {
+      text-decoration: none;
+    }
   
     .menu-sub-title-wedding-menu-container {
       padding: 0;
-      margin-top: -20px;
       margin-bottom: 20px;
       
       ul {
         padding: 0;
         margin-left: 0;
+        
+        li a {
+          text-decoration: none;
+        }
       }
     }
   
@@ -156,6 +176,15 @@ article.article {
             padding-left: 5%;
             margin-top: 20px;
         }
+      
+        .menu-sub-title-wedding-menu-container {
+          padding-left: 5%;
+        }
+    
+      
+      .menu-sub-title-wedding-menu-container {
+        margin-top: -20px;
+      }
 
         div, p, ul, ol {
             padding-right: 20%;

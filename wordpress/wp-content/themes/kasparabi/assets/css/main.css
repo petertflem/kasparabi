@@ -7149,13 +7149,16 @@ footer .container .social-media .instagram {
   font-family: 'gt_walsheim_regular';
   padding: 5px 5px;
 }
-.sub-menu-toggle {
+.sub-menu-toggle,
+.sub-title-menu-toggle {
   margin-top: -40px;
 }
-.sub-menu-toggle a:hover {
+.sub-menu-toggle a:hover,
+.sub-title-menu-toggle a:hover {
   background-color: #eeeeee;
 }
-.sub-menu-toggle a {
+.sub-menu-toggle a,
+.sub-title-menu-toggle a {
   border-radius: 4px;
   position: relative;
   display: block;
@@ -7170,11 +7173,21 @@ footer .container .social-media .instagram {
   color: #000;
   text-decoration: none;
 }
-.sub-menu-wrapper li {
+article.article div.sub-title-menu-toggle {
+  margin-top: -20px;
+}
+.sub-menu-wrapper li,
+.menu-sub-title-wedding-menu-container li {
   float: none;
   text-align: center;
 }
 @media (min-width: 768px) {
+  .menu-sub-title-wedding-menu-container li {
+    float: left;
+  }
+  .menu-sub-title-wedding-menu-container li a:first-child {
+    margin-left: -12px;
+  }
   .sub-menu-wrapper .sub-menu {
     margin-top: -40px;
   }
@@ -7226,14 +7239,19 @@ footer .container .social-media .instagram {
     width: 66.6666666667%;
   }
 }
+article.article .sub-title-menu-toggle a {
+  text-decoration: none;
+}
 article.article .menu-sub-title-wedding-menu-container {
   padding: 0;
-  margin-top: -20px;
   margin-bottom: 20px;
 }
 article.article .menu-sub-title-wedding-menu-container ul {
   padding: 0;
   margin-left: 0;
+}
+article.article .menu-sub-title-wedding-menu-container ul li a {
+  text-decoration: none;
 }
 article.article ul.sub-title-menu {
   width: 100%;
@@ -7264,6 +7282,12 @@ article.article .one_half {
   article.article h1 {
     padding-left: 5%;
     margin-top: 20px;
+  }
+  article.article .menu-sub-title-wedding-menu-container {
+    padding-left: 5%;
+  }
+  article.article .menu-sub-title-wedding-menu-container {
+    margin-top: -20px;
   }
   article.article div,
   article.article p,
