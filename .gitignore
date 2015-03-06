@@ -11,25 +11,25 @@ markup/build/
 # Wordpress #
 #############
 # Ignore everything in the wordpress folder except the "wp-content" directory.
-wordpress/*
-!wordpress/wp-content/
+kbiwp/*
+!kbiwp/wp-content/
 
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
-wordpress/wp-content/*
-!wordpress/wp-content/plugins/
-!wordpress/wp-content/themes/
+kbiwp/wp-content/*
+!kbiwp/wp-content/plugins/
+!kbiwp/wp-content/themes/
 
 # Ignore everything in the "plugins" directory, except the plugins you
 # specify (see the commented-out examples for hints on how to do this.)
-#!wordpress/wp-content/plugins/news
-#!wordpress/wp-content/plugins/reference
-#!wordpress/wp-content/plugins/settings
-#!wordpress/wp-content/plugins/inspiration/
-#!wordpress/wp-content/plugins/inspiration-categories
-#!wordpress/wp-content/plugins/inspiration-picker-links
+#!kbiwp/wp-content/plugins/news
+#!kbiwp/wp-content/plugins/reference
+#!kbiwp/wp-content/plugins/settings
+#!kbiwp/wp-content/plugins/inspiration/
+#!kbiwp/wp-content/plugins/inspiration-categories
+#!kbiwp/wp-content/plugins/inspiration-picker-links
 
 # Ignore everything in the "themes" directory, except the themes you
 # specify (see the commented-out example for a hint on how to do this.)
-wordpress/wp-content/themes/*
-!wordpress/wp-content/themes/kasparabi/
+kbiwp/wp-content/themes/*
+!kbiwp/wp-content/themes/kasparabi/
