@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 			},
 			less_dev: {
 				files: [
-					{ src: 'css/main.css', dest: '../wordpress/wp-content/themes/kasparabi/assets/css/main.css' }
+					{ src: 'css/main.css', dest: '../kbiwp/wp-content/themes/kasparabi/assets/css/main.css' }
 				]
 			}
 		},
