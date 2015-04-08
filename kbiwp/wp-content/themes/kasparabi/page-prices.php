@@ -16,9 +16,25 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="visible-xs text-center sub-menu-toggle">
-        <a data-toggle="collapse" data-target="#sub-menu">Undermeny</a>
+        <a data-toggle="collapse" data-target="#sub-menu"><?php _e('Sub menu', 'kasparabi'); ?></a>
       </div>
     </div>
+  </div>
+  <div class="row">
+    <!-- LEFT MENU -->
+    <?php if ($show_menu) : ?>
+
+      <div class="col-sm-12 sub-menu">
+        <nav class="sub-menu-wrapper">
+          <?php wp_nav_menu(array(
+            'menu' => $menu_slug, 
+            'menu_class' => 'nav nav-pills collapse sub-menu',
+            'menu_id' => 'sub-menu')); ?>
+        </nav>
+      </div>
+
+    <?php endif; ?>
+    <!-- END LEFT MENU -->
   </div>
 
   <!-- ARTICLE -->

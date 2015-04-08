@@ -7605,26 +7605,36 @@ div.reference-images {
   .gallery-menu .gallery-menu-image {
     height: 153px;
   }
-  .gallery-menu .gallery-image {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 }
 @media (min-width: 992px) {
   .gallery-menu .gallery-menu-image {
     height: 202px;
   }
+  .gallery-menu .gallery-image {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 @media (min-width: 1200px) {
-  .gallery-menu .gallery-menu-image {
-    height: 247px;
+  .gallery-menu {
+    /*.gallery-menu-image {
+          height: 247px;
+      }*/
+  }
+  .gallery-menu .gallery-image {
+    padding-left: 33px;
+    padding-right: 33px;
   }
 }
 .about-us {
   margin-bottom: 10px;
 }
+.about-us h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
 .about-us .about-person-row {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .about-us .about-person-row .about-person-text {
   font-size: 16px;

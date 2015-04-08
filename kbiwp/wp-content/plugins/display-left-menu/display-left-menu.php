@@ -27,7 +27,7 @@ function kasparabi_page_left_menu() {
     
     $template_file = get_post_meta( $post_id, '_wp_page_template', true );
 
-    if ( $template_file == 'page-article.php' || $template_file == 'page-article-with-gallery.php' ) {
+    if ( $template_file == 'page-article.php' || $template_file == 'page-article-with-gallery.php' || $template_file == 'page-prices.php' ) {
         add_meta_box( 'kasparabi-left-menu-meta', __( 'Left Menu', 'kasparabi' ), 'kasparabi_render_left_menu_meta_box', 'page', 'side' );
     }
 }
