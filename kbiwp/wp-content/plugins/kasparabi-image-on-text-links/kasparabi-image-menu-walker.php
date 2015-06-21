@@ -10,9 +10,7 @@ class Text_Link_Image_Menu_Walker extends Walker_Nav_Menu_Edit {
       require_once 'phpQuery-onefile.php';
 
     $_doc = phpQuery::newDocumentHTML( $output );
-    $_li = phpQuery::pq('li.menu-item-custom');
-    
-    //echo htmlspecialchars($_li);
+    $_li = phpQuery::pq('li.menu-item-custom:last');
     
     // if the last <li>'s id attribute doesn't match $item->ID something is very wrong, don't do anything
     // just a safety, should never happen...
@@ -25,7 +23,7 @@ class Text_Link_Image_Menu_Walker extends Walker_Nav_Menu_Edit {
 
     // by means of phpQuery magic, inject a new input field
     $_li->find('.field-url')
-        ->append("<p class='description'>Image URL (only for the gallery menu page)<br /><input type='text' value='$image_url' name='text_link_image_$menu_item_id' id='text_link_image' /><button id='select-image'>Select Image</button></p>");
+        ->append("<p class='description'>Image URL (only for the gallery menu page)<br /><input type='text' value='$image_url' name='text_link_image_$menu_item_id' id='text_link_image' /><button class='select-image'>Select Image</button></p>");
     
     // swap the $output
     $output = $_doc->html();

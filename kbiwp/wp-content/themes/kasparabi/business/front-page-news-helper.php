@@ -40,11 +40,6 @@
 
       $item_output = $args->before;
 
-      // thumbnail image output
-      //$item_output .= ( isset( $args->thumbnail_link ) && $args->thumbnail_link ) ? '<a' . $attributes . '>' : '';
-      //$item_output .= apply_filters( 'menu_item_thumbnail' , ( isset( $args->thumbnail ) && $args->thumbnail ) ? get_the_post_thumbnail( $item->object_id , ( isset( $args->thumbnail_size ) ) ? $args->thumbnail_size : 'thumbnail' , $attr ) : '' , $item , $args , $depth );		
-      //$item_output .= ( isset( $args->thumbnail_link ) && $args->thumbnail_link ) ? '</a>' : '';
-
       $post = get_post($item->object_id);
       $isInspiration = $post->post_type !== 'inspiration';
       if ($isInspiration) {
