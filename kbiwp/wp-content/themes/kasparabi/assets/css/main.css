@@ -7527,21 +7527,32 @@ div.reference-images {
     margin: 0 auto;
   }
 }
-.news-row {
+.news-row,
+.list-child-pages-row {
   margin-bottom: 40px;
 }
-.news-row .news-thumbnail {
+.news-row .news-thumbnail,
+.list-child-pages-row .news-thumbnail,
+.news-row .child-pages-thumbnail,
+.list-child-pages-row .child-pages-thumbnail {
   margin-top: 20px;
 }
-.news-row .news-thumbnail img {
+.news-row .news-thumbnail img,
+.list-child-pages-row .news-thumbnail img,
+.news-row .child-pages-thumbnail img,
+.list-child-pages-row .child-pages-thumbnail img {
   margin-left: auto;
   margin-right: auto;
 }
-.news-row a {
+.news-row a,
+.list-child-pages-row a {
   text-decoration: none;
 }
 .news-page-heading {
   margin-bottom: 10px;
+}
+.list-child-pages-page-heading {
+  padding-bottom: 14px;
 }
 .maginfic-popup-gallery div.gallery-image {
   padding: 5px;
