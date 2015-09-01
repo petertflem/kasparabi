@@ -11,7 +11,7 @@ Template Name: List Out Child Pages
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-xs-12 col-md-10">
-      <h1 class="list-child-pages-page-heading"><?php _e('Inspiring Homes', 'kasparabi'); ?></h1>
+      <h1 class="list-child-pages-page-heading"><?php echo get_the_title(); ?></h1>
     </div>
     <div class="col-md-1"></div>
   </div>
