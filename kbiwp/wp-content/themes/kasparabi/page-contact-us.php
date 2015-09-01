@@ -4,7 +4,7 @@
     */
 ?>
 <?php
- 
+
     //response generation function
     $response = "";
 
@@ -24,7 +24,7 @@
     $email_invalid   = __("Email Address Invalid.", "kasparabi");
     $message_unsent  = __("Message was not sent. Try Again.", "kasparabi");
     $message_sent    = __("Thanks! Your message has been sent.", "kasparabi");
-     
+
     //user posted variables
     $name = $_POST['message_name'];
     $email = $_POST['message_email'];
@@ -38,7 +38,7 @@
     $headers = "Reply-To: <" . $email . ">" . "\r\n";
 
     if(!$human == 0){
-        if($human != 2) 
+        if($human != 2)
             my_contact_form_generate_response("error", $not_human); //not human!
         else {
 
@@ -56,10 +56,10 @@
                     $message .= "\r\n\r\n" . __("Newsletter: ", "kasparabi") . ($newsletter ? __("Yes", "kasparabi") : __("No", "kasparabi")) . ".\r\n\r\nFra: " . $name;
 
                     $sent = wp_mail($to, $subject, strip_tags($message), $headers);
-                    
-                    if($sent) 
+
+                    if($sent)
                         my_contact_form_generate_response("success", $message_sent); //message sent!
-                    else 
+                    else
                         my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
                 }
             }
@@ -85,7 +85,7 @@
 
 ?>
 <?php get_header(); ?>
-        
+
         <!-- CONTANT US -->
         <div class="container contact-us">
             <div class="row">
@@ -93,7 +93,7 @@
                     <h1><?php _e('Contact us', 'kasparabi'); ?></h1>
                 </div>
             </div>
-            
+
             <div class="row contact-us-row">
               <div class="col-sm-4">
                 <?php echo $street_name; ?>
@@ -107,16 +107,18 @@
                 <?php echo $nb_name ?>
                 <br />
                 <?php echo $nb_phonenumber ?>
+                <br />
                 <?php echo $nb_email ?>
               </div>
               <div class="col-sm-4">
                 <?php echo $hm_name ?>
                 <br />
                 <?php echo $hm_phonenumber ?>
+                <br />
                 <?php echo $hm_email ?>
               </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-xs-12">
                     <h4 class="email-title"><?php _e('Send us an email', 'kasparabi'); ?></h4>
@@ -130,7 +132,7 @@
                             margin-bottom: 12px;
                             margin-top: 12px;
                         }
-                     
+
                         .success{
                             padding: 5px 9px;
                             border: 1px solid green;
@@ -147,12 +149,12 @@
                         form {
                             margin-bottom: 20px;
                         }
-                     
+
                         form span{
                             color: red;
                         }
                     </style>
-                     
+
                     <div id="respond" class="email-contact-form">
                         <?php echo $response; ?>
                         <form role="form" action="<?php the_permalink(); ?>" method="post">
@@ -171,7 +173,7 @@
                             <div class="form-group">
                                 <label for="message_human"><?php echo _e('Human Verification: *', 'kasparabi'); ?><br /><input type="text" style="width: 60px;" class="form-control human-verification" name="message_human"> + 3 = 5</label>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="newsletter"><input style="margin-right: 5px; margin-top: 5px;" type="checkbox" name="newsletter" checked><?php _e("I wish to receive newsletters from Kaspara Bryllup & Interiør", "kasparabi"); ?></label>
                             </div>
