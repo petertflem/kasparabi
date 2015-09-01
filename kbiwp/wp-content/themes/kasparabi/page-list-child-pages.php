@@ -22,7 +22,7 @@ Template Name: List Out Child Pages
   		'post_type' => 'page',
   		'post_parent' => $post->ID,
   		'posts_per_page' => -1,
-  		'orderby' => 'menu_order'
+  		'orderby' => 'date'
   	));
 
     if ($subpages->have_posts()) : while ($subpages->have_posts()) : $subpages->the_post();
