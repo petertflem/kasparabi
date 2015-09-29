@@ -30,3 +30,6 @@ deploy:
     password:
       secure: 2T1/BoBV5UMpLZ886hM7PQ==
     folder: test
+
+artifacts:
+  - path: kasparabi.zip
