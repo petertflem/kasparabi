@@ -23,7 +23,7 @@ build: off
 
 artifacts:
   - path: \
-    name: kasparabi.zip
+    name: kasparabi
 
 deploy:
     # FTP deployment provider settings
@@ -33,4 +33,5 @@ deploy:
     username: petertflemno
     password:
       secure: 2T1/BoBV5UMpLZ886hM7PQ==
-    application: kasparabi.zip
+    folder: /test
+    application: kasparabi
