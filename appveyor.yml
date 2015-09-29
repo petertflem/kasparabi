@@ -19,6 +19,8 @@ install:
   - npm install -g grunt-cli
   - grunt compile_less
 
+build: off
+
 deploy:
     # FTP deployment provider settings
   - provider: FTP
