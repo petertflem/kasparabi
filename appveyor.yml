@@ -24,7 +24,7 @@ build: off
 deploy:
     # FTP deployment provider settings
   - provider: FTP
-    protocol: ftps
+    protocol: ftp
     host: ftp.domeneshop.no
     username: petertflemno
     password:
