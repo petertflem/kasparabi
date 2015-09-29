@@ -3,8 +3,17 @@ version: 1.0.{build}
 branches:
   only:
     - development
-    
+
 skip_tags: true
 
 init:
   - git config --global core.autocrlf input
+
+environment:
+  nodejs_version: "4.1.1"
+
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - npm install
