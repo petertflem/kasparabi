@@ -1,0 +1,10 @@
+version: 1.0.{build}
+
+branches:
+  only:
+    - development
+    
+skip_tags: true
+
+init:
+  - git config --global core.autocrlf input
