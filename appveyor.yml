@@ -32,5 +32,5 @@ deploy:
     folder: test
 
 artifacts:
-  - path: ./
+  - path: **\*
     name: kasparabi
