@@ -33,5 +33,5 @@ deploy:
     username: petertflemno
     password:
       secure: 2T1/BoBV5UMpLZ886hM7PQ==
-    folder: /test
+    folder: /test/
     application: kasparabi
