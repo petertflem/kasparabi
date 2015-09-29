@@ -48,4 +48,5 @@ module.exports = function (grunt) {
 
 	grunt.renameTask('watch', 'delta');
 	grunt.registerTask('watch', ['delta']);
+	grunt.registerTask('compile_less', ['clean:css', 'less:dev', 'concat:css', 'clean:temp']);
 }
