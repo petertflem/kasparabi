@@ -4,9 +4,8 @@ hours.xlsx
 
 # Markup #
 ##########
-markup/node_modules/
-#markup/stylesheets/css/
-markup/build/
+node_modules/
+css/
 
 # Wordpress #
 #############
@@ -19,15 +18,6 @@ kbiwp/*
 kbiwp/wp-content/*
 !kbiwp/wp-content/plugins/
 !kbiwp/wp-content/themes/
-
-# Ignore everything in the "plugins" directory, except the plugins you
-# specify (see the commented-out examples for hints on how to do this.)
-#!kbiwp/wp-content/plugins/news
-#!kbiwp/wp-content/plugins/reference
-#!kbiwp/wp-content/plugins/settings
-#!kbiwp/wp-content/plugins/inspiration/
-#!kbiwp/wp-content/plugins/inspiration-categories
-#!kbiwp/wp-content/plugins/inspiration-picker-links
 
 # Ignore everything in the "themes" directory, except the themes you
 # specify (see the commented-out example for a hint on how to do this.)
