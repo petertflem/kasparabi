@@ -1,7 +1,8 @@
 # Markup #
 ##########
 node_modules/
-css/
+kbiwp/wp-content/themes/kasparabi/assets/css/*
+!kbiwp/wp-content/themes/kasparabi/assets/css/vendor/
 
 # Wordpress #
 #############
