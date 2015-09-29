@@ -16,4 +16,5 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - cd kbiwp/wp-content/themes/kasparabi/assets/
   - npm install
+  - npm install -g grunt-cli
   - grunt compile_less
