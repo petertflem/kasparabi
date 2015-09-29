@@ -19,6 +19,12 @@ install:
   - npm install -g grunt-cli
   - grunt compile_less
 
-artifacts:
-  - path: kasparabi.zip
-    name: kasparabi
+deploy:
+    # FTP deployment provider settings
+  - provider: FTP
+    protocol: ftps
+    host: ftp.domeneshop.no
+    username: petertflemno
+    password:
+      secure: 2T1/BoBV5UMpLZ886hM7PQ==
+    folder: test
