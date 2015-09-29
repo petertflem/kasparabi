@@ -19,3 +19,5 @@ kbiwp/wp-content/*
 # specify (see the commented-out example for a hint on how to do this.)
 kbiwp/wp-content/themes/*
 !kbiwp/wp-content/themes/kasparabi/
+
+npm-debug.log
