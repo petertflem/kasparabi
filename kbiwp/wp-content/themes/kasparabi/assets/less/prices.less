@@ -18,12 +18,20 @@
       font-weight: bold;
     }
   }
-  
+
   article.article {
-    margin-bottom: 20px; 
-  
+    margin-bottom: 20px;
+
     h1 {
       text-align: center;
+    }
+
+    @media (min-width: @screen-sm-min) {
+
+        div, p, ul, ol, .reference-images {
+            padding-right: 0;
+            padding-left: 0;
+        }
     }
   }
 }
