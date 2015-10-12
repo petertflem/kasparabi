@@ -100,7 +100,6 @@
                 <br />
                 <?php echo $zip_code; ?> <?php echo $area; ?>
                 <br />
-                <br />
                 <?php echo $kasparabi_email; ?>
               </div>
               <div class="col-sm-4">

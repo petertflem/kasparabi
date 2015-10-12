@@ -25,13 +25,13 @@ artifacts:
   - path: \
     name: kasparabi
 
-deploy:
+#deploy:
     # FTP deployment provider settings
-  - provider: FTP
-    protocol: ftp
-    host: ftp.domeneshop.no
-    username: petertflemno
-    password:
-      secure: 2T1/BoBV5UMpLZ886hM7PQ==
-    folder: /test/
-    application: kasparabi
+  #- provider: FTP
+  #  protocol: ftp
+  #  host: ftp.domeneshop.no
+  #  username: petertflemno
+  #  password:
+  #    secure: 2T1/BoBV5UMpLZ886hM7PQ==
+  #  folder: /test/
+  #  application: kasparabi
