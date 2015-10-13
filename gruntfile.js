@@ -32,7 +32,6 @@ module.exports = function (grunt) {
 			build: {
 				files: [
 					{ expand: true, dest: 'build/', src: [
-						'kbiwp/wp-content/plugins/**/*',
 						'kbiwp/wp-content/themes/kasparabi/**/*',
 						'!**kbiwp/wp-content/themes/kasparabi/assets/less/**',
 						'index.php'

@@ -36,4 +36,3 @@ deploy:
     folder: /release/1.0.{build}
     application: kasparabi
     beta: true
-    debug: true
