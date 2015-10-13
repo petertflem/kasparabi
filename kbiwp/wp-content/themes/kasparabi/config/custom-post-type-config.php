@@ -3,7 +3,7 @@
   /**
 	 * Set number of custom post types per page on archive pages
 	 */
-	function add_custom_posts_per_page( $q ) {	
+	function add_custom_posts_per_page( $q ) {
 		global $custom_post_types;
 		$custom_post_types = array('reference', 'news', 'inspiration');
 
@@ -24,8 +24,8 @@
 	 * If the archive is the inspiration archive, filter by category if we have one
 	 */
 	function add_inspiration_category( $q ) {
-		if ($q->is_main_query() 
-	   		&& $q->is_post_type_archive('inspiration') 
+		if ($q->is_main_query()
+	   		&& $q->is_post_type_archive('inspiration')
 	   		&& !is_admin()) {
 
 			$category_id = $_GET['c'];
@@ -43,6 +43,30 @@
 		return $q;
 	}
 	add_filter('parse_query', 'add_inspiration_category');
+
+	/**
+	 * If the archive is the reference archive, filter by category if we have one
+	 */
+	function add_reference_category( $q ) {
+		if ($q->is_main_query()
+	   		&& $q->is_post_type_archive('reference')
+	   		&& !is_admin()) {
+
+			$category_id = $_GET['c'];
+			if (!empty($category_id)) {
+				$q->set('tax_query', array(
+					array(
+						'taxonomy' => 'reference-taxonomy',
+						'field' => 'id',
+						'terms' => $category_id
+					)
+				));
+			}
+		}
+
+		return $q;
+	}
+	add_filter('parse_query', 'add_reference_category');
 
   /**
 	 * Add custom post types to home page query
