@@ -22,3 +22,4 @@ kbiwp/wp-content/themes/*
 !kbiwp/wp-content/themes/kasparabi/
 
 npm-debug.log
+build/
