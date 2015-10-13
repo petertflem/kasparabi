@@ -2,7 +2,7 @@ version: 1.0.{build}
 
 branches:
   only:
-    - development
+    - production
 
 skip_tags: true
 
@@ -33,6 +33,6 @@ deploy:
     username: petertflemno
     password:
       secure: 2T1/BoBV5UMpLZ886hM7PQ==
-    folder: /release/1.0.{build}
+    folder: /release
     application: kasparabi
     beta: true
