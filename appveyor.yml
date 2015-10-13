@@ -33,6 +33,6 @@ deploy:
     username: petertflemno
     password:
       secure: 2T1/BoBV5UMpLZ886hM7PQ==
-    folder: /test/
+    folder: /release/1.0.{build}
     application: kasparabi
     skip_dirs: \\kbiwp\\wp-content\\plugins
