@@ -23,3 +23,5 @@ kbiwp/wp-content/themes/*
 
 npm-debug.log
 build/
+
+.htaccess
