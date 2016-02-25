@@ -42,8 +42,8 @@ class GalleryMenu extends Walker_Nav_Menu {
       $img = get_post_meta($item->ID, 'text_link_image', true);
     } else {
       $attachment_id = get_post_thumbnail_id($item->object_id);
-      echo $attachment_id;
-      $img = '';//wp_get_attachment_image_src($attachment_id, 'large')[0];
+      //wp_get_attachment_image_src($attachment_id, 'large')[0];
+      $img = wp_get_attachment_url($attachment_id, 'large');
     }
 
     $item_output = '<a href="' . $item->url . '">';
