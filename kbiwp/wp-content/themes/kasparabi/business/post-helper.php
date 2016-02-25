@@ -9,7 +9,7 @@
     public static function get_post_images_as_html() {
       global $post;
       $id = intval( $post->ID );
-      $size = 'medium';
+      $size = 'large';
       $attachments = get_children( array(
         'post_parent' => $id,
         'post_status' => 'inherit',
