@@ -173,10 +173,6 @@
                                 <label for="message_human"><?php echo _e('Human Verification: *', 'kasparabi'); ?><br /><input type="text" style="width: 60px;" class="form-control human-verification" name="message_human"> + 3 = 5</label>
                             </div>
 
-                            <div class="form-group">
-                                <label for="newsletter"><input style="margin-right: 5px; margin-top: 5px;" type="checkbox" name="newsletter" checked><?php _e("I wish to receive newsletters from Kaspara Bryllup & Interiør", "kasparabi"); ?></label>
-                            </div>
-
                             <input type="hidden" name="submitted" value="1" />
                             <button type="submit" class="btn btn-default"><?php echo _e('Send email', 'kasparabi'); ?></button>
                         </form>

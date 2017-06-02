@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kasparabi\n"
 "POT-Creation-Date: 2015-03-06 16:23+0100\n"
-"PO-Revision-Date: 2015-03-06 16:32+0100\n"
+"PO-Revision-Date: 2017-05-20 16:10+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -431,7 +431,7 @@ msgstr "Ingen side funnet"
 
 #: ../page-article.php:20
 msgid "Sub menu"
-msgstr ""
+msgstr "Valg"
 
 #: ../page-contact-us.php:22
 msgid "Human verification incorrect."
