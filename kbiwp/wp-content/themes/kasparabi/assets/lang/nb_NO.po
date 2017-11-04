@@ -431,7 +431,7 @@ msgstr "Ingen side funnet"
 
 #: ../page-article.php:20
 msgid "Sub menu"
-msgstr "Valg"
+msgstr "VALG"
 
 #: ../page-contact-us.php:22
 msgid "Human verification incorrect."

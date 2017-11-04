@@ -40,7 +40,7 @@
         $img = wp_get_attachment_image_src( $id, $size );
 
         $output .= $open . '<div class="col-sm-4 gallery-image"><a href="' . esc_url( wp_get_attachment_url( $id ) ) . '" title="' . esc_attr( $title ) . '">';
-        $output .= '<div class="article-gallery-image" style="background: url(' . esc_url( $img[0] ) . ') no-repeat; background-position: center center; background-size: cover;" title="' . esc_attr( $title ) . '"></div>';
+	$output .= '<div class="article-gallery-iamge"><img class="img-responsive" title="' . esc_attr($title) . '" src="' . esc_url($img[0]) . '" /></div>';
         $output .= '</a></div>' . $close;
       }
 

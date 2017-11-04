@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="visible-xs text-center sub-menu-toggle">
-                        <a data-toggle="collapse" data-target="#sub-menu">Undermeny</a>
+                        <a data-toggle="collapse" data-target="#sub-menu"><?php _e('Sub menu', 'kasparabi'); ?></a>
                     </div>
                 </div>
             </div>
@@ -77,8 +77,7 @@
 
             </div>
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-sm-12 col-md-10">
+                <div class="col-sm-12">
                   <div class="maginfic-popup-gallery reference-images">
                       <?php echo PostHelper::get_post_images_as_html(); ?>
                   </div>
